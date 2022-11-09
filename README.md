@@ -1,0 +1,2 @@
+# CoolFinance
+Next + Tailwind
