@@ -5,7 +5,7 @@ import Image from 'next/image';
 import GrayEdit from '../assets/img/gray-edit-btn.svg'
 import GrayCopy from '../assets/img/gray-copy-btn.svg'
 
-const transactions = () => {
+const Transactions = () => {
   const [openTab, setOpenTab] = React.useState(1);
 
   return (
@@ -427,4 +427,4 @@ const transactions = () => {
   )
 }
 
-export default transactions
+export default Transactions
