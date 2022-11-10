@@ -10,15 +10,13 @@ const Transactions = () => {
 
   return (
     <>
-    <div className='md:pt-8 md:px-[102px] px-4 pt-5'>
-        <div className='flex items-center justify-between '>
-          <div className="">
-            <h2 className='xl:text-[40px] text-[32px] lg:leading-6 leading-snug font-bold text-primaryDarkBlue'>Transactions</h2>
-          </div>
-        </div>
-        <div className='border-gray300 md:mt-[30px] mt-5 border rounded-[10px] my-4 overflow-hidden'>
+    <div className='max-w-[1203px] w-full mx-auto px-5 pt-10'>        
+      <div className="">
+        <h2 className='xl:text-[40px] text-[32px] lg:leading-6 leading-snug font-bold text-primaryDarkBlue inline-block'>Transactions</h2>
+      </div>       
+        <div className='border-gray300 md:mt-9 mt-5 border rounded-[10px] my-4 overflow-hidden'>
           <div className='w-full text-left'>
-            {/* t =========== tab start======== */}
+            {/*=========== tab start======== */}
             <div className="flex flex-wrap ">
                 <div className="w-full">
                   <div
@@ -30,10 +28,10 @@ const Transactions = () => {
                         <div className="flex-auto text-center max-w-[136px] w-full"> 
                           <a 
                             className={
-                              "md:text-lg text-base font-semibold px-5 py-[15px] block leading-normal text-gray900 " +
+                              "md:text-lg text-base font-semibold md:px-10 px-5 py-[15px] block leading-normal text-gray900 " +
                               (openTab === 1
                                 ? "text-primaryBlue bg-blueGray-600 border-b-4 border-b-primaryBlue"
-                                : "text-blueGray-600 bg-white")
+                                : "text-blueGray-600 bg-white hover:text-primaryBlue")
                             }
                             onClick={e => {
                               e.preventDefault();
@@ -49,10 +47,10 @@ const Transactions = () => {
                         <div className="flex-auto text-center max-w-[136px] w-full">
                           <a 
                             className={
-                              "md:text-lg text-base font-semibold px-5 py-[15px] block leading-normal text-gray900 " +
+                              "md:text-lg text-base font-semibold md:px-10 px-5 py-[15px] block leading-normal text-gray900" +
                               (openTab === 2
                                 ? "text-primaryBlue bg-blueGray-600 border-b-4 border-b-primaryBlue"
-                                : "text-blueGray-600 bg-white")
+                                : "text-blueGray-600 bg-white hover:text-primaryBlue")
                             }
                             onClick={e => {
                               e.preventDefault();
@@ -67,7 +65,7 @@ const Transactions = () => {
                         </div>
                       </div>
                       <div className="mr-5">
-                        <select className='bg-white100 text-gray900 py-[8px] px-[22px] w-[80px] text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown' name="" id="">
+                        <select className='bg-white100 text-gray900 py-[8px] px-[22px] w-[80px] text-[10px] cursor-pointer rounded focus:outline-none focus:ring-0 filter-dropdown' name="" id="">
                           <option value="">Filter</option>
                           <option value="">Queue</option>
                           <option value="">History</option>
@@ -109,22 +107,38 @@ const Transactions = () => {
                             <div className='w-[100px]'><p className='text-gray900 text-sm font-light'>1000</p></div>  
                             <div className='w-[191px]'>
                               <div className="flex">
-                                <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x65A12C313fE8…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <p className='text-gray900 text-sm font-light mr-8 data-table-transition'>0x65A12C313fE8…</p>
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>                                
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x65A12C313fE8…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                               <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -136,21 +150,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x7915a6eb0403…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'>0x566714ec977a...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                             <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -162,21 +192,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x86c4A74e1280...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'>0xad2aec1eff22d...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                             <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -188,21 +234,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0xCC5596Fb286...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0xc0ab080393f9...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                             <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -214,21 +276,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0xEA674fdDe714f...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x74231b6118a3...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
-                            <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                           <div className="flex items-center">
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -240,21 +318,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x6d2e03b7EfFE…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x93f6446230c1...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                             <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -266,21 +360,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0xaaBAd1670BB8…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x7c91f1cbefc93...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                             <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -317,21 +427,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x65A12C313fE8…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x65A12C313fE8…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
-                              <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                            <div className="flex items-center">
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -343,21 +469,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x7915a6eb0403…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'>0x566714ec977a...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                             <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -369,21 +511,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x86c4A74e1280...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'>0xad2aec1eff22d...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                             <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -395,21 +553,37 @@ const Transactions = () => {
                             <div className='w-[191px]'>
                               <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0xaaBAd1670BB8…</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div className='w-[191px]'>
                             <div className="flex">
                                 <p className='text-gray900 text-sm font-light mr-8 data-table-transition'> 0x7c91f1cbefc93...</p>
-                                <span className='mr-2'><Image src={GrayEdit} alt="" /></span>
-                                <Image src={GrayCopy} alt="" />
+                                <span className='mr-2'>
+                                  <Link href={'#'}>
+                                    <a><Image src={GrayEdit} alt="" /></a>
+                                  </Link>
+                                </span>
+                                <Link href={'#'}>
+                                  <a><Image src={GrayCopy} alt="" /></a>
+                                </Link>
                               </div>
                               </div>  
                             <div>
                             <div className="flex items-center">
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] '><span  className='md:hidden block -mb-1'></span><span className=''>Approve</span></button>
-                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px]'><span  className='md:hidden block -mb-1'></span><span className=''>Decline</span></button>
+                                <button className='wallet-btn sm:mr-[14px] mr-1 flex items-center bg-primaryBlue py-2 px-[10px] w-[80px] justify-center rounded text-white text-[10px] border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
+                                 <span className=''>Approve</span>
+                                </button>
+                                <button className='wallet-btn flex items-center border-gray900 border py-2 px-[10px] w-[80px] justify-center rounded text-[10px] border-transparent hover:border-gray900 hover:text-white hover:bg-gray900 duration-300'>
+                                  <span className=''>Decline</span>
+                                </button>
                               </div>
                             </div>
                           </div>

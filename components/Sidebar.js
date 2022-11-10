@@ -34,30 +34,30 @@ function Sidebar() {
         </div>
         <div className={`px-[30px] bg-primaryDarkBlue lg:block h-[calc(100%-86px)]`}>
           <ul className='sidebar-menu sidebar-border lg:pt-9 pt-4 pb-3'>
-            <li className={router.pathname == "/explore" ? "active" : ""}>
+            <li className={router.pathname == "/explore" ? "active" : "hover:text-white duration-300 hover:bg-primaryBlue hover:rounded"}>
               <Link href="/explore">Explore</Link>
             </li>
-            <li className={router.pathname == "/portfolio" ? "active" : ""}>
+            <li className={router.pathname == "/portfolio" ? "active" : "hover:text-white duration-300 hover:bg-primaryBlue hover:rounded"}>
               <Link href="/portfolio">Portfolio</Link>
             </li>
-            <li className={router.pathname == "/swap-bridges" ? "active" : ""}>
-              <Link href="/swap-bridges">Swap & Bridges</Link>
+            <li className={router.pathname == "/swapbridges" ? "active" : "hover:text-white duration-300 hover:bg-primaryBlue hover:rounded"}>
+              <Link href="/swapbridges">Swap & Bridges</Link>
             </li>
-            <li className={router.pathname == "/wallets" ? "active" : ""}>
+            <li className={router.pathname == "/wallets" ? "active" : "hover:text-white duration-300 hover:bg-primaryBlue hover:rounded"}>
               <Link href="/wallets">Wallets</Link>
             </li>
-            <li className={router.pathname == "/analysis" ? "active" : ""}>
+            <li className={router.pathname == "/analysis" ? "active" : "hover:text-white duration-300 hover:bg-primaryBlue hover:rounded"}>
               <Link href="/analysis">Analysis</Link>
             </li>
           </ul>
           <ul className='sidebar-menu pt-3 pb-3'>
-            <li className={router.pathname == "/transactions" ? "active" : ""}>
+            <li className={router.pathname == "/transactions" ? "active" : "hover:text-white duration-300 hover:bg-primaryBlue hover:rounded"}>
               <Link href="/transactions">Transactions</Link>
             </li>
-            <li className={router.pathname == "/settings" ? "active" : ""}>
+            <li className={router.pathname == "/settings" ? "active" : "hover:text-white duration-300 hover:bg-primaryBlue hover:rounded"}>
               <Link href="/settings">Settings</Link>
             </li>
-            <li className='text-primaryBlue'>
+            <li className='text-primaryBlue hover:text-white duration-300'>
               <Link href="#" >Logout</Link>
             </li>
           </ul>

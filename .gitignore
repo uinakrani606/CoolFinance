@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-
+.next
 # production
 /build
 
@@ -113,3 +113,21 @@ yarn-error.log*
 .next/static/chunks/fallback/pages/_error.js
 .next/static/webpack/116238b53bc1f9a7.webpack.hot-update.json
 .next/static/webpack/webpack.116238b53bc1f9a7.hot-update.js
+.next/static/webpack/08a196c7ebd0badc.webpack.hot-update.json
+.next/static/webpack/1bb4b08f3c751b9d.webpack.hot-update.json
+.next/static/webpack/37df0e7ee7bd919c.webpack.hot-update.json
+.next/static/webpack/568ff28d25fcfe26.webpack.hot-update.json
+.next/static/webpack/7488f52a7923ae0b.webpack.hot-update.json
+.next/static/webpack/77702f5b112dff48.webpack.hot-update.json
+.next/static/webpack/acef4a5455a559df.webpack.hot-update.json
+.next/static/webpack/edd85695cf0efbba.webpack.hot-update.json
+.next/static/webpack/webpack.08a196c7ebd0badc.hot-update.js
+.next/static/webpack/webpack.1bb4b08f3c751b9d.hot-update.js
+.next/static/webpack/webpack.37df0e7ee7bd919c.hot-update.js
+.next/static/webpack/webpack.568ff28d25fcfe26.hot-update.js
+.next/static/webpack/webpack.7488f52a7923ae0b.hot-update.js
+.next/static/webpack/webpack.77702f5b112dff48.hot-update.js
+.next/static/webpack/webpack.acef4a5455a559df.hot-update.js
+.next/static/webpack/webpack.edd85695cf0efbba.hot-update.js
+.next/cache/webpack/client-development-fallback/1.pack
+.next/cache/webpack/server-development/4.pack

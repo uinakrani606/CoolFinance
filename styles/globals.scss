@@ -27,14 +27,18 @@ a {
   position: relative;
   li {
     display: block;
+    margin: 5px 0;
     &:first-child{
-      margin-bottom: 5px;      
+      margin-bottom: 8px;      
     }
     a {
       padding: 5px 14px;
       width: 100%;
       border-radius: 4px;
-      margin: 3px 0;
+      
+      &:hover{
+        padding: 5px 14px;
+      }
     }
   }.active {
     a {
@@ -64,7 +68,28 @@ select.filter-dropdown{
   background-repeat: no-repeat;
   background-position: right 1rem center;
 }
-
+.edit-icon{
+  &:hover{
+    svg{
+      path ,
+      rect
+      {
+        fill: #fff;
+      }
+    }
+  }
+}
+.delet-icon{
+  &:hover{
+    svg{
+      path ,
+      rect
+      {
+        fill: #fff;
+      }
+    }
+  }
+}
 // wallet page
 .add-btn{
   .wallet-btn{
@@ -87,6 +112,29 @@ select.filter-dropdown{
     }
   }
 }
+.plus-icon{
+  &:hover{
+    svg{
+      line{
+        stroke: #0770E5;
+      }
+    }
+  }
+  &:hover{
+    span{
+      svg{
+        path{
+          fill: #0770E5;
+        }
+      }
+    }
+    svg{
+      path{
+        stroke: #0770E5;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 1023px) {
   .menuopen {
     transition: 0.3s;
@@ -98,10 +146,7 @@ select.filter-dropdown{
 .open {
   left: 10%;
 }
-@media only screen and (max-width: 1500px) {
-  .data-table{
-    width: 961px;
-  }
+@media only screen and (max-width: 1500px) {  
   .transactions-box{
     width: 1200px;
   }
@@ -112,6 +157,11 @@ select.filter-dropdown{
   }
   .transactions-box{
     width: 1100px;
+  }
+  .white-plus-icon{
+    svg{
+      width: 7px;
+    }
   }
 }
 @media only screen and (max-width: 640px) {
