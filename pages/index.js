@@ -48,7 +48,7 @@ const Explore = () => {
                   <div className='bg-primaryBlue text-sm font-semibold px-6 py-3 rounded-[4px] text-[#fff] flex items-center gap-3 border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
                     View more
                     <svg xmlns="http://www.w3.org/2000/svg" width="7.725" height="13.451" viewBox="0 0 7.725 13.451">
-                      <path id="Path_45" data-name="Path 45" d="M-1926.941,601.848l5.311,5.311-5.311,5.311" transform="translate(1928.355 -600.434)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      <path id="Path_45" data-name="Path 45" d="M-1926.941,601.848l5.311,5.311-5.311,5.311" transform="translate(1928.355 -600.434)" fill="none" stroke="#fff" strokeLinecap="round" stroke-linejoin="round" stroke-width="2"/>
                     </svg>
                   </div>
                 </a>                
