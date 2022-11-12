@@ -1,0 +1,225 @@
+// siderbar sec Start
+$screen-sm:768px;
+$screen-md:992px;
+$screen-lg:1023px;
+
+.siderbar-main-sec{
+    width: 300px;
+    height: 100vh;
+    background-color: var(--primaryDarkBlue);
+    color: var(white);
+    position: fixed;
+    .siderbar-logo-part{
+        padding: 40px 30px 0;
+        display: flex;
+        justify-content: space-between;
+        span{
+            display: flex;
+            align-items: center;
+            padding: 12px 0 12px;
+            display: none;
+        }
+    }
+    .sidebar-condition{
+        position: relative;
+        background-color: var(--primaryDarkBlue);
+        height: calc(100% - 86px);        
+        z-index: 50;
+        width: 100%;        
+        .open{
+            width: 100%;
+        }
+        .sidebar-toggle{
+            background-color: var(--primaryDarkBlue);
+             height: calc(100% - 86px);
+             display: block;
+             padding: 0 30px;
+             color: var(--white);
+             .sidebar-menu {
+                position: relative;
+                padding: 36px 0 12px 0;
+                li {
+                    display: block;
+                    margin: 5px 0;
+                    &:first-child{
+                        margin-bottom: 8px;
+                    }
+                    a {
+                      padding: 5px 14px;
+                      width: 100%;
+                      border-radius: 4px;
+                      &:hover{
+                        padding: 5px 14px;
+                      }
+                    }
+                }
+            }              
+            .sidebar-menu .active a {
+            background-color: #0770e5;
+            color: #fff;
+            }
+            .siderbar-menu-bottom{
+                padding: 12px 0;
+                .logout-btn{
+                    color: var(--primaryBlue);
+                }
+            }
+            .sidebar-border
+            &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border-bottom: 1px solid #ffffff;
+            opacity: 0.2;
+            }
+        }
+        .sidebar-user{
+            position: absolute;
+            background-color: var(--primaryDarkBlue);
+            width: 100%;
+            bottom: 0;
+            .sidebar-user-part{
+                padding: 0 30px;
+                .sidebar-border-round{
+                    background-color: var(--gray500);
+                    border-radius: 10px;
+                    margin-bottom: 30px;
+                    .user-bottom{
+                        border-bottom: 1px solid var(--primarylightblue);
+                        color: var(--white);
+                        .user-flex{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 20px;
+                            .user-img{
+                                display: flex;
+                                .name-user{
+                                    padding-left: 12px;
+                                    h4{
+                                        font-size: 14px;
+                                    }
+                                    p{
+                                        font-size: 10px;
+                                        opacity: 0.4;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .Total-holding{
+                        display: flex;
+                        padding: 20px;
+                        color: var(--white);
+                        .Total-holding-width{
+                            width: 50%;
+                            h4{
+                                font-size: 16px;
+                            }
+                            p{
+                                font-size: 10px;
+                                opacity: 0.4;
+                            }
+                        }
+                        .Total-holding-border{
+                            border-left: 1px solid var(--primarylightblue);
+                            padding-left: 20px;
+                            h4{
+                                font-size: 16px;
+                            }
+                            p{
+                                font-size: 10px;
+                                opacity: 0.4;
+                            }
+                        }
+                    }
+                }
+            }
+            .footer-sec-main{
+                border-top: 1px solid var(--primarylightblue);
+                padding: 30px 7px 27px 7px;
+                .footer-sec{
+                    max-width: 90px;
+                    width: 100%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 14px;
+                }
+                .footer-copyright{
+                    font-size: 10px;
+                    text-align: center;
+                    color: var(--white);
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+    .sidebar-toggle-menu{
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        display: none;
+        padding: 16px 16px 0 0;
+    }
+}
+@media screen and (min-width:$screen-lg) {
+    .right-tab-main{
+        display: flex;
+      }
+      .inner-right-sec{
+        max-width: calc(100% - 300px);
+      }  
+}
+@media screen and (max-width:$screen-lg) {
+    .siderbar-main-sec{  
+        width: 100%;
+        height: auto;        
+        position: static;     
+        .siderbar-logo-part{
+            padding: 16px 20px;
+            span{                
+                display: block;
+            }            
+        } 
+        .sidebar-condition{
+            position: fixed;           
+            left: 100%;
+            position: fixed;
+            z-index: 50;
+            width: auto;
+            .sidebar-toggle{
+                display: hidden;
+                .sidebar-menu {
+                    padding-top: 16px;
+                }               
+            }
+            .sidebar-user{
+                display: none;                    
+            }
+        }       
+        .menuopen {
+            transition: 0.3s;
+            top: 0;
+            height: 100%;
+            width: 90%;
+        }
+        .open {
+            left: 10%;
+        }
+        .sidebar-toggle-menu{
+            display: block;
+            text-align: end;            
+        }
+    }  
+}
+@media screen and (max-width:$screen-sm) {
+    .siderbar-main-sec{       
+        .siderbar-logo-part{
+            padding: 16px 15px;
+        }
+    }
+}
+// siderbar sec End

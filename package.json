@@ -10,13 +10,23 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.4",
+    "@types/styled-components": "^5.1.26",
+    "dayjs": "^1.11.6",
+    "lightweight-charts": "^3.8.0",
     "next": "12.2.5",
+    "numeral": "^2.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-feather": "^2.0.10",
     "react-intersection-observer": "^9.4.0",
-    "sass": "^1.56.0"
+    "react-use": "^17.4.0",
+    "sass": "^1.56.0",
+    "styled-components": "^5.3.6",
+    "typescript": "^4.8.4"
   },
   "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
     "autoprefixer": "^10.4.8",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",

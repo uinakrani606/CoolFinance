@@ -1,13 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 
@@ -16,161 +15,194 @@ body {
   padding: 0;
   margin: 0;
 }
-
 a {
   color: inherit;
   display: inline-block;
   text-decoration: none;
 }
+.right-tab-main{
+  width: 100%;
+}
+.inner-right-sec{
+  width: 100%;
+  margin-left: auto;
+}
 
 .sidebar-menu {
   position: relative;
-  li {
-    display: block;
-    margin: 5px 0;
-    &:first-child{
-      margin-bottom: 8px;      
-    }
-    a {
-      padding: 5px 14px;
-      width: 100%;
-      border-radius: 4px;
-      
-      &:hover{
-        padding: 5px 14px;
-      }
-    }
-  }.active {
-    a {
-      background-color: #0770E5 ;
-      color: #fff;
-    }
-  }
 }
+.sidebar-menu li {
+  display: block;
+  margin: 5px 0;
+}
+.sidebar-menu li:first-child {
+  margin-bottom: 8px;
+}
+.sidebar-menu li a {
+  padding: 5px 14px;
+  width: 100%;
+  border-radius: 4px;
+}
+.sidebar-menu li a:hover {
+  padding: 5px 14px;
+}
+.sidebar-menu .active a {
+  background-color: #0770e5;
+  color: #fff;
+}
+
 .sidebar-border::after {
   content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #ffffff;
   opacity: 0.2;
 }
-// transactions page start
-.data-table-transition{
+.data-table-transition {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 67%;
 }
-select.filter-dropdown{
+select.filter-dropdown {
   appearance: none;
   background-image: url("../assets/img/filter-dropdown.svg");
   background-repeat: no-repeat;
   background-position: right 1rem center;
 }
-.edit-icon{
-  &:hover{
-    svg{
-      path ,
-      rect
-      {
-        fill: #fff;
-      }
-    }
-  }
+.edit-icon:hover svg path,
+.edit-icon:hover svg rect {
+  fill: #fff;
 }
-.delet-icon{
-  &:hover{
-    svg{
-      path ,
-      rect
-      {
-        fill: #fff;
-      }
-    }
-  }
+.delet-icon:hover svg path,
+.delet-icon:hover svg rect {
+  fill: #fff;
 }
-// wallet page
-.add-btn{
-  .wallet-btn{
-    background-color: #0770E5 ;
-    color: #fff;
-    padding: 11px 23px;
-    border-radius: 4px;
-    Image{
-      padding-right: 14px;
-    }
-  }
+
+.add-btn .wallet-btn {
+  background-color: #0770e5;
+  color: #fff;
+  padding: 11px 23px;
+  border-radius: 4px;
 }
-.data-table {
-  &:first-child {
-    p{
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      width: 90%;
-    }
-  }
+.add-btn .wallet-btn Image {
+  padding-right: 14px;
 }
-.plus-icon{
-  &:hover{
-    svg{
-      line{
-        stroke: #0770E5;
-      }
-    }
-  }
-  &:hover{
-    span{
-      svg{
-        path{
-          fill: #0770E5;
-        }
-      }
-    }
-    svg{
-      path{
-        stroke: #0770E5;
-      }
-    }
-  }
+
+.data-table:first-child p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
 }
-@media only screen and (max-width: 1023px) {
-  .menuopen {
-    transition: 0.3s;
-    top: 0;
-    height: 100%;
-    width: 90%;
-  }
-}
+
 .open {
   left: 10%;
 }
-@media only screen and (max-width: 1500px) {  
-  .transactions-box{
+
+#tooltip-idAREA div:nth-child(1) {
+  display: none;
+}
+
+#tooltip-idAREA div:nth-child(2) {
+  color: #333333 !important;
+  position: absolute;
+  font-weight: 700;
+  font-size: 30px !important;
+  padding: 4px 0;
+  line-height: 2.25rem;
+  top: 34px;
+  margin: 0 !important;
+}
+
+#tooltip-idAREA div:nth-child(3) {
+  color: #333333;
+  position: absolute;
+  top: 66px;
+  font-size: 10px;
+  font-weight: Medium;
+  padding-top: 5px;
+}
+
+#test-idAREA #tooltip-idAREA:first-child {
+  display: none !important;
+}
+
+@media only screen and (max-width: 1500px) {
+  .transactions-box {
     width: 1200px;
   }
 }
-@media only screen and (max-width: 767px) {
-  .data-table{
-    width: auto;
-  }
-  .transactions-box{
-    width: 1100px;
-  }
-  .white-plus-icon{
-    svg{
-      width: 7px;
-    }
-  }
-}
 @media only screen and (max-width: 640px) {
-  .data-table{
+  .data-table {
     width: auto;
   }
 }
 @media only screen and (max-width: 1600px) {
-  .transactions-box{
+  .transactions-box {
     width: 1300px;
   }
 }
+@media only screen and (max-width: 767px) {
+  .data-table {
+    width: auto;
+  }
+  .tv-lightweight-charts {
+    width: 708px !important;
+  }
+  .tv-lightweight-charts table {
+    width: 686px !important;
+  }
+  .tv-lightweight-charts .transactions-box {
+    width: 1100px;
+  }
+  .tv-lightweight-charts .white-plus-icon svg {
+    width: 7px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .tv-lightweight-charts {
+    margin-top: 78px;
+  }
+}
+@media screen and (max-width: 1469px) and (min-width: 1024px) {
+  .tv-lightweight-charts {
+    width: 100% !important;
+    margin-right: 10px;
+  }
+  .tv-lightweight-charts table {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  // .menuopen {
+  //   transition: 0.3s;
+  //   top: 0;
+  //   height: 100%;
+  //   width: 90%;
+  // }
+  .tv-lightweight-charts {
+    width: 100% !important;
+  }
+  .tv-lightweight-charts table {
+    width: 100% !important;
+  }
+}
+.Portfolio #tooltip-idAREA div:nth-child(2)::before {
+  color: #24ad58 !important;
+  content: "+";
+}
+
+.Portfolio #tooltip-idAREA div:nth-child(2) {
+  color: #24ad58 !important;
+}
+
+.Portfolio #tooltip-idAREA div:nth-child(3) {
+  color: #24ad58 !important;
+  display: none;
+}
+
+.tv-lightweight-charts {
+  margin-top: 27px;
+}/*# sourceMappingURL=globals.css.map */

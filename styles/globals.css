@@ -3,8 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -21,6 +20,15 @@ a {
   color: inherit;
   display: inline-block;
   text-decoration: none;
+}
+
+.right-tab-main {
+  width: 100%;
+}
+
+.inner-right-sec {
+  width: 100%;
+  margin-left: auto;
 }
 
 .sidebar-menu {
@@ -68,9 +76,7 @@ a {
 }
 
 select.filter-dropdown {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-image: url("../assets/img/filter-dropdown.svg");
   background-repeat: no-repeat;
   background-position: right 1rem center;
@@ -141,62 +147,61 @@ select.filter-dropdown {
     width: 1200px;
   }
 }
-
 @media only screen and (max-width: 640px) {
   .data-table {
     width: auto;
   }
 }
-
 @media only screen and (max-width: 1600px) {
   .transactions-box {
     width: 1300px;
   }
 }
-
 @media only screen and (max-width: 767px) {
   .data-table {
     width: auto;
   }
+
   .tv-lightweight-charts {
     width: 708px !important;
   }
+
   .tv-lightweight-charts table {
     width: 686px !important;
   }
+
   .tv-lightweight-charts .transactions-box {
     width: 1100px;
   }
+
   .tv-lightweight-charts .white-plus-icon svg {
     width: 7px;
   }
 }
-
 @media screen and (max-width: 320px) {
   .tv-lightweight-charts {
     margin-top: 78px;
   }
 }
-
 @media screen and (max-width: 1469px) and (min-width: 1024px) {
   .tv-lightweight-charts {
     width: 100% !important;
     margin-right: 10px;
   }
+
   .tv-lightweight-charts table {
     width: 100% !important;
   }
 }
-
 @media only screen and (max-width: 1023px) {
   .tv-lightweight-charts {
     width: 100% !important;
   }
+
   .tv-lightweight-charts table {
     width: 100% !important;
   }
 }
-
 .Portfolio #tooltip-idAREA div:nth-child(2)::before {
   color: #24ad58 !important;
   content: "+";
@@ -214,4 +219,5 @@ select.filter-dropdown {
 .tv-lightweight-charts {
   margin-top: 27px;
 }
-/*# sourceMappingURL=globals.css.map */
+
+/*# sourceMappingURL=globals.css.map *//*# sourceMappingURL=globals.css.map */

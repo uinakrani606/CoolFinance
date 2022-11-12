@@ -1,6 +1,8 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+
 import notional from '../assets/img/notionalogo.svg'
 import protocol from '../assets/img/notional.svg'
 import etherium from'../assets/img/ethereum.svg'
@@ -12,7 +14,89 @@ import aavelogo from'../assets/img/aavelogo.svg'
 import uniswaplogo from'../assets/img/uniswaplogo.svg'
 import GrayEdit from '../assets/img/gray-edit-btn.svg'
 import GrayCopy from '../assets/img/gray-copy-btn.svg'
+const TradingViewChart = dynamic(
+  () => import("../components/TradingviewChart"),
+  {
+    loading: () => <p>Loading ...</p>,
+    ssr: false,
+  }
+);
 const Portfolio = () => {
+  const CHART_TYPES = {
+    BAR: "BAR",
+    AREA: "AREA",
+  };
+
+  const dailyData = [
+    { date: 1603756800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1599436800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1599523200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1599609600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603756800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1599782400, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1599868800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1599955200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600041600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600128000, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603756800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600300800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600387200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600473600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600560000, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600646400, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600732800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600819200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603756800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1600992000, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601078400, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601164800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601251200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601337600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601424000, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601510400, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601596800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601683200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601769600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601856000, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1601942400, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602028800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602115200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602201600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602288000, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602374400, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602460800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602547200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602633600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602720000, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602806400, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602892800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1602979200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603065600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603152000, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603238400, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603324800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603411200, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    { date: 1603497600, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
+    {
+      date: 1603584000,
+      dailyVolumeUSD: "13711096888.30",
+      totalLiquidityUSD: "13711096888.30",
+    },
+    {
+      date: 1603670400,
+      dailyVolumeUSD: "11020868839.41",
+      totalLiquidityUSD: "11020868839.41",
+    },
+    {
+      date: 1603756800,
+      dailyVolumeUSD: "10776268100.16",
+      totalLiquidityUSD: "10776268100.16",
+    },
+  ];
+
+  const totalLiquidityUSD = "65";
+  const liquidityChangeUSD = 3;
+  const width = "800";
   return (
    <>
     <div className='max-w-[1203px] w-full mx-auto px-[15px]'>
@@ -34,10 +118,23 @@ const Portfolio = () => {
             </div>
           </div>
           
-          <div className='max-w-[875px] w-full border border-gray300 rounded-[10px]'>
-            <h3>Performance</h3>
-            <h2>+206.5%</h2>
-          </div>
+          <div className="max-w-[875PX]  w-full rounded-[10px] border border-gray300">
+              <div className="p-4 lg:pb-4 pb-0 relative">
+                <h3 className="text-base text-gray900  font-medium">
+                  Total TVL
+                </h3>
+                {/* <h2 className="text-3xl text-gray900 font-bold">$54.98b</h2> */}
+                <TradingViewChart
+                  data={dailyData}
+                  base={totalLiquidityUSD}
+                  baseChange={liquidityChangeUSD}
+                  title="Liquidityy"
+                  field="totalLiquidityUSD"
+                  width={width}
+                  type={CHART_TYPES.AREA}
+                />
+              </div>
+            </div>
         </div>          
       </div>        
       {/* asset section start */}

@@ -13,8 +13,8 @@ const Wallets = () => {
             <button className='wallet-btn justify-center md:mr-[14px] md:!px-[23px] !px-0 flex items-center md:w-auto w-[82px] border-transparent white-plus-icon border  hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
               <g id="Group_309" data-name="Group 309" transform="translate(-1578 -601.5)">
-                <line id="Line_37" data-name="Line 37" y2="11" transform="translate(1584.5 602.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2"/>
-                <line id="Line_38" data-name="Line 38" y2="11" transform="translate(1590 608) rotate(90)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2"/>
+                <line id="Line_37" data-name="Line 37" y2="11" transform="translate(1584.5 602.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                <line id="Line_38" data-name="Line 38" y2="11" transform="translate(1590 608) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
               </g>
             </svg>
               <span className='md:ml-3 ml-[7px] md:text-base text-[10px]'>
@@ -25,8 +25,8 @@ const Wallets = () => {
               <button className='wallet-btn items-center flex border-transparent border hover:border-primaryBlue hover:text-primaryBlue hover:bg-white plus-icon duration-300'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
                   <g id="Group_309" data-name="Group 309" transform="translate(-1578 -601.5)">
-                    <line id="Line_37" data-name="Line 37" y2="11" transform="translate(1584.5 602.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2"/>
-                    <line id="Line_38" data-name="Line 38" y2="11" transform="translate(1590 608) rotate(90)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2"/>
+                    <line id="Line_37" data-name="Line 37" y2="11" transform="translate(1584.5 602.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                    <line id="Line_38" data-name="Line 38" y2="11" transform="translate(1590 608) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
                   </g>
                 </svg>
                 <span className='ml-3'>

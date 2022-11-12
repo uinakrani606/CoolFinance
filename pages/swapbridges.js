@@ -16,12 +16,12 @@ const SwapBridges = () => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className="max-w-[1203px] w-full mx-auto px-[15px] md:flex justify-center lg:justify-start">
+      <div className="max-w-[1203px] w-full mx-auto px-[20px] md:flex justify-center lg:justify-start">
         <div className="lg:mt-11 mt-5 mb-10">
           <h2 className="lg:text-[40px] text-[32px] lg:leading-6 leading-snug font-bold text-primaryDarkBlue inline-block">
             Swap & Bridges
           </h2>
-          <div className="border border-gray300 lg:max-w-[578px] md:max-w-[578px] mt-[30px] rounded-[10px] max-w-[320px] ">
+          <div className="border border-gray300 mt-[30px] rounded-[10px] sm:max-w-[578px] w-full mx-auto">
             <div className="">
               <div className="flex relative items-center justify-around border-b border-gray300">
                 <Link href={"#"}>
@@ -64,8 +64,8 @@ const SwapBridges = () => {
                 </Link>
               </div>
             </div>
-            <div className="relative flex flex-col min-w-0 break-words bg-white w-[576px] shadow-lg rounded">
-              <div className="p-[30px] flex-auto flex-wrap">
+            <div className="relative flex flex-col min-w-0 break-words bg-white sm:w-[576px] shadow-lg rounded">
+              <div className="sm:p-[30px] p-5 flex-auto flex-wrap">
                 <div className="tab-content tab-space">
                   <div
                     className={openTab === 1 ? "block" : "hidden"}
@@ -75,7 +75,7 @@ const SwapBridges = () => {
                       <div className="relative">
                         <span className="absolute top-[8px] left-[8px]"></span>
                         <select
-                          className="pl-4  h-10 text-sm font-semibold text-gray900 py-[8px] px-[22px] lg:w-full md:w-full w-[320px] border  border-white100 text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
+                          className="pl-4 h-10 text-sm font-semibold text-gray900 py-[8px] px-[22px] lg:w-full md:w-full sm:w-[320px] w-full border  border-white100 text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
                           name=""
                           id=""
                         >
@@ -87,13 +87,13 @@ const SwapBridges = () => {
                         </select>
                       </div>
                       <div className="border-white100 border-b pt-7"></div>
-                      <div className="pt-7 flex justify-between">
-                        <div className="lg:w-2/5 md:w-2/5 w-[320px] h-10">
+                      <div className="pt-7 flex justify-between flex-col sm:flex-row">
+                        <div className="sm:w-[44%] h-10 w-full">
                           <h3 className="text-gray900 opacity-40 pb-[6px] font-medium text-xs">
                             Transfer from
                           </h3>
 
-                          <div className="mr-5 relative">
+                          <div className="relative">
                             <span className="absolute top-[8px] left-[8px]">
                               <Image src={Ethreum} alt="" className="" />
                             </span>
@@ -110,17 +110,17 @@ const SwapBridges = () => {
                             </select>
                           </div>
                         </div>
-                        <div className="pt-4 flex items-center">
+                        <div className="sm:pt-3 pt-6 flex items-center justify-center my-4">
                           <div className="w-[30px] h-[30px] rounded-full border flex justify-center items-center border-white100">
                             <Image src={Leftrightarrow} />
                           </div>
                         </div>
-                        <div className="lg:w-2/5 md:w-2/5 w-[320px]">
-                          <h3 className="text-gray900 opacity-40 pt-3 lg:pt-0 pb-[6px] font-medium text-xs">
+                        <div className="sm:w-[44%] w-full">
+                          <h3 className="text-gray900 opacity-40 pb-[6px] font-medium text-xs">
                             Transfer to
                           </h3>
 
-                          <div className="mr-5 relative">
+                          <div className="relative">
                             <span className="absolute top-[8px] left-[8px]">
                               <Image src={Polygon} alt="" className="" />
                             </span>
@@ -224,7 +224,7 @@ const SwapBridges = () => {
                             </div>
                           </div>
                           <div className="text-right">
-                            <h5 className="text-3xl font-bold text-gray900">
+                            <h5 className="md:text-3xl text-xl font-bold text-gray900">
                               100
                             </h5>
                             <span className="text-sm text-gray900 font-light mt-1">
@@ -314,7 +314,7 @@ const SwapBridges = () => {
                             </div>
                           </div>
                           <div className="text-right">
-                            <h5 className="text-3xl font-bold text-gray900">
+                            <h5 className="md:text-3xl text-xl font-bold text-gray900">
                               13.453
                             </h5>
                             <span className="text-sm text-gray900 font-light mt-1">
@@ -364,17 +364,17 @@ const SwapBridges = () => {
                         </select>
                       </div>
                       <div className="border-white100 border-b pt-7"></div>
-                      <div className="pt-7 flex justify-between">
-                        <div className="w-2/5">
+                      <div className="pt-7">
+                        <div className="sm:w-[44%] w-full">
                           <h3 className="text-gray900 opacity-40 font-medium text-xs pb-[6px]">
                             Chain
                           </h3>
-                          <div className="mr-5 relative">
+                          <div className="relative">
                             <span className="absolute top-[8px] left-[8px]">
                               <Image src={Ethreum} alt="" className="" />
                             </span>
                             <select
-                              className="bg-white100 text-sm h-10 font-semibold text-gray900 py-[8px] px-[22px] w-[224px] text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
+                              className="bg-white100 text-sm h-10 font-semibold text-gray900 py-[8px] px-[22px] sm:w-[224px] w-full text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
                               name=""
                               id=""
                             >
@@ -469,7 +469,7 @@ const SwapBridges = () => {
                             </div>
                           </div>
                           <div className="text-right">
-                            <h5 className="text-3xl font-bold text-gray900">
+                            <h5 className="md:text-3xl text-xl font-bold text-gray900">
                               20
                             </h5>
                             <span className="text-sm text-gray900 font-light mt-1">
@@ -559,7 +559,7 @@ const SwapBridges = () => {
                             </div>
                           </div>
                           <div className="text-right">
-                            <h5 className="text-3xl font-bold text-gray900">
+                            <h5 className="md:text-3xl text-xl font-bold text-gray900">
                               4,205.975
                             </h5>
                             <span className="text-sm text-gray900 font-light mt-1">
@@ -587,7 +587,7 @@ const SwapBridges = () => {
                       <div className="add-btn flex w-full">
                         <button className="wallet-btn w-full max-w-full justify-center h-10 md:!px-[23px] !px-0 flex items-center ">
                           <span className="md:ml-3 ml-[7px] md:text-base text-[10px]">
-                          Swap
+                            Swap
                           </span>
                         </button>
                       </div>

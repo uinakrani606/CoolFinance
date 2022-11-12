@@ -1,6 +1,8 @@
 import Header from '../components/Sidebar'
 import Head from 'next/head'
 import '../styles/globals.scss'
+import '../styles/Home.scss'
+import '../styles/sidebar.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,9 +15,9 @@ function MyApp({ Component, pageProps }) {
         {/* <meta name="author" content="John Doe"/> */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </Head>
-      <div className='lg:flex w-full'>
+      <div className='right-tab-main'>
         <Header />
-        <div className='lg:max-w-[calc(100%-300px)] w-full ml-auto'>
+        <div className='inner-right-sec'>
           <Component {...pageProps} />
         </div>
       </div>

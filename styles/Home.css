@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+:root {
+  --primaryBlue: #0770E5;
+  --primarylightblue:#0770E530;
+  --primaryDarkBlue: #00215F;
+  --black: #000;
+  --white: #fff;
+  --white100: #E0E0E0;
+  --gray100: #E0E0E066;
+  --gray200: #E0E0E080;
+  --gray300: #E0E0E0;
+  --gray400: #E8E8E8;
+  --gray500: #00000030;
+  --gray900: #333333;
+}
+
+/* total value sec Start */
+.total-value-main {
+  max-width: 1203px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.total-value-main .total-value-head {
+  margin-top: 44px;
+}
+.total-value-main .total-value-head h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--primaryDarkBlue);
+  display: inline-block;
+}
+.total-value-main .total-value-head .total-value-left {
+  border-bottom: 1px solid var(--gray300);
+  padding-bottom: 56px;
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  color: var(--gray900);
+}
+.total-value-main .total-value-head .total-value-left .value-locked-part {
+  max-width: 281px;
+  width: 100%;
+  display: block;
+}
+.total-value-main .total-value-head .total-value-left .value-locked-part .value-locked-top {
+  border: 1px solid var(--gray300);
+  width: auto;
+  border-radius: 10px;
+  padding: 25px 30px;
+  margin-bottom: 14px;
+}
+.total-value-main .total-value-head .total-value-left .value-locked-part .value-locked-top:last-child {
+  margin-bottom: 0;
+}
+.total-value-main .total-value-head .total-value-left .value-locked-part .value-locked-top h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.total-value-main .total-value-head .total-value-left .value-locked-part .value-locked-top h2 {
+  font-size: 42px;
+  color: var(--primaryBlue);
+  padding-top: 10px;
+  font-weight: bold;
+  line-height: 2.125rem;
+}
+.total-value-main .total-value-head .total-value-right {
+  max-width: 875px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--gray300);
+}
+.total-value-main .total-value-head .total-value-right .total-right-conatin {
+  padding: 16px;
+  position: relative;
+}
+.total-value-main .total-value-head .total-value-right .total-right-conatin h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray900);
+}
+
+/* total value sec End */
+/* Explore all protocols sec Start */
+.explore-protocol-sec-main {
+  margin-bottom: 36px;
+  color: var(--primaryDarkBlue);
+}
+.explore-protocol-sec-main .explore-protocol-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 53px;
+  padding-bottom: 24px;
+}
+.explore-protocol-sec-main .explore-protocol-head h2 {
+  font-size: 26px;
+  font-weight: bold;
+}
+.explore-protocol-sec-main .explore-protocol-head .view-more-btn {
+  background-color: var(--primaryBlue);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 23px;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+.explore-protocol-sec-main .explore-protocol-head .view-more-btn:hover {
+  background-color: var(--white);
+  border: 1px solid var(--primaryBlue);
+  color: var(--primaryBlue);
+}
+.explore-protocol-sec-main .explore-protocol-head .plus-icon:hover svg line {
+  stroke: #0770e5;
+}
+.explore-protocol-sec-main .explore-protocol-head .plus-icon:hover span svg path {
+  fill: #0770e5;
+}
+.explore-protocol-sec-main .explore-protocol-head .plus-icon:hover svg path {
+  stroke: #0770e5;
+}
+.explore-protocol-sec-main .explore-protocol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: y 1.75rem;
+  border-bottom: 1px solid var(--gray300);
+  padding-bottom: 44px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left {
+  width: 23.8%;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box {
+  border: 1px solid var(--gray300);
+  border-radius: 10px;
+  padding: 20px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-part {
+  display: flex;
+  align-items: center;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-part h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray900);
+  padding-left: 10px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-part-text {
+  display: flex;
+  padding: 32px 0px 12px;
+  gap: 2rem;
+  border-bottom: 1px solid var(--gray300);
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-part-text h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-part-text p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray900);
+  opacity: 0.4;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--gray100);
+  margin-top: 20px;
+  border-radius: 4px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-risk {
+  padding: 8px 16px 16px;
+  background-color: var(--gray400);
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-risk h4 {
+  font-size: 10px;
+  font-weight: bold;
+  background-color: var(--primaryDarkBlue);
+  padding: 4px 8px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-protocol {
+  padding: 8px 0 16px 8px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-protocol .notional-protocol-inner {
+  border-right: 1px solid var(--white);
+  padding-right: 12px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-protocol .notional-protocol-inner h3 {
+  color: var(--gray900);
+  opacity: 0.5;
+  text-align: center;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-protocol .notional-protocol-inner .protocol-img {
+  padding: 4px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: var(--white);
+  border-radius: 4px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-protocol .notional-protocol-inner .protocol-img h4 {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--gray900);
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-chain {
+  padding: 8px 12px 16px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-chain h3 {
+  text-align: center;
+  color: var(--gray900);
+  opacity: 0.5;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-chain .notional-chain-inner {
+  padding: 4px;
+  margin-top: 4px;
+  background-color: var(--white);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-bottompart .notional-chain .notional-chain-inner h4 {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--gray900);
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec {
+  border: 1px solid var(--gray300);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 18px 0;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-sec .insert-inner-part {
+  display: flex;
+  align-items: center;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-sec .insert-inner-part .name-insert-round {
+  background-color: var(--gray300);
+  padding: 20px;
+  border-radius: 50%;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-sec .insert-inner-part .insert-contain {
+  padding-left: 10px;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-sec .insert-inner-part .insert-contain h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray900);
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-sec .insert-inner-part .insert-contain .insert-contain-bottom {
+  display: flex;
+  gap: 1rem;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-sec .insert-inner-part .insert-contain .insert-contain-bottom h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primaryDarkBlue);
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-sec .insert-inner-part .insert-contain .insert-contain-bottom p {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--gray900);
+  opacity: 0.4;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-name-right h4 {
+  font-size: 10px;
+  font-weight: bold;
+  background-color: var(--primaryDarkBlue);
+  margin-top: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.explore-protocol-sec-main .explore-protocol .explore-protocol-left .notional-insert-sec .insert-name-right .insert-logo-part {
+  display: flex;
+  justify-content: center;
+  background-color: var(--gray200);
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 2px;
+}
+
+/* Explore all protocols sec End */
+@media screen and (max-width: 1400px) {
+  .explore-protocol-sec-main .explore-protocol .explore-protocol-left {
+    width: 32%;
+  }
+
+  .uniswap-sec-main {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  .uniswap-sec-main .uniswp-sec {
+    display: flex;
+    flex-direction: column;
+  }
+  .uniswap-sec-main .uniswap-bottom {
+    margin-top: 0 !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .explore-protocol-sec-main .explore-protocol .explore-protocol-left {
+    width: 48%;
+  }
+
+  .uniswap-sec-main {
+    display: block;
+  }
+  .uniswap-sec-main .uniswp-sec {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .total-value-main .total-value-head {
+    margin-top: 20px;
+  }
+  .total-value-main .total-value-head h2 {
+    font-size: 32px;
+    line-height: 2.1875rem;
+  }
+  .total-value-main .total-value-head .total-value-left {
+    padding-bottom: 32px;
+    margin-top: 20px;
+  }
+  .total-value-main .total-value-head .total-value-left .value-locked-part .value-locked-top h2 {
+    font-size: 24px;
+    padding-top: 4px;
+  }
+  .total-value-main .total-value-head .total-value-right .total-right-conatin {
+    padding-bottom: 0;
+  }
+
+  .explore-protocol-sec-main .explore-protocol h2 {
+    font-size: 24px;
+  }
+  .explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-part-text {
+    padding-top: 20px;
+  }
+  .explore-protocol-sec-main .explore-protocol .explore-protocol-left .protocol-box .notional-part-text h3 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .total-value-main {
+    padding: 0 15px;
+  }
+  .total-value-main .total-value-head .total-value-left {
+    flex-direction: column;
+  }
+  .total-value-main .total-value-head .total-value-left .value-locked-part {
+    max-width: 100%;
+    display: flex;
+    gap: 1.25rem;
+  }
+  .total-value-main .total-value-head .total-value-left .value-locked-part .value-locked-top {
+    padding: 16px;
+    margin-bottom: 0;
+    max-width: 224px;
+    width: 100%;
+  }
+
+  .insert-contain-bottom h3 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .total-value-main .total-value-head .total-value-left .value-locked-part {
+    max-width: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .total-value-main .total-value-head .total-value-left .value-locked-part .value-locked-top {
+    width: 47%;
+    max-width: 100%;
+  }
+  .total-value-main .total-value-head .total-value-left .value-locked-part .value-locked-bottom {
+    width: 100%;
+  }
+
+  .explore-protocol-sec-main .explore-protocol .explore-protocol-left {
+    width: 100%;
+  }
+
+  .protocol-box {
+    padding: 15px;
+  }
+
+  .insert-contain-bottom {
+    gap: 1.25rem;
+  }
+}
+/* Explore all protocols sec End *//*# sourceMappingURL=Home.css.map */
