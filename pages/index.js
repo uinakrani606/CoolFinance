@@ -149,7 +149,7 @@ const Explore = () => {
                   <div className='view-more-btn plus-icon'>
                     View more
                     <svg xmlns="http://www.w3.org/2000/svg" width="7.725" height="13.451" viewBox="0 0 7.725 13.451">
-                      <path id="Path_45" data-name="Path 45" d="M-1926.941,601.848l5.311,5.311-5.311,5.311" transform="translate(1928.355 -600.434)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      <path id="Path_45" data-name="Path 45" d="M-1926.941,601.848l5.311,5.311-5.311,5.311" transform="translate(1928.355 -600.434)" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/>
                     </svg>
                   </div>
                 </a>                

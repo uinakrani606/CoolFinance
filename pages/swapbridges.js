@@ -112,7 +112,7 @@ const SwapBridges = () => {
                         </div>
                         <div className="sm:pt-3 pt-6 flex items-center justify-center my-4">
                           <div className="w-[30px] h-[30px] rounded-full border flex justify-center items-center border-white100">
-                            <Image src={Leftrightarrow} />
+                            <Image src={Leftrightarrow} alt="" />
                           </div>
                         </div>
                         <div className="sm:w-[44%] w-full">
