@@ -21,7 +21,6 @@
     "allowSyntheticDefaultImports": true,
     "types": [
       "react-spring",
-      "jest"
     ],
     "incremental": true
   },
