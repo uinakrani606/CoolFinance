@@ -12,13 +12,12 @@ import uniswap from "../assets/img/uniswap.svg";
 import curveprotocol from "../assets/img/curvelogo.svg";
 import aavelogo from "../assets/img/aavelogo.svg";
 import uniswaplogo from "../assets/img/uniswaplogo.svg";
-const TradingViewChart = dynamic(
-  () => import("../components/TradingviewChart"),
-  {
-    loading: () => <p>Loading ...</p>,
-    ssr: false,
-  }
-);
+// import TradingViewChart, { CHART_TYPES } from '../components/TradingviewChart/index.js'
+const TradingViewChart = dynamic(() => import("../components/TradingviewChart"), {
+  loading: () => <p>Loading ...</p>,
+  ssr: false,
+});
+
 const Home = () => {
   const CHART_TYPES = {
     BAR: "BAR",
@@ -97,32 +96,28 @@ const Home = () => {
   const width = "800";
   return (
     <>
-      <div className="max-w-[1203px] w-full mx-auto px-[15px]">
-        <div className="lg:mt-11 mt-5 ">
-          <h2 className="lg:text-[40px] text-[32px] lg:leading-6 leading-snug font-bold text-primaryDarkBlue inline-block">
-            Total value locked DeFi
-          </h2>
-          <div className="border-b border-gray300 lg:pb-14 pb-8 lg:mt-[30px] mt-4 flex md:flex-row flex-col gap-4 text-gray90">
-          <div className='md:max-w-[281px] sm:max-w-full sm:flex-nowrap flex-wrap w-full flex md:block gap-5'>
-            <div className='border border-gray300 sm:w-auto w-[45%] rounded-[10px] md:py-[25px] py-4 md:px-[30px] px-4 md:mb-[14px]'>
-              <h3 className='text-base font-medium'>Total Value Locked (USD)</h3>
-              <h2 className='lg:text-[42px] text-2xl text-primaryBlue lg:pt-[10px] pt-1 font-bold'>$54.98b</h2>
+      {/* total value sec start */}
+      <div className="total-value-main">
+        <div className="total-value-head">
+          <h2>Total value locked DeFi</h2>
+          <div className="total-value-left">
+            <div className="value-locked-part">
+              <div className="value-locked-top">
+                <h3>Total Value Locked (USD)</h3>
+                <h2>$54.98b</h2>
+              </div>
+              <div className="value-locked-top">
+                <h3>Change (24h)</h3>
+                <h2>2.40%</h2>
+              </div>
+              <div className="value-locked-top value-locked-bottom">
+                <h3>MakerDAO Dominance</h3>
+                <h2>14.94%</h2>
+              </div>
             </div>
-            <div className='border border-gray300 sm:w-auto w-[45%] rounded-[10px] md:py-[25px] py-4 md:px-[30px] px-4 md:mb-[14px]'>
-              <h3 className='text-base font-medium'>Change (24h)</h3>
-              <h2 className='lg:text-[42px] text-2xl text-primaryBlue lg:pt-[10px] pt-1 font-bold'>2.40%</h2>
-            </div>  
-            <div className='border border-gray300 sm:w-auto w-[45%] sm:mx-0 mx-auto rounded-[10px] md:py-[25px] py-4 md:px-[30px] px-4'>
-              <h3 className='text-base font-medium'>MakerDAO Dominance</h3>
-              <h2 className='lg:text-[42px] text-2xl text-primaryBlue lg:pt-[10px] pt-1 font-bold'>14.94%</h2>
-            </div>
-          </div>
-
-            <div className="max-w-[875PX]  w-full rounded-[10px] border border-gray300">
-              <div className="p-4 lg:pb-4 pb-0 relative">
-                <h3 className="text-base text-gray900  font-medium">
-                  Total TVL
-                </h3>
+            <div className="total-value-right">
+              <div className="total-right-conatin">
+                <h3>Total TVL</h3>
                 {/* <h2 className="text-3xl text-gray900 font-bold">$54.98b</h2> */}
                 <TradingViewChart
                   data={dailyData}
@@ -137,507 +132,423 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="text-primaryDarkBlue mb-9">
-          <div className="flex flex-wrap gap-y-3 justify-between lg:pt-[53px] pt-7 pb-6">
-            <h2 className="lg:text-[26px] text-2xl font-bold">
-              Explore all protocols
-            </h2>
+        {/* total value sec end */}
+        {/* Explore all protocols sec Start */}
+        <div className="explore-protocol-sec-main">
+          <div className="explore-protocol-head">
+            <h2>Explore all protocols</h2>
             <Link href={"#"}>
               <a>
-                <div className="bg-primaryBlue text-sm font-semibold px-6 py-3 rounded-[4px] text-[#fff] flex items-center gap-3">
+                <div className="view-more-btn plus-icon">
                   View more
-                  <Image src={arrow} alt="" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="7.725" height="13.451" viewBox="0 0 7.725 13.451">
+                    <path
+                      id="Path_45"
+                      data-name="Path 45"
+                      d="M-1926.941,601.848l5.311,5.311-5.311,5.311"
+                      transform="translate(1928.355 -600.434)"
+                      fill="none"
+                      stroke="#fff"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                    />
+                  </svg>
                 </div>
               </a>
             </Link>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 border-b border-gray300 pb-11">
-            <div className="border border-gray300 rounded-[10px] sm:p-5 p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center">
-                <Image src={notional} alt=" " />
-                <h3 className="text-sm font-semibold text-gray900 pl-[10px]">
-                  Notional Eth Market
-                </h3>
+          <div className="explore-protocol">
+            <div className="explore-protocol-left">
+              <div className="protocol-box">
+                <div className="notional-part">
+                  <Image src={notional} alt=" " />
+                  <h3>Notional Eth Market</h3>
+                </div>
+                <div className="notional-part-text">
+                  <div>
+                    <h3>7.94%</h3>
+                    <p>Yield 30d</p>
+                  </div>
+                  <div>
+                    <h3>$7M</h3>
+                    <p>TVL</p>
+                  </div>
+                </div>
+                <div className="notional-bottompart">
+                  <div className="notional-risk">
+                    <h3>Risk</h3>
+                    <h4>B</h4>
+                  </div>
+                  <div className="notional-protocol">
+                    <div className="notional-protocol-inner">
+                      <h3>Protocol</h3>
+                      <div className="protocol-img">
+                        <Image src={protocol} alt=" " />
+                        <h4>Notional</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="notional-chain">
+                    <h3>Chain</h3>
+                    <div className="notional-chain-inner">
+                      <Image src={etherium} alt=" " />
+                      <h4>Ethereum</h4>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex lg:pt-8 pt-5 gap-10 border-b pb-3 border-gray300">
-                <div>
-                  <h3 className="lg:text-3xl text-2xl font-bold">7.94%</h3>
-                  <p className="text-sm font-medium text-[#33333340]">
-                    Yield 30d
-                  </p>
-                </div>
-                <div>
-                  <h3 className="lg:text-3xl text-2xl font-bold">$7M</h3>
-                  <p className="text-sm font-medium text-[#33333340]">TVL</p>
-                </div>
-              </div>
-              <div className="flex text-sm font-medium bg-gray100 mt-5 rounded-[4px]">
-                <div className="px-4 bg-gray400 pt-2 pb-4 rounded-[4px]">
-                  <h3>Risk</h3>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                </div>
-                <div className="pl-3 pt-2 pb-4">
-                  <div className="border-r border-white pr-3">
-                    <h3 className="text-[#33333350] text-center">Protocol</h3>
-                    <div className="px-1 py-1 mt-1 rounded bg-white flex items-center gap-1">
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
+                      <h3>Insert Name Here</h3>
+                      <div className="insert-contain-bottom">
+                        <div>
+                          <h3>5.24%</h3>
+                          <p>Yield 30d</p>
+                        </div>
+                        <div>
+                          <h3>$48M</h3>
+                          <p>TVL</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
                       <Image src={protocol} alt=" " />
-                      <h4 className="text-[10px] font-bold text-gray900">
-                        Notional
-                      </h4>
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
                     </div>
                   </div>
                 </div>
-                <div className="px-3 pt-2 pb-4">
-                  <h3 className="text-[#33333350] text-center">Chain</h3>
-                  <div className="px-1 py-1 mt-1 rounded bg-white flex items-center gap-1">
-                    <Image src={etherium} alt=" " />
-                    <h4 className="text-[10px] font-bold text-gray900">
-                      Ethereum
-                    </h4>
+              </div>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
+                      <h3>Insert Name Here</h3>
+                      <div className="insert-contain-bottom">
+                        <div>
+                          <h3>5.24%</h3>
+                          <p>Yield 30d</p>
+                        </div>
+                        <div>
+                          <h3>$48M</h3>
+                          <p>TVL</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="border border-gray300 rounded-[10px] sm:p-5 p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center">
-                <Image src={curvesvg} alt=" " />
-                <h3 className="text-sm font-semibold text-gray900 pl-[10px]">
-                  Curve Finance
-                </h3>
-              </div>
-              <div className="flex lg:pt-8 pt-5 gap-10 border-b pb-3 border-gray300">
-                <div>
-                  <h3 className="lg:text-3xl text-2xl font-bold">6.74%</h3>
-                  <p className="text-sm font-medium text-[#33333340]">
-                    Yield 30d
-                  </p>
+            <div className="explore-protocol-left">
+              <div className="protocol-box">
+                <div className="notional-part">
+                  <Image src={curvesvg} alt=" " />
+                  <h3>Curve Finance</h3>
                 </div>
-                <div>
-                  <h3 className="lg:text-3xl text-2xl font-bold">$211M</h3>
-                  <p className="text-sm font-medium text-[#33333340]">TVL</p>
+                <div className="notional-part-text">
+                  <div>
+                    <h3>6.74%</h3>
+                    <p>Yield 30d</p>
+                  </div>
+                  <div>
+                    <h3>$211M</h3>
+                    <p>TVL</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex text-sm font-medium bg-gray100 mt-5 rounded-[4px]">
-                <div className="px-4 bg-gray400 pt-2 pb-4 rounded-[4px]">
-                  <h3>Risk</h3>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    A
-                  </h4>
-                </div>
-                <div className="pl-3 pt-2 pb-4">
-                  <div className="border-r border-white pr-3">
-                    <h3 className="text-[#33333350] text-center">Protocol</h3>
-                    <div className="px-1 py-1 mt-1 rounded bg-white flex items-center gap-1">
-                      <Image src={curveprotocol} alt=" " />
-                      <h4 className="text-[10px] font-bold text-gray900">
-                        Curve
-                      </h4>
+                <div className="notional-bottompart">
+                  <div className="notional-risk">
+                    <h3>Risk</h3>
+                    <h4>A</h4>
+                  </div>
+                  <div className="notional-protocol">
+                    <div className="notional-protocol-inner">
+                      <h3>Protocol</h3>
+                      <div className="protocol-img">
+                        <Image src={curveprotocol} alt=" " />
+                        <h4>Curve</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="notional-chain">
+                    <h3>Chain</h3>
+                    <div className="notional-chain-inner">
+                      <Image src={etherium} alt=" " />
+                      <h4>Ethereum</h4>
                     </div>
                   </div>
                 </div>
-                <div className="px-3 pt-2 pb-4">
-                  <h3 className="text-[#33333350] text-center">Chain</h3>
-                  <div className="px-1 py-1 mt-1 rounded bg-white flex items-center gap-1">
-                    <Image src={etherium} alt=" " />
-                    <h4 className="text-[10px] font-bold text-gray900">
-                      Ethereum
-                    </h4>
+              </div>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
+                      <h3>Insert Name Here</h3>
+                      <div className="insert-contain-bottom">
+                        <div>
+                          <h3>5.24%</h3>
+                          <p>Yield 30d</p>
+                        </div>
+                        <div>
+                          <h3>$48M</h3>
+                          <p>TVL</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
+                      <h3>Insert Name Here</h3>
+                      <div className="insert-contain-bottom">
+                        <div>
+                          <h3>5.24%</h3>
+                          <p>Yield 30d</p>
+                        </div>
+                        <div>
+                          <h3>$48M</h3>
+                          <p>TVL</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="border border-gray300 rounded-[10px] sm:p-5 p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center">
-                <Image src={aavev2} alt=" " />
-                <h3 className="text-sm font-semibold text-gray900 pl-[10px]">
-                  AAVE V2 (AAVE)
-                </h3>
-              </div>
-              <div className="flex lg:pt-8 pt-5 gap-10 border-b pb-3 border-gray300">
-                <div>
-                  <h3 className="lg:text-3xl text-2xl font-bold">6.60%</h3>
-                  <p className="text-sm font-medium text-[#33333340]">
-                    Yield 30d
-                  </p>
+            <div className="explore-protocol-left">
+              <div className="protocol-box">
+                <div className="notional-part">
+                  <Image src={aavev2} alt=" " />
+                  <h3>AAVE V2 (AAVE)</h3>
                 </div>
-                <div>
-                  <h3 className="lg:text-3xl text-2xl font-bold">$258M</h3>
-                  <p className="text-sm font-medium text-[#33333340]">TVL</p>
+                <div className="notional-part-text">
+                  <div>
+                    <h3>6.60%</h3>
+                    <p>Yield 30d</p>
+                  </div>
+                  <div>
+                    <h3>$258M</h3>
+                    <p>TVL</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex text-sm font-medium bg-gray100 mt-5 rounded-[4px]">
-                <div className="px-4 bg-gray400 rounded-[4px] pt-2 pb-4">
-                  <h3>Risk</h3>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    C
-                  </h4>
-                </div>
-                <div className="pl-3 pt-2 pb-4">
-                  <div className="border-r border-white pr-3">
-                    <h3 className="text-[#33333350] text-center">Protocol</h3>
-                    <div className="px-1 py-1 mt-1 rounded bg-white flex items-center gap-1">
-                      <Image src={aavelogo} alt=" " />
-                      <h4 className="text-[10px] font-bold text-gray900">
-                        Aave
-                      </h4>
+                <div className="notional-bottompart">
+                  <div className="notional-risk">
+                    <h3>Risk</h3>
+                    <h4>C</h4>
+                  </div>
+                  <div className="notional-protocol">
+                    <div className="notional-protocol-inner">
+                      <h3>Protocol</h3>
+                      <div className="protocol-img">
+                        <Image src={aavelogo} alt=" " />
+                        <h4>Aave</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="notional-chain">
+                    <h3>Chain</h3>
+                    <div className="notional-chain-inner">
+                      <Image src={etherium} alt=" " />
+                      <h4>Ethereum</h4>
                     </div>
                   </div>
                 </div>
-                <div className="px-3 pt-2 pb-4">
-                  <h3 className="text-[#33333350] text-center">Chain</h3>
-                  <div className="px-1 py-1 mt-1 rounded bg-white flex items-center gap-1">
-                    <Image src={etherium} alt=" " />
-                    <h4 className="text-[10px] font-bold text-gray900">
-                      Ethereum
-                    </h4>
+              </div>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
+                      <h3>Insert Name Here</h3>
+                      <div className="insert-contain-bottom">
+                        <div>
+                          <h3>5.24%</h3>
+                          <p>Yield 30d</p>
+                        </div>
+                        <div>
+                          <h3>$48M</h3>
+                          <p>TVL</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
+                      <h3>Insert Name Here</h3>
+                      <div className="insert-contain-bottom">
+                        <div>
+                          <h3>5.24%</h3>
+                          <p>Yield 30d</p>
+                        </div>
+                        <div>
+                          <h3>$48M</h3>
+                          <p>TVL</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="border border-gray300 rounded-[10px] sm:p-5 p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center">
-                <Image src={uniswap} alt=" " />
-                <h3 className="text-sm font-semibold text-gray900 pl-[10px]">
-                  Uniswap
-                </h3>
-              </div>
-              <div className="flex lg:pt-8 pt-5 gap-10 border-b pb-3 border-gray300">
-                <div>
-                  <h3 className="lg:text-3xl text-2xl font-bold">12.37%</h3>
-                  <p className="text-sm font-medium text-[#33333340]">
-                    Yield 30d
-                  </p>
+            <div className="explore-protocol-left uniswap-sec-main">
+              <div className="protocol-box">
+                <div className="notional-part">
+                  <Image src={uniswap} alt=" " />
+                  <h3>Uniswap</h3>
                 </div>
-                <div>
-                  <h3 className="lg:text-3xl text-2xl font-bold">$4B</h3>
-                  <p className="text-sm font-medium text-[#33333340]">TVL</p>
+                <div className="notional-part-text">
+                  <div>
+                    <h3>12.37%</h3>
+                    <p>Yield 30d</p>
+                  </div>
+                  <div>
+                    <h3>$4B</h3>
+                    <p>TVL</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex text-sm font-medium bg-gray100 mt-5 rounded-[4px]">
-                <div className="px-4 bg-gray400 rounded-[4px] pt-2 pb-4">
-                  <h3>Risk</h3>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                </div>
-                <div className="pl-3 pt-2 pb-4">
-                  <div className="border-r border-white pr-3">
-                    <h3 className="text-[#33333350] text-center">Protocol</h3>
-                    <div className="px-1 py-1 mt-1 rounded bg-white flex items-center gap-1">
-                      <Image src={uniswaplogo} alt=" " />
-                      <h4 className="text-[10px] font-bold text-gray900">
-                        Uniswap
-                      </h4>
+                <div className="notional-bottompart">
+                  <div className="notional-risk">
+                    <h3>Risk</h3>
+                    <h4>B</h4>
+                  </div>
+                  <div className="notional-protocol">
+                    <div className="notional-protocol-inner">
+                      <h3>Protocol</h3>
+                      <div className="protocol-img">
+                        <Image src={uniswaplogo} alt=" " />
+                        <h4>$4B</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="notional-chain">
+                    <h3>Chain</h3>
+                    <div className="notional-chain-inner">
+                      <Image src={etherium} alt=" " />
+                      <h4>Ethereum</h4>
                     </div>
                   </div>
                 </div>
-                <div className="px-3 pt-2 pb-4">
-                  <h3 className="text-[#33333350] text-center">Chain</h3>
-                  <div className="px-1 py-1 mt-1 rounded bg-white flex items-center gap-1">
-                    <Image src={etherium} alt=" " />
-                    <h4 className="text-[10px] font-bold text-gray900">
-                      Ethereum
-                    </h4>
-                  </div>
-                </div>
               </div>
-            </div>
-
-            <div className="border border-gray300 rounded-[10px] sm:px-5 py-[14px] p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="bg-gray300 rounded-full p-5"></div>
-                  <div className="pl-[10px]">
-                    <h3 className="text-sm font-semibold text-gray900">
-                      Insert Name Here
-                    </h3>
-                    <div className="flex sm:gap-7 gap-5">
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">5.24%</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          Yield 30d
-                        </p>
+              <div className="uniswp-sec">
+                <div className="notional-insert-sec">
+                  <div className="insert-sec">
+                    <div className="insert-inner-part">
+                      <div className="name-insert-round"></div>
+                      <div className="insert-contain">
+                        <h3>Insert Name Here</h3>
+                        <div className="insert-contain-bottom">
+                          <div>
+                            <h3>5.24%</h3>
+                            <p>Yield 30d</p>
+                          </div>
+                          <div>
+                            <h3>$48M</h3>
+                            <p>TVL</p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">$48M</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          TVL
-                        </p>
+                    </div>
+                    <div className="insert-name-right">
+                      <h4>B</h4>
+                      <div className="insert-logo-part">
+                        <Image src={protocol} alt=" " />
+                      </div>
+                      <div className="insert-logo-part">
+                        <Image src={etherium} alt=" " />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={protocol} alt=" " />
-                  </div>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={etherium} alt=" " />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray300 rounded-[10px] sm:px-5 py-[14px] p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="bg-gray300 rounded-full p-5"></div>
-                  <div className="pl-[10px]">
-                    <h3 className="text-sm font-semibold text-gray900">
-                      Insert Name Here
-                    </h3>
-                    <div className="flex sm:gap-7 gap-5">
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">5.24%</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          Yield 30d
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">$48M</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          TVL
-                        </p>
+                <div className="notional-insert-sec uniswap-bottom">
+                  <div className="insert-sec">
+                    <div className="insert-inner-part">
+                      <div className="name-insert-round"></div>
+                      <div className="insert-contain">
+                        <h3>Insert Name Here</h3>
+                        <div className="insert-contain-bottom">
+                          <div>
+                            <h3>5.24%</h3>
+                            <p>Yield 30d</p>
+                          </div>
+                          <div>
+                            <h3>$48M</h3>
+                            <p>TVL</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={protocol} alt=" " />
-                  </div>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={etherium} alt=" " />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray300 rounded-[10px] sm:px-5 py-[14px] p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="bg-gray300 rounded-full p-5"></div>
-                  <div className="pl-[10px]">
-                    <h3 className="text-sm font-semibold text-gray900">
-                      Insert Name Here
-                    </h3>
-                    <div className="flex sm:gap-7 gap-5">
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">5.24%</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          Yield 30d
-                        </p>
+                    <div className="insert-name-right">
+                      <h4>B</h4>
+                      <div className="insert-logo-part">
+                        <Image src={protocol} alt=" " />
                       </div>
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">$48M</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          TVL
-                        </p>
+                      <div className="insert-logo-part">
+                        <Image src={etherium} alt=" " />
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={protocol} alt=" " />
-                  </div>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={etherium} alt=" " />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray300 rounded-[10px] sm:px-5 py-[14px] p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="bg-gray300 rounded-full p-5"></div>
-                  <div className="pl-[10px]">
-                    <h3 className="text-sm font-semibold text-gray900">
-                      Insert Name Here
-                    </h3>
-                    <div className="flex sm:gap-7 gap-5">
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">5.24%</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          Yield 30d
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">$48M</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          TVL
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={protocol} alt=" " />
-                  </div>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={etherium} alt=" " />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="border border-gray300 rounded-[10px] sm:px-5 py-[14px] p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="bg-gray300 rounded-full p-5"></div>
-                  <div className="pl-[10px]">
-                    <h3 className="text-sm font-semibold text-gray900">
-                      Insert Name Here
-                    </h3>
-                    <div className="flex sm:gap-7 gap-5">
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">5.24%</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          Yield 30d
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">$48M</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          TVL
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={protocol} alt=" " />
-                  </div>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={etherium} alt=" " />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray300 rounded-[10px] sm:px-5 py-[14px] p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="bg-gray300 rounded-full p-5"></div>
-                  <div className="pl-[10px]">
-                    <h3 className="text-sm font-semibold text-gray900">
-                      Insert Name Here
-                    </h3>
-                    <div className="flex sm:gap-7 gap-5">
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">5.24%</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          Yield 30d
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">$48M</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          TVL
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={protocol} alt=" " />
-                  </div>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={etherium} alt=" " />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray300 rounded-[10px] sm:px-5 py-[14px] p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="bg-gray300 rounded-full p-5"></div>
-                  <div className="pl-[10px]">
-                    <h3 className="text-sm font-semibold text-gray900">
-                      Insert Name Here
-                    </h3>
-                    <div className="flex sm:gap-7 gap-5">
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">5.24%</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          Yield 30d
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">$48M</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          TVL
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={protocol} alt=" " />
-                  </div>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={etherium} alt=" " />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray300 rounded-[10px] sm:px-5 py-[14px] p-4 xl:max-w-[281px] md:!max-w-[279px] w-full">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="bg-gray300 rounded-full p-5"></div>
-                  <div className="pl-[10px]">
-                    <h3 className="text-sm font-semibold text-gray900">
-                      Insert Name Here
-                    </h3>
-                    <div className="flex sm:gap-7 gap-5">
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">5.24%</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          Yield 30d
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="md:text-xl text-lg font-bold">$48M</h3>
-                        <p className="text-[10px] font-medium text-[#33333340]">
-                          TVL
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold mt-1 bg-primaryDarkBlue px-2 py-1 rounded text-white flex justify-center">
-                    B
-                  </h4>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={protocol} alt=" " />
-                  </div>
-                  <div className="bg-gray200 rounded flex justify-center p-2 mt-[2px]">
-                    <Image src={etherium} alt=" " />
                   </div>
                 </div>
               </div>
@@ -645,6 +556,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* Explore all protocols sec Start */}
     </>
   );
 };
