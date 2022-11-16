@@ -67,8 +67,9 @@ $screen-xxl: 1399px;
   top: 66px;
   padding-left: 6px;
   font-size: 10px;
-  font-weight: Medium;
-  padding-top: 10px;
+  font-weight: 500 !important;
+   padding-top: 10px;
+   z-index: 9;
 }
 .tv-lightweight-charts {
   margin-top: 27px;
