@@ -16,21 +16,21 @@ const SwapBridges = () => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className="max-w-[1203px] w-full mx-auto px-[20px] md:flex justify-center lg:justify-start">
-        <div className="lg:mt-11 mt-5 mb-10">
-          <h2 className="lg:text-[40px] text-[32px] lg:leading-6 leading-snug font-bold text-primaryDarkBlue inline-block">
+      <div className="total-value-main swapbridge-main-sec">
+        <div className="swap-bridge-heading">
+          <h2>
             Swap & Bridges
           </h2>
-          <div className="border border-gray300 mt-[30px] rounded-[10px] sm:max-w-[578px] w-full mx-auto">
+          <div className="bridge-swap-sec">
             <div className="">
-              <div className="flex relative items-center justify-around border-b border-gray300">
+              <div className="bridge-part">
                 <Link href={"#"}>
                   <a
                     className={
-                      "text-lg font-semibold  block p-5 w-2/4 text-center leading-normal " +
+                      " " +
                       (openTab === 1
-                        ? "text-primaryBlue bg-blueGray-600 border-b-4 border-b-primaryBlue "
-                        : "text-blueGray-600  bg-white border-b-4 border-white")
+                        ? "text-primaryBlue bg-blueGray-600 border-b-4  rounded-t-2xl border-t-white  border-b-primaryBlue "
+                        : "text-blueGray-600  bg-white border-b-4 border-white ")
                     }
                     onClick={(e) => {
                       e.preventDefault();
@@ -46,9 +46,9 @@ const SwapBridges = () => {
                 <Link href={"#"}>
                   <a
                     className={
-                      "text-lg font-semibold block p-5 w-2/4 text-center leading-normal " +
+                      " " +
                       (openTab === 1
-                        ? "bg-blueGray-600 text-gray900 border-b-4 border-white"
+                        ? "bg-blueGray-600 text-gray900 border-b-4  border-white"
                         : "text-primaryBlue bg-blueGray-600 border-b-4 border-b-primaryBlue")
                     }
                     onClick={(e) => {
@@ -64,18 +64,17 @@ const SwapBridges = () => {
                 </Link>
               </div>
             </div>
-            <div className="relative flex flex-col min-w-0 break-words bg-white sm:w-[576px] shadow-lg rounded">
-              <div className="sm:p-[30px] p-5 flex-auto flex-wrap">
+            <div className="bridge-condition-sec">
+              <div className="bridge-sec">
                 <div className="tab-content tab-space">
                   <div
                     className={openTab === 1 ? "block" : "hidden"}
-                    id="link1"
-                  >
+                    id="link1">
                     <div>
-                      <div className="relative">
-                        <span className="absolute top-[8px] left-[8px]"></span>
+                      <div className="bridge-relative">
+                        <span></span>
                         <select
-                          className="pl-4 h-10 text-sm font-semibold text-gray900 py-[8px] px-[22px] lg:w-full md:w-full sm:w-[320px] w-full border  border-white100 text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
+                          className="dropdown-wallet filter-dropdown"
                           name=""
                           id=""
                         >
@@ -86,19 +85,18 @@ const SwapBridges = () => {
                           <option value="">History</option>
                         </select>
                       </div>
-                      <div className="border-white100 border-b pt-7"></div>
-                      <div className="pt-7 flex justify-between flex-col sm:flex-row">
-                        <div className="sm:w-[44%] h-10 w-full">
-                          <h3 className="text-gray900 opacity-40 pb-[6px] font-medium text-xs">
+                      <div className="wrapper-bridge"></div>
+                      <div className="bridge-ehterium">
+                        <div className="bridge-ehterium-width">
+                          <h3>
                             Transfer from
                           </h3>
-
-                          <div className="relative">
-                            <span className="absolute top-[8px] left-[8px]">
+                          <div className="bridge-queue-etherium">
+                            <span>
                               <Image src={Ethreum} alt="" className="" />
                             </span>
                             <select
-                              className="bg-white100 text-sm h-10 font-semibold text-gray900 py-[8px] px-[22px] w-full lg:w-[224px] text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
+                              className="filter-dropdown"
                               name=""
                               id=""
                             >
@@ -110,22 +108,23 @@ const SwapBridges = () => {
                             </select>
                           </div>
                         </div>
-                        <div className="sm:pt-3 pt-6 flex items-center justify-center my-4">
-                          <div className="w-[30px] h-[30px] rounded-full border flex justify-center items-center border-white100">
+                        <div className="select-reverse ">
+                          <div className="top-bottom-arrow">
                             <Image src={Leftrightarrow} alt="" />
                           </div>
                         </div>
+
                         <div className="sm:w-[44%] w-full">
                           <h3 className="text-gray900 opacity-40 pb-[6px] font-medium text-xs">
                             Transfer to
                           </h3>
-
                           <div className="relative">
                             <span className="absolute top-[8px] left-[8px]">
                               <Image src={Polygon} alt="" className="" />
                             </span>
                             <select
-                              className="bg-white100 pl-8 h-10 text-sm font-semibold text-gray900 py-[8px] px-[22px] w-full lg:w-[224px] text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
+                              className="bg-white100 pl-8 h-10 text-sm font-semibold text-gray900 py-[8px] px-[22px] w-full
+                               lg:w-[224px] text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
                               name=""
                               id=""
                             >
@@ -137,15 +136,37 @@ const SwapBridges = () => {
                             </select>
                           </div>
                         </div>
+                        
+                        {/* <div className="bridge-ehterium-width">
+                          <h3>
+                          Transfer to
+                          </h3>
+                          <div className="bridge-queue-etherium">
+                          <span className="absolute top-[8px] left-[8px]">
+                              <Image src={Polygon} alt="" className="" />
+                            </span>
+                            <select
+                              className="filter-dropdown"
+                              name=""
+                              id=""
+                            >
+                              <option value="" selected>
+                                Ethereum
+                              </option>
+                              <option value="">Queue</option>
+                              <option value="">History</option>
+                            </select>
+                          </div>
+                        </div> */}
                       </div>
-                      <div className="bg-white100 mt-5 py-[17px] px-5 rounded">
-                        <div className="flex items-end justify-between">
+                      <div className="bridge-send-top">
+                        <div className="send-flex">
                           <div className="">
-                            <span className="text-[10px] text-gray900">
+                            <span className="send-span">
                               Send
                             </span>
-                            <div className="mr-5 relative">
-                              <span className="absolute top-[4px] left-0">
+                            <div className="wrapper-send">
+                              <span className="span-send-absolute">
                                 <Image
                                   src={OriginProtocol}
                                   alt=""
@@ -154,7 +175,7 @@ const SwapBridges = () => {
                               </span>
                               <Menu
                                 as="div"
-                                className="relative inline-block text-left"
+                                className="send-menu-relative"
                               >
                                 <div className="flex items-center">
                                   <Menu.Button className="inline-flex items-center justify-center bg-opacity-20 hover:bg-opacity-30 focus-visible:ring-white focus-visible:ring-opacity-75 ogn-dropdown text-center bg-white100 pl-12 lg:text-[40px] text-3xl font-bold text-primaryDarkBlue py-[8px] pr-4 max-w-[190px] w-full text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown">

@@ -13,20 +13,16 @@ import curveprotocol from "../assets/img/curvelogo.svg";
 import aavelogo from "../assets/img/aavelogo.svg";
 import uniswaplogo from "../assets/img/uniswaplogo.svg";
 // import TradingViewChart, { CHART_TYPES } from '../components/TradingviewChart/index.js'
-const TradingViewChart = dynamic(
-  () => import("../components/TradingviewChart"),
-  {
-    loading: () => <p>Loading ...</p>,
-    ssr: false,
-  }
-);
+const TradingViewChart = dynamic(() => import("../components/TradingviewChart"), {
+  loading: () => <p>Loading ...</p>,
+  ssr: false,
+});
 
 const Explore = () => {
   const CHART_TYPES = {
     BAR: "BAR",
     AREA: "AREA",
   };
-
   const dailyData = [
     { date: 1603756800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
     { date: 1599436800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
@@ -99,32 +95,28 @@ const Explore = () => {
   const width = "800";
   return (
     <>
-    {/* total value sec start */}
+      {/* total value sec start */}
       <div className="total-value-main">
         <div className="total-value-head">
-          <h2>
-            Total value locked DeFi 
-          </h2>
+          <h2>Total value locked DeFi</h2>
           <div className="total-value-left">
-            <div className='value-locked-part'>
-              <div className='value-locked-top'>
+            <div className="value-locked-part">
+              <div className="value-locked-top">
                 <h3>Total Value Locked (USD)</h3>
                 <h2>$54.98b</h2>
               </div>
-              <div className='value-locked-top'>
+              <div className="value-locked-top">
                 <h3>Change (24h)</h3>
                 <h2>2.40%</h2>
-              </div>  
-              <div className='value-locked-top value-locked-bottom'>
+              </div>
+              <div className="value-locked-top value-locked-bottom">
                 <h3>MakerDAO Dominance</h3>
                 <h2>14.94%</h2>
               </div>
             </div>
             <div className="total-value-right">
               <div className="total-right-conatin">
-                <h3>
-                  Total TVL
-                </h3>
+                <h3>Total TVL</h3>
                 {/* <h2 className="text-3xl text-gray900 font-bold">$54.98b</h2> */}
                 <TradingViewChart
                   data={dailyData}
@@ -139,30 +131,40 @@ const Explore = () => {
             </div>
           </div>
         </div>
-      {/* total value sec end */}
-      {/* Explore all protocols sec Start */}
-      <div className='explore-protocol-sec-main'>
-          <div className='explore-protocol-head'>
+        {/* total value sec end */}
+        {/* Explore all protocols sec Start */}
+        <div className="explore-protocol-sec-main">
+          <div className="explore-protocol-head">
             <h2>Explore all protocols</h2>
-            <Link href={'#'}>
-                <a>
-                  <div className='view-more-btn plus-icon'>
-                    View more
-                    <svg xmlns="http://www.w3.org/2000/svg" width="7.725" height="13.451" viewBox="0 0 7.725 13.451">
-                      <path id="Path_45" data-name="Path 45" d="M-1926.941,601.848l5.311,5.311-5.311,5.311" transform="translate(1928.355 -600.434)" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/>
-                    </svg>
-                  </div>
-                </a>                
-              </Link>
+            <Link href={"#"}>
+              <a>
+                <div className="view-more-btn plus-icon">
+                  View more
+                  <svg xmlns="http://www.w3.org/2000/svg" width="7.725" height="13.451" viewBox="0 0 7.725 13.451">
+                    <path
+                      id="Path_45"
+                      data-name="Path 45"
+                      d="M-1926.941,601.848l5.311,5.311-5.311,5.311"
+                      transform="translate(1928.355 -600.434)"
+                      fill="none"
+                      stroke="#fff"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </Link>
           </div>
-          <div className='explore-protocol'>
-            <div className='explore-protocol-left'>
-              <div className='protocol-box'>
-                <div className='notional-part'>
-                  <Image src={notional} alt=" "/>
+          <div className="explore-protocol">
+            <div className="explore-protocol-left">
+              <div className="protocol-box">
+                <div className="notional-part">
+                  <Image src={notional} alt=" " />
                   <h3>Notional Eth Market</h3>
                 </div>
-                <div className='notional-part-text'>
+                <div className="notional-part-text">
                   <div>
                     <h3>7.94%</h3>
                     <p>Yield 30d</p>
@@ -170,97 +172,98 @@ const Explore = () => {
                   <div>
                     <h3>$7M</h3>
                     <p>TVL</p>
-                  </div> 
+                  </div>
                 </div>
-                <div className='notional-bottompart'>
-                  <div className='notional-risk'>
+                <div className="notional-bottompart">
+                  <div className="notional-risk">
                     <h3>Risk</h3>
                     <h4>B</h4>
                   </div>
-                  <div className='notional-protocol'>
-                    <div  className='notional-protocol-inner'>
+                  <div className="notional-protocol">
+                    <div className="notional-protocol-inner">
                       <h3>Protocol</h3>
-                      <div className='protocol-img'>
-                        <Image src={protocol} alt=" "/>
+                      <div className="protocol-img">
+                        <Image src={protocol} alt=" " />
                         <h4>Notional</h4>
                       </div>
-                    </div>                    
+                    </div>
                   </div>
-                  <div className='notional-chain'>
+                  <div className="notional-right-border"></div>
+                  <div className="notional-chain">
                     <h3>Chain</h3>
-                    <div className='notional-chain-inner'>
-                      <Image src={etherium} alt=" "/>
+                    <div className="notional-chain-inner">
+                      <Image src={etherium} alt=" " />
                       <h4>Ethereum</h4>
                     </div>
-                  </div>                
+                  </div>
                 </div>
               </div>
-              <div className='notional-insert-sec'>
-              <div className='insert-sec'>
-                <div className='insert-inner-part'>
-                  <div className='name-insert-round'></div>
-                    <div className='insert-contain'>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
                       <h3>Insert Name Here</h3>
-                      <div className='insert-contain-bottom'>
+                      <div className="insert-contain-bottom">
                         <div>
                           <h3>5.24%</h3>
                           <p>Yield 30d</p>
                         </div>
                         <div>
                           <h3>$48M</h3>
-                          <p >TVL</p>
-                        </div> 
+                          <p>TVL</p>
+                        </div>
                       </div>
                     </div>
-                </div>
-                <div className="insert-name-right">
-                  <h4>B</h4>
-                  <div className='insert-logo-part'>
-                    <Image src={protocol} alt=" " />
                   </div>
-                  <div className='insert-logo-part'>
-                    <Image src={etherium} alt=" "/>
-                  </div>                    
-                </div>      
-              </div> 
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className='notional-insert-sec'>
-              <div className='insert-sec'>
-                <div className='insert-inner-part'>
-                  <div className='name-insert-round'></div>
-                    <div className='insert-contain'>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
                       <h3>Insert Name Here</h3>
-                      <div className='insert-contain-bottom'>
+                      <div className="insert-contain-bottom">
                         <div>
                           <h3>5.24%</h3>
                           <p>Yield 30d</p>
                         </div>
                         <div>
                           <h3>$48M</h3>
-                          <p >TVL</p>
-                        </div> 
+                          <p>TVL</p>
+                        </div>
                       </div>
                     </div>
-                </div>
-                <div className="insert-name-right">
-                  <h4>B</h4>
-                  <div className='insert-logo-part'>
-                    <Image src={protocol} alt=" " />
                   </div>
-                  <div className='insert-logo-part'>
-                    <Image src={etherium} alt=" "/>
-                  </div>                    
-                </div>      
-              </div> 
-              </div>                            
-            </div> 
-            <div className='explore-protocol-left'>
-              <div className='protocol-box'>
-                <div className='notional-part'>
-                  <Image src={curvesvg} alt=" "/>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="explore-protocol-left">
+              <div className="protocol-box">
+                <div className="notional-part">
+                  <Image src={curvesvg} alt=" " />
                   <h3>Curve Finance</h3>
                 </div>
-                <div className='notional-part-text'>
+                <div className="notional-part-text">
                   <div>
                     <h3>6.74%</h3>
                     <p>Yield 30d</p>
@@ -268,97 +271,98 @@ const Explore = () => {
                   <div>
                     <h3>$211M</h3>
                     <p>TVL</p>
-                  </div> 
+                  </div>
                 </div>
-                <div className='notional-bottompart'>
-                  <div className='notional-risk'>
+                <div className="notional-bottompart">
+                  <div className="notional-risk">
                     <h3>Risk</h3>
                     <h4>A</h4>
                   </div>
-                  <div className='notional-protocol'>
-                    <div  className='notional-protocol-inner'>
+                  <div className="notional-protocol">
+                    <div className="notional-protocol-inner">
                       <h3>Protocol</h3>
-                      <div className='protocol-img'>
-                        <Image src={curveprotocol} alt=" "/>
+                      <div className="protocol-img">
+                        <Image src={curveprotocol} alt=" " />
                         <h4>Curve</h4>
                       </div>
-                    </div>                    
+                    </div>
                   </div>
-                  <div className='notional-chain'>
+                  <div className="notional-right-border"></div>
+                  <div className="notional-chain">
                     <h3>Chain</h3>
-                    <div className='notional-chain-inner'>
-                      <Image src={etherium} alt=" "/>
+                    <div className="notional-chain-inner">
+                      <Image src={etherium} alt=" " />
                       <h4>Ethereum</h4>
                     </div>
-                  </div>                
+                  </div>
                 </div>
               </div>
-              <div className='notional-insert-sec'>
-              <div className='insert-sec'>
-                <div className='insert-inner-part'>
-                  <div className='name-insert-round'></div>
-                    <div className='insert-contain'>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
                       <h3>Insert Name Here</h3>
-                      <div className='insert-contain-bottom'>
+                      <div className="insert-contain-bottom">
                         <div>
                           <h3>5.24%</h3>
                           <p>Yield 30d</p>
                         </div>
                         <div>
                           <h3>$48M</h3>
-                          <p >TVL</p>
-                        </div> 
+                          <p>TVL</p>
+                        </div>
                       </div>
                     </div>
-                </div>
-                <div className="insert-name-right">
-                  <h4>B</h4>
-                  <div className='insert-logo-part'>
-                    <Image src={protocol} alt=" " />
                   </div>
-                  <div className='insert-logo-part'>
-                    <Image src={etherium} alt=" "/>
-                  </div>                    
-                </div>      
-              </div> 
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className='notional-insert-sec'>
-              <div className='insert-sec'>
-                <div className='insert-inner-part'>
-                  <div className='name-insert-round'></div>
-                    <div className='insert-contain'>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
                       <h3>Insert Name Here</h3>
-                      <div className='insert-contain-bottom'>
+                      <div className="insert-contain-bottom">
                         <div>
                           <h3>5.24%</h3>
                           <p>Yield 30d</p>
                         </div>
                         <div>
                           <h3>$48M</h3>
-                          <p >TVL</p>
-                        </div> 
+                          <p>TVL</p>
+                        </div>
                       </div>
                     </div>
-                </div>
-                <div className="insert-name-right">
-                  <h4>B</h4>
-                  <div className='insert-logo-part'>
-                    <Image src={protocol} alt=" " />
                   </div>
-                  <div className='insert-logo-part'>
-                    <Image src={etherium} alt=" "/>
-                  </div>                    
-                </div>      
-              </div> 
-              </div>                            
-            </div>   
-            <div className='explore-protocol-left'>
-              <div className='protocol-box'>
-                <div className='notional-part'>
-                  <Image src={aavev2} alt=" "/>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="explore-protocol-left">
+              <div className="protocol-box">
+                <div className="notional-part">
+                  <Image src={aavev2} alt=" " />
                   <h3>AAVE V2 (AAVE)</h3>
                 </div>
-                <div className='notional-part-text'>
+                <div className="notional-part-text">
                   <div>
                     <h3>6.60%</h3>
                     <p>Yield 30d</p>
@@ -366,97 +370,98 @@ const Explore = () => {
                   <div>
                     <h3>$258M</h3>
                     <p>TVL</p>
-                  </div> 
+                  </div>
                 </div>
-                <div className='notional-bottompart'>
-                  <div className='notional-risk'>
+                <div className="notional-bottompart">
+                  <div className="notional-risk">
                     <h3>Risk</h3>
                     <h4>C</h4>
                   </div>
-                  <div className='notional-protocol'>
-                    <div  className='notional-protocol-inner'>
+                  <div className="notional-protocol">
+                    <div className="notional-protocol-inner">
                       <h3>Protocol</h3>
-                      <div className='protocol-img'>
-                        <Image src={aavelogo} alt=" "/>
+                      <div className="protocol-img">
+                        <Image src={aavelogo} alt=" " />
                         <h4>Aave</h4>
                       </div>
-                    </div>                    
+                    </div>
                   </div>
-                  <div className='notional-chain'>
+                  <div className="notional-right-border"></div>
+                  <div className="notional-chain">
                     <h3>Chain</h3>
-                    <div className='notional-chain-inner'>
-                      <Image src={etherium} alt=" "/>
+                    <div className="notional-chain-inner">
+                      <Image src={etherium} alt=" " />
                       <h4>Ethereum</h4>
                     </div>
-                  </div>                
+                  </div>
                 </div>
               </div>
-              <div className='notional-insert-sec'>
-              <div className='insert-sec'>
-                <div className='insert-inner-part'>
-                  <div className='name-insert-round'></div>
-                    <div className='insert-contain'>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
                       <h3>Insert Name Here</h3>
-                      <div className='insert-contain-bottom'>
+                      <div className="insert-contain-bottom">
                         <div>
                           <h3>5.24%</h3>
                           <p>Yield 30d</p>
                         </div>
                         <div>
                           <h3>$48M</h3>
-                          <p >TVL</p>
-                        </div> 
+                          <p>TVL</p>
+                        </div>
                       </div>
                     </div>
-                </div>
-                <div className="insert-name-right">
-                  <h4>B</h4>
-                  <div className='insert-logo-part'>
-                    <Image src={protocol} alt=" " />
                   </div>
-                  <div className='insert-logo-part'>
-                    <Image src={etherium} alt=" "/>
-                  </div>                    
-                </div>      
-              </div> 
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className='notional-insert-sec'>
-              <div className='insert-sec'>
-                <div className='insert-inner-part'>
-                  <div className='name-insert-round'></div>
-                    <div className='insert-contain'>
+              <div className="notional-insert-sec">
+                <div className="insert-sec">
+                  <div className="insert-inner-part">
+                    <div className="name-insert-round"></div>
+                    <div className="insert-contain">
                       <h3>Insert Name Here</h3>
-                      <div className='insert-contain-bottom'>
+                      <div className="insert-contain-bottom">
                         <div>
                           <h3>5.24%</h3>
                           <p>Yield 30d</p>
                         </div>
                         <div>
                           <h3>$48M</h3>
-                          <p >TVL</p>
-                        </div> 
+                          <p>TVL</p>
+                        </div>
                       </div>
                     </div>
-                </div>
-                <div className="insert-name-right">
-                  <h4>B</h4>
-                  <div className='insert-logo-part'>
-                    <Image src={protocol} alt=" " />
                   </div>
-                  <div className='insert-logo-part'>
-                    <Image src={etherium} alt=" "/>
-                  </div>                    
-                </div>      
-              </div> 
-              </div>                            
-            </div>   
-            <div className='explore-protocol-left uniswap-sec-main'>
-              <div className='protocol-box'>
-                <div className='notional-part'>
-                  <Image src={uniswap} alt=" "/>
+                  <div className="insert-name-right">
+                    <h4>B</h4>
+                    <div className="insert-logo-part">
+                      <Image src={protocol} alt=" " />
+                    </div>
+                    <div className="insert-logo-part">
+                      <Image src={etherium} alt=" " />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="explore-protocol-left uniswap-sec-main">
+              <div className="protocol-box">
+                <div className="notional-part">
+                  <Image src={uniswap} alt=" " />
                   <h3>Uniswap</h3>
                 </div>
-                <div className='notional-part-text'>
+                <div className="notional-part-text">
                   <div>
                     <h3>12.37%</h3>
                     <p>Yield 30d</p>
@@ -464,94 +469,94 @@ const Explore = () => {
                   <div>
                     <h3>$4B</h3>
                     <p>TVL</p>
-                  </div> 
+                  </div>
                 </div>
-                <div className='notional-bottompart'>
-                  <div className='notional-risk'>
+                <div className="notional-bottompart">
+                  <div className="notional-risk">
                     <h3>Risk</h3>
                     <h4>B</h4>
                   </div>
-                  <div className='notional-protocol'>
-                    <div  className='notional-protocol-inner'>
+                  <div className="notional-protocol">
+                    <div className="notional-protocol-inner">
                       <h3>Protocol</h3>
-                      <div className='protocol-img'>
-                        <Image src={uniswaplogo} alt=" "/>
+                      <div className="protocol-img">
+                        <Image src={uniswaplogo} alt=" " />
                         <h4>$4B</h4>
                       </div>
-                    </div>                    
+                    </div>
                   </div>
-                  <div className='notional-chain'>
+                  <div className="notional-right-border"></div>
+                  <div className="notional-chain">
                     <h3>Chain</h3>
-                    <div className='notional-chain-inner'>
-                      <Image src={etherium} alt=" "/>
+                    <div className="notional-chain-inner">
+                      <Image src={etherium} alt=" " />
                       <h4>Ethereum</h4>
                     </div>
-                  </div>                
+                  </div>
                 </div>
               </div>
               <div className="uniswp-sec">
-                <div className='notional-insert-sec'>
-                <div className='insert-sec'>
-                  <div className='insert-inner-part'>
-                    <div className='name-insert-round'></div>
-                      <div className='insert-contain'>
+                <div className="notional-insert-sec">
+                  <div className="insert-sec">
+                    <div className="insert-inner-part">
+                      <div className="name-insert-round"></div>
+                      <div className="insert-contain">
                         <h3>Insert Name Here</h3>
-                        <div className='insert-contain-bottom'>
+                        <div className="insert-contain-bottom">
                           <div>
                             <h3>5.24%</h3>
                             <p>Yield 30d</p>
                           </div>
                           <div>
                             <h3>$48M</h3>
-                            <p >TVL</p>
-                          </div> 
+                            <p>TVL</p>
+                          </div>
                         </div>
                       </div>
-                  </div>
-                  <div className="insert-name-right">
-                    <h4>B</h4>
-                    <div className='insert-logo-part'>
-                      <Image src={protocol} alt=" " />
                     </div>
-                    <div className='insert-logo-part'>
-                      <Image src={etherium} alt=" "/>
-                    </div>                    
-                  </div>      
-                </div> 
+                    <div className="insert-name-right">
+                      <h4>B</h4>
+                      <div className="insert-logo-part">
+                        <Image src={protocol} alt=" " />
+                      </div>
+                      <div className="insert-logo-part">
+                        <Image src={etherium} alt=" " />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className='notional-insert-sec uniswap-bottom'>
-                <div className='insert-sec'>
-                  <div className='insert-inner-part'>
-                    <div className='name-insert-round'></div>
-                      <div className='insert-contain'>
+                <div className="notional-insert-sec uniswap-bottom">
+                  <div className="insert-sec">
+                    <div className="insert-inner-part">
+                      <div className="name-insert-round"></div>
+                      <div className="insert-contain">
                         <h3>Insert Name Here</h3>
-                        <div className='insert-contain-bottom'>
+                        <div className="insert-contain-bottom">
                           <div>
                             <h3>5.24%</h3>
                             <p>Yield 30d</p>
                           </div>
                           <div>
                             <h3>$48M</h3>
-                            <p >TVL</p>
-                          </div> 
+                            <p>TVL</p>
+                          </div>
                         </div>
                       </div>
-                  </div>
-                  <div className="insert-name-right">
-                    <h4>B</h4>
-                    <div className='insert-logo-part'>
-                      <Image src={protocol} alt=" " />
                     </div>
-                    <div className='insert-logo-part'>
-                      <Image src={etherium} alt=" "/>
-                    </div>                    
-                  </div>      
-                </div> 
+                    <div className="insert-name-right">
+                      <h4>B</h4>
+                      <div className="insert-logo-part">
+                        <Image src={protocol} alt=" " />
+                      </div>
+                      <div className="insert-logo-part">
+                        <Image src={etherium} alt=" " />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-                                          
-            </div> 
-          </div>         
+            </div>
+          </div>
         </div>
       </div>
       {/* Explore all protocols sec Start */}

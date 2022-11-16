@@ -189,6 +189,7 @@ const Explore = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="notional-right-border"></div>
                   <div className="notional-chain">
                     <h3>Chain</h3>
                     <div className="notional-chain-inner">
@@ -287,6 +288,7 @@ const Explore = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="notional-right-border"></div>
                   <div className="notional-chain">
                     <h3>Chain</h3>
                     <div className="notional-chain-inner">
@@ -385,6 +387,7 @@ const Explore = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="notional-right-border"></div>
                   <div className="notional-chain">
                     <h3>Chain</h3>
                     <div className="notional-chain-inner">
@@ -483,6 +486,7 @@ const Explore = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="notional-right-border"></div>
                   <div className="notional-chain">
                     <h3>Chain</h3>
                     <div className="notional-chain-inner">

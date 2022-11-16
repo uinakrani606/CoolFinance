@@ -70,18 +70,20 @@ $screen-xxl: 1399px;
       border-radius: 10px;
       border: 1px solid var(--gray300);
       .portfolia-right-contain {
-        padding: 20px 0 20px 20px;
+        padding: 25px 25px;
         position: relative;
         h3 {
           font-size: 16px;
           font-weight: 500;
           color: var(--gray900);
+          padding-left: 10px
         }
       }
       #tooltip-idAREA div:nth-child(3) {
         display: none;
       }
       #tooltip-idAREA div:nth-child(2) {
+        padding-left: 10px;
         color: #24ad58 !important;
         &::before {
           color: #24ad58 !important;
@@ -104,9 +106,9 @@ $screen-xxl: 1399px;
     }
   }
 }
-.tv-lightweight-charts table td div {
+.tv-lightweight-charts table tr td div {
   width: 60%;
-  margin: 0 0 0 auto;
+  margin-left: 6px;
   padding-right: 0;
 }
 // asset sec Start
@@ -150,7 +152,7 @@ $screen-xxl: 1399px;
         overflow-wrap: break-word;
         background-color: var(--white);
         .transactions-box {
-          padding: 12px 20px 20px;
+          padding: 12px 20px 16px;
           flex: 1 1 auto;
           .assets-box {
             display: inline-flex;
@@ -241,7 +243,7 @@ $screen-xxl: 1399px;
             }
             &:last-child {
               border-bottom: none;
-              padding-bottom: 0;
+              padding-bottom: 10px;
             }
           }
         }
@@ -342,6 +344,9 @@ $screen-xxl: 1399px;
           .transactions-box {
             .notional-eht {
               padding: 20px 0;
+              &:last-child{
+                padding-bottom: 15px;
+              }
             }
           }
         }
@@ -349,24 +354,7 @@ $screen-xxl: 1399px;
     }
   }
 }
-@media screen and (max-width: $screen-xs) {
-  .portfolia-sec-main {
-    .portfolia-part {
-      .portfolia-left-sec {
-        max-width: fit-content;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-        .portfolia-left-top {
-          width: 47%;
-          max-width: 100%;
-        }
-        .portfolia-left-bottom {
-          width: 100%;
-        }
-      }
-    }
-  }
+@media screen and (max-width: $screen-xs) {  
   .portfolia-asset-sec {
     .portfolia-asset-flex {
       .asset-main-sec {
@@ -385,5 +373,24 @@ $screen-xxl: 1399px;
     }
   }
 }
+@media screen and (max-width: 425px) {
+  .portfolia-sec-main {
+    .portfolia-part {
+      .portfolia-left-sec {
+        max-width: fit-content;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        .portfolia-left-top {
+          width: 47%;
+          max-width: 100%;
+        }
+        .portfolia-left-bottom {
+          width: 100%;
+        }
+      }
+    }
+  }
+} 
 
 // -------======portfolia page Start------=======/

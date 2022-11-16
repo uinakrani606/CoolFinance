@@ -2,18 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-
 import notional from "../assets/img/notionalogo.svg";
-import protocol from "../assets/img/notional.svg";
-import etherium from "../assets/img/ethereum.svg";
 import curvesvg from "../assets/img/curvefnance.svg";
 import aavev2 from "../assets/img/aaveaavelogo.svg";
 import uniswap from "../assets/img/uniswap.svg";
-import curveprotocol from "../assets/img/curvelogo.svg";
-import aavelogo from "../assets/img/aavelogo.svg";
-import uniswaplogo from "../assets/img/uniswaplogo.svg";
-import GrayEdit from "../assets/img/gray-edit-btn.svg";
-import GrayCopy from "../assets/img/gray-copy-btn.svg";
 const TradingViewChart = dynamic(() => import("../components/TradingviewChart"), {
   loading: () => <p>Loading ...</p>,
   ssr: false,

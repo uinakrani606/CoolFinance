@@ -15,11 +15,13 @@ function Sidebar() {
  
   const router = useRouter();
 
-  const [menutoggle, setMenutoggle] = useState(false);
+  const [menutoggle,  setMenutoggle] = useState(false);
+  const [usetoggle,  setUsertoggle] = useState(false);
   const menutoggleHendler = () => { 
     setMenutoggle(!menutoggle);
+    setUsertoggle(!usetoggle);
   };
-
+ 
   return (
     <div className='siderbar-main-sec'>
       <div className='siderbar-logo-part'>
@@ -65,7 +67,7 @@ function Sidebar() {
         <div className='sidebar-user'>
           <div className='sidebar-user-part'>
             <div className='sidebar-border-round'>
-              <div className='user-bottom border-b border-[#0770E530]'>
+              <div className='user-bottom'>
                   <div className='user-flex'>
                     <div className='user-img'>
                     <Image src={Avatar} alt="" />
@@ -74,21 +76,28 @@ function Sidebar() {
                       <p>Director</p>
                     </div>
                     </div>
-                    <div>
-                     <Image src={arrowsidebar} alt="" />
-                    </div>                    
+                    <div  onClick={menutoggleHendler}>
+                    <Link href={'#'}>
+                      <a>
+                      <Image src={arrowsidebar} alt="" />
+                      </a>                     
+                    </Link>
+                    </div>
+                                        
                   </div>
               </div>
-              <div className='Total-holding'>
-                <div className='Total-holding-width'>
-                  <h4>$7,822</h4> 
-                  <p>Total holdings</p>
+              <div className={`total-wrapper ${usetoggle ? 'invisible' : ''}`}>
+                <div className='Total-holding'> 
+                  <div className='Total-holding-width'>
+                    <h4>$7,822</h4> 
+                    <p>Total holdings</p>
+                  </div>
+                  <div className='Total-holding-border'>
+                    <h4>+6.97%</h4> 
+                    <p>1d Change</p>
+                  </div>
                 </div>
-                <div className='Total-holding-border'>
-                  <h4>+6.97%</h4> 
-                  <p>1d Change</p>
-                </div>
-              </div>
+              </div>              
             </div>
           </div>
           <div className='footer-sec-main'>

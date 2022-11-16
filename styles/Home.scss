@@ -50,28 +50,35 @@ $screen-xxl: 1399px;
 #tooltip-idAREA div:nth-child(1) {
   display: none;
 }
-
 #tooltip-idAREA div:nth-child(2) {
   color: #333333 !important;
   position: absolute;
   font-weight: 700;
   font-size: 30px !important;
-  padding: 4px 0;
+  padding: 8px 0;
+  padding-left: 4px;
   line-height: 2.25rem;
   top: 34px;
   margin: 0 !important;
 }
-
 #tooltip-idAREA div:nth-child(3) {
   color: #333333;
   position: absolute;
   top: 66px;
+  padding-left: 6px;
   font-size: 10px;
   font-weight: Medium;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 .tv-lightweight-charts {
   margin-top: 27px;
+}
+.tv-lightweight-charts table tr td {
+  &:last-child {
+    div {
+      margin-left: 15px;
+    }
+  }
 }
 .total-value-main {
   max-width: 1203px;
@@ -126,13 +133,14 @@ $screen-xxl: 1399px;
       border-radius: 10px;
       border: 1px solid var(--gray300);
       .total-right-conatin {
-        padding-right: 0!important;
-        padding: 16px;
+        padding: 25px;
+        padding-bottom: 0 !important;
         position: relative;
         h3 {
           font-size: 16px;
           font-weight: 500;
           color: var(--gray900);
+          padding-left: 8px;
         }
       }
     }
@@ -244,6 +252,7 @@ $screen-xxl: 1399px;
           border-radius: 4px;
           .notional-risk {
             padding: 8px 16px 16px;
+            border-radius: 4px;
             background-color: var(--gray400);
             h4 {
               font-size: 10px;
@@ -258,11 +267,9 @@ $screen-xxl: 1399px;
             }
           }
           .notional-protocol {
-            padding: 8px 0 16px 8px;
+            padding: 8px 12px 16px 8px;
 
             .notional-protocol-inner {
-              border-right: 1px solid var(--white);
-              padding-right: 12px;
               h3 {
                 color: var(--gray900);
                 opacity: 0.5;
@@ -283,6 +290,12 @@ $screen-xxl: 1399px;
                 }
               }
             }
+          }
+          .notional-right-border {
+            border-right: 1px solid var(--white);
+            width: 2px;
+            height: 50px;
+            margin-top: 12px;
           }
           .notional-chain {
             padding: 8px 12px 16px;
@@ -466,6 +479,7 @@ $screen-xxl: 1399px;
       .total-value-right {
         .total-right-conatin {
           padding-bottom: 0;
+          padding-top: 20px;
         }
       }
     }
@@ -489,12 +503,6 @@ $screen-xxl: 1399px;
   }
 }
 @media screen and (max-width: $screen-sm) {
-  // .tv-lightweight-charts {
-  //     width: 708px !important;
-  //   }
-  //   .tv-lightweight-charts table {
-  //     width: 686px !important;
-  //   }
   .tv-lightweight-charts .transactions-box {
     width: 1100px;
   }
@@ -509,6 +517,7 @@ $screen-xxl: 1399px;
         .value-locked-part {
           max-width: 100%;
           display: flex;
+          justify-content: space-between;
           gap: 1.25rem;
           .value-locked-top {
             padding: 16px;
@@ -525,6 +534,26 @@ $screen-xxl: 1399px;
       font-size: 18px;
     }
   }
+  .explore-protocol-sec-main {
+    .explore-protocol {
+      .explore-protocol-left {
+        .protocol-box {
+          .notional-bottompart {
+            justify-content: space-between;
+            .notional-chain {
+              padding: 8px 9px 16px;
+            }
+            .notional-protocol {
+              padding: 8px 9px 13px 8px;
+            }
+          }
+          .notional-part-text {
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width: $screen-xs) {
   .tv-lightweight-charts {
@@ -534,10 +563,40 @@ $screen-xxl: 1399px;
     .total-value-head {
       .total-value-left {
         .value-locked-part {
-          max-width: fit-content;
-          flex-wrap: wrap;
           justify-content: center;
           gap: 1rem;
+        }
+      }
+    }
+  }
+  .explore-protocol-sec-main {
+    .explore-protocol {
+      .explore-protocol-left {
+        width: 100%;
+        .protocol-box {
+          padding: 15px;
+        }
+        .notional-insert-sec {
+          .insert-sec .insert-inner-part {
+            .insert-contain {
+              .insert-contain-bottom {
+                gap: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .total-value-main {
+    .total-value-head {
+      .total-value-left {
+        .value-locked-part {
+          max-width: fit-content;
+          flex-wrap: wrap;
+          justify-content: space-between;
           .value-locked-top {
             width: 47%;
             max-width: 100%;
@@ -548,19 +607,6 @@ $screen-xxl: 1399px;
         }
       }
     }
-  }
-  .explore-protocol-sec-main {
-    .explore-protocol {
-      .explore-protocol-left {
-        width: 100%;
-      }
-    }
-  }
-  .protocol-box {
-    padding: 15px;
-  }
-  .insert-contain-bottom {
-    gap: 1.25rem;
   }
 }
 /* Explore all protocols sec End */
