@@ -16,22 +16,17 @@ const SwapBridges = () => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
+      <div className="swap-head">
+        <h2>Swap & Bridges</h2>
+      </div>
       <div className="total-value-main swapbridge-main-sec">
         <div className="swap-bridge-heading">
-          <h2>
-            Swap & Bridges
-          </h2>
           <div className="bridge-swap-sec">
             <div className="">
               <div className="bridge-part">
                 <Link href={"#"}>
                   <a
-                    className={
-                      " " +
-                      (openTab === 1
-                        ? "text-primaryBlue bg-blueGray-600 border-b-4  rounded-t-2xl border-t-white  border-b-primaryBlue "
-                        : "text-blueGray-600  bg-white border-b-4 border-white ")
-                    }
+                    className={" " + (openTab === 1 ? "bridge-border" : "")}
                     onClick={(e) => {
                       e.preventDefault();
                       setOpenTab(1);
@@ -45,12 +40,7 @@ const SwapBridges = () => {
                 </Link>
                 <Link href={"#"}>
                   <a
-                    className={
-                      " " +
-                      (openTab === 1
-                        ? "bg-blueGray-600 text-gray900 border-b-4  border-white"
-                        : "text-primaryBlue bg-blueGray-600 border-b-4 border-b-primaryBlue")
-                    }
+                    className={" " + (openTab === 1 ? "" : "bridge-border")}
                     onClick={(e) => {
                       e.preventDefault();
                       setOpenTab(2);
@@ -67,17 +57,11 @@ const SwapBridges = () => {
             <div className="bridge-condition-sec">
               <div className="bridge-sec">
                 <div className="tab-content tab-space">
-                  <div
-                    className={openTab === 1 ? "block" : "hidden"}
-                    id="link1">
+                  <div className={openTab === 1 ? "bridge-block" : "bridge-hidden"} id="link1">
                     <div>
                       <div className="bridge-relative">
                         <span></span>
-                        <select
-                          className="dropdown-wallet filter-dropdown"
-                          name=""
-                          id=""
-                        >
+                        <select className="dropdown-wallet filter-dropdown" name="" id="">
                           <option value="" selected>
                             Select wallet
                           </option>
@@ -88,18 +72,12 @@ const SwapBridges = () => {
                       <div className="wrapper-bridge"></div>
                       <div className="bridge-ehterium">
                         <div className="bridge-ehterium-width">
-                          <h3>
-                            Transfer from
-                          </h3>
+                          <h3>Transfer from</h3>
                           <div className="bridge-queue-etherium">
-                            <span>
+                            <span className="etherium-img">
                               <Image src={Ethreum} alt="" className="" />
                             </span>
-                            <select
-                              className="filter-dropdown"
-                              name=""
-                              id=""
-                            >
+                            <select className="filter-dropdown" name="" id="">
                               <option value="" selected>
                                 Ethereum
                               </option>
@@ -113,21 +91,13 @@ const SwapBridges = () => {
                             <Image src={Leftrightarrow} alt="" />
                           </div>
                         </div>
-
-                        <div className="sm:w-[44%] w-full">
-                          <h3 className="text-gray900 opacity-40 pb-[6px] font-medium text-xs">
-                            Transfer to
-                          </h3>
-                          <div className="relative">
-                            <span className="absolute top-[8px] left-[8px]">
-                              <Image src={Polygon} alt="" className="" />
+                        <div className="bridge-ehterium-width">
+                          <h3>Transfer to</h3>
+                          <div className="bridge-queue-etherium">
+                            <span className="etherium-img">
+                              <Image src={Polygon} alt="" className="polygon-img" />
                             </span>
-                            <select
-                              className="bg-white100 pl-8 h-10 text-sm font-semibold text-gray900 py-[8px] px-[22px] w-full
-                               lg:w-[224px] text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
-                              name=""
-                              id=""
-                            >
+                            <select className="polygon-dropdown filter-dropdown" name="" id="">
                               <option value="" selected>
                                 Polygon
                               </option>
@@ -136,58 +106,24 @@ const SwapBridges = () => {
                             </select>
                           </div>
                         </div>
-                        
-                        {/* <div className="bridge-ehterium-width">
-                          <h3>
-                          Transfer to
-                          </h3>
-                          <div className="bridge-queue-etherium">
-                          <span className="absolute top-[8px] left-[8px]">
-                              <Image src={Polygon} alt="" className="" />
-                            </span>
-                            <select
-                              className="filter-dropdown"
-                              name=""
-                              id=""
-                            >
-                              <option value="" selected>
-                                Ethereum
-                              </option>
-                              <option value="">Queue</option>
-                              <option value="">History</option>
-                            </select>
-                          </div>
-                        </div> */}
                       </div>
-                      <div className="bridge-send-top">
-                        <div className="send-flex">
-                          <div className="">
-                            <span className="send-span">
-                              Send
-                            </span>
-                            <div className="wrapper-send">
-                              <span className="span-send-absolute">
-                                <Image
-                                  src={OriginProtocol}
-                                  alt=""
-                                  className=""
-                                />
+
+                      <div className="bridge-recieve-btn">
+                        <div className="bridge-recieve-flex">
+                          <div className="bridge-recieve-width">
+                            <span>Send</span>
+                            <div className="recieve-position">
+                              <span className="wrapper-recive-absolute">
+                                <Image src={OriginProtocol} alt="" className="" />
                               </span>
-                              <Menu
-                                as="div"
-                                className="send-menu-relative"
-                              >
-                                <div className="flex items-center">
-                                  <Menu.Button className="inline-flex items-center justify-center bg-opacity-20 hover:bg-opacity-30 focus-visible:ring-white focus-visible:ring-opacity-75 ogn-dropdown text-center bg-white100 pl-12 lg:text-[40px] text-3xl font-bold text-primaryDarkBlue py-[8px] pr-4 max-w-[190px] w-full text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown">
-                                    OGN
-                                    <span className="ml-3 flex items-center">
-                                      <Image
-                                        src={BlueDropdown}
-                                        alt=""
-                                        className=""
-                                      />
-                                    </span>
-                                  </Menu.Button>
+                              <Menu as="div" className="recieve-menu">
+                                <div className="recieve-flex">
+                                  <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
+                                    <option value="" selected>
+                                      OGN
+                                    </option>
+                                    <option value="">SWAP</option>
+                                  </select>
                                 </div>
                                 <Transition
                                   as={Fragment}
@@ -198,31 +134,19 @@ const SwapBridges = () => {
                                   leaveFrom="transform opacity-100 scale-100"
                                   leaveTo="transform opacity-0 scale-95"
                                 >
-                                  <Menu.Items className="absolute z-50 left-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                    <div className="px-1 py-1">
+                                  <Menu.Items className="wrapper-menu-contain">
+                                    <div className="wrapper-menu-matic">
                                       <Menu.Item>
                                         {({ active }) => (
-                                          <button
-                                            className={`${
-                                              active
-                                                ? "bg-violet-500 "
-                                                : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                          >
-                                            {active ? "Queue" : "Queue"}
+                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                            {active ? "bridge" : "bridge"}
                                           </button>
                                         )}
                                       </Menu.Item>
                                       <Menu.Item>
                                         {({ active }) => (
-                                          <button
-                                            className={`${
-                                              active
-                                                ? "bg-violet-500"
-                                                : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                          >
-                                            {active ? "History" : "History"}
+                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                            {active ? "swap" : "swap"}
                                           </button>
                                         )}
                                       </Menu.Item>
@@ -231,57 +155,33 @@ const SwapBridges = () => {
                                 </Transition>
                               </Menu>
                             </div>
-                            <div className="flex mt-[6px]">
-                              <p
-                                className="text-sm text-gray900 font-light
-                                "
-                              >
-                                Balance:{" "}
-                              </p>
-                              <span className="ml-1 text-sm text-primaryBlue font-light">
-                                {" "}
-                                500
-                              </span>
+                            <div className="matic-box">
+                              <p>Balance: </p>
+                              <span> 500</span>
                             </div>
                           </div>
-                          <div className="text-right">
-                            <h5 className="md:text-3xl text-xl font-bold text-gray900">
-                              100
-                            </h5>
-                            <span className="text-sm text-gray900 font-light mt-1">
-                              $16.03
-                            </span>
+                          <div className="matic-right">
+                            <h5>100</h5>
+                            <span>$16.03</span>
                           </div>
                         </div>
                       </div>
-                      <div className="bg-white100 mt-5 py-[17px] px-5 rounded">
-                        <div className="flex items-end justify-between">
-                          <div className="w-[51%]">
-                            <span className="text-[10px] text-gray900">
-                              Receive
-                            </span>
-                            <div className="mr-5 relative">
-                              <span className="absolute top-[4px] left-0">
+                      <div className="bridge-recieve-btn">
+                        <div className="bridge-recieve-flex">
+                          <div className="bridge-recieve-width">
+                            <span>Receive</span>
+                            <div className="recieve-position">
+                              <span className="wrapper-recive-absolute">
                                 <Image src={MaticIcon} alt="" className="" />
                               </span>
-                              <Menu
-                                as="div"
-                                className="relative inline-block text-left"
-                              >
-                                <div
-                                  className="flex items-center
-                                  "
-                                >
-                                  <Menu.Button className="inline-flex justify-center bg-opacity-20 hover:bg-opacity-30 focus-visible:ring-white focus-visible:ring-opacity-75 ogn-dropdown text-center bg-white100 pl-14 lg:text-[40px] text-3xl font-bold text-primaryDarkBlue py-[8px] pr-4 max-w-[190px] w-full text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown">
-                                    MATIC
-                                  </Menu.Button>
-                                  <span className="flex items-center">
-                                    <Image
-                                      src={BlueDropdown}
-                                      alt=""
-                                      className=""
-                                    />
-                                  </span>
+                              <Menu as="div" className="recieve-menu">
+                                <div className="recieve-flex">
+                                  <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
+                                    <option value="" selected>
+                                      MATIC
+                                    </option>
+                                    <option value="">SWAP</option>
+                                  </select>
                                 </div>
                                 <Transition
                                   as={Fragment}
@@ -292,31 +192,19 @@ const SwapBridges = () => {
                                   leaveFrom="transform opacity-100 scale-100"
                                   leaveTo="transform opacity-0 scale-95"
                                 >
-                                  <Menu.Items className="absolute z-50 left-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                    <div className="px-1 py-1 ">
+                                  <Menu.Items className="wrapper-menu-contain">
+                                    <div className="wrapper-menu-matic">
                                       <Menu.Item>
                                         {({ active }) => (
-                                          <button
-                                            className={`${
-                                              active
-                                                ? "bg-violet-500 "
-                                                : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                          >
-                                            {active ? "Queue" : "Queue"}
+                                          <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
+                                            {active ? "bridge" : "bridge"}
                                           </button>
                                         )}
                                       </Menu.Item>
                                       <Menu.Item>
                                         {({ active }) => (
-                                          <button
-                                            className={`${
-                                              active
-                                                ? "bg-violet-500"
-                                                : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                          >
-                                            {active ? "History" : "History"}
+                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                            {active ? "swap" : "swap"}
                                           </button>
                                         )}
                                       </Menu.Item>
@@ -325,58 +213,41 @@ const SwapBridges = () => {
                                 </Transition>
                               </Menu>
                             </div>
-                            <div className="flex mt-[6px]">
-                              <p
-                                className="text-sm text-gray900 font-light
-                                "
-                              >
-                                Balance: 0.1{" "}
-                              </p>
+                            <div className="matic-box">
+                              <p>Balance: 0.1 </p>
                             </div>
                           </div>
-                          <div className="text-right">
-                            <h5 className="md:text-3xl text-xl font-bold text-gray900">
-                              13.453
-                            </h5>
-                            <span className="text-sm text-gray900 font-light mt-1">
-                              $16.15
-                            </span>
+                          <div className="matic-right">
+                            <h5>13.453</h5>
+                            <span>$16.15</span>
                           </div>
                         </div>
                       </div>
-                      <div className="py-4">
-                        <div className="flex justify-between items-center text-sm py-1">
-                          <p className="font-light">Bridge</p>
-                          <p className="font-light">~5 mins $0.00</p>
+
+                      <div className="bridge-bottom">
+                        <div className="bridge-bottom-main">
+                          <p>Bridge</p>
+                          <p>~5 mins $0.00</p>
                         </div>
-                        <div className="flex justify-between items-center text-sm py-1">
-                          <p className="font-light">Network fee</p>
-                          <p className="font-light">Fast $4.51</p>
+                        <div className="bridge-bottom-main">
+                          <p>Network fee</p>
+                          <p>Fast $4.51</p>
                         </div>
                       </div>
-                      <div className="border-white100 border-t pb-7"></div>
+                      <div className="bridge-bottom-border"></div>
 
-                      <div className="add-btn flex w-full">
-                        <button className="wallet-btn w-full max-w-full justify-center h-10 md:!px-[23px] !px-0 flex items-center ">
-                          <span className="md:ml-3 ml-[7px] md:text-base text-[10px]">
-                            Bridge
-                          </span>
+                      <div className="add-btn">
+                        <button className="wallet-btn">
+                          <span>Bridge</span>
                         </button>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={openTab === 2 ? "block" : "hidden"}
-                    id="link2"
-                  >
+                  <div className={openTab === 2 ? "swap-block" : "swap-hidden"} id="link2">
                     <div>
-                      <div className="relative">
-                        <span className="absolute top-[8px] left-[8px]"></span>
-                        <select
-                          className=" pl-4 h-10 text-sm font-semibold text-gray900 py-[8px] px-[22px] w-full border  border-white100 text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
-                          name=""
-                          id=""
-                        >
+                      <div className="bridge-relative">
+                        <span></span>
+                        <select className="dropdown-wallet filter-dropdown" name="" id="">
                           <option value="" selected>
                             Select wallet
                           </option>
@@ -384,21 +255,15 @@ const SwapBridges = () => {
                           <option value="">History</option>
                         </select>
                       </div>
-                      <div className="border-white100 border-b pt-7"></div>
-                      <div className="pt-7">
-                        <div className="sm:w-[44%] w-full">
-                          <h3 className="text-gray900 opacity-40 font-medium text-xs pb-[6px]">
-                            Chain
-                          </h3>
-                          <div className="relative">
-                            <span className="absolute top-[8px] left-[8px]">
+                      <div className="wrapper-bridge"></div>
+                      <div className="bridge-ehterium">
+                        <div className="bridge-ehterium-width">
+                          <h3>Chain</h3>
+                          <div className="bridge-queue-etherium">
+                            <span className="etherium-img">
                               <Image src={Ethreum} alt="" className="" />
                             </span>
-                            <select
-                              className="bg-white100 text-sm h-10 font-semibold text-gray900 py-[8px] px-[22px] sm:w-[224px] w-full text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown"
-                              name=""
-                              id=""
-                            >
+                            <select className="filter-dropdown" name="" id="">
                               <option value="" selected>
                                 Ethereum
                               </option>
@@ -408,31 +273,22 @@ const SwapBridges = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="bg-white100 mt-5 py-[17px] px-5 rounded">
-                        <div className="flex items-end justify-between">
-                          <div className="">
-                            <span className="text-[10px] text-gray900">
-                              Send
-                            </span>
-                            <div className="mr-5 relative">
-                              <span className="absolute top-[4px] left-0">
+                      <div className="bridge-recieve-btn">
+                        <div className="bridge-recieve-flex">
+                          <div className="bridge-recieve-width">
+                            <span>Send</span>
+                            <div className="recieve-position">
+                              <span className="wrapper-recive-absolute">
                                 <Image src={EthIcon} alt="" className="" />
                               </span>
-                              <Menu
-                                as="div"
-                                className="relative inline-block text-left"
-                              >
-                                <div className="flex items-center">
-                                  <Menu.Button className="inline-flex items-center justify-center bg-opacity-20 hover:bg-opacity-30 focus-visible:ring-white focus-visible:ring-opacity-75 ogn-dropdown text-center bg-white100 pl-12 lg:text-[40px] text-3xl font-bold text-primaryDarkBlue py-[8px] pr-4 max-w-[190px] w-full text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown">
-                                    ETH
-                                    <span className="ml-3 flex items-center">
-                                      <Image
-                                        src={BlueDropdown}
-                                        alt=""
-                                        className=""
-                                      />
-                                    </span>
-                                  </Menu.Button>
+                              <Menu as="div" className="recieve-menu">
+                                <div className="recieve-flex">
+                                  <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
+                                    <option value="" selected>
+                                      ETH
+                                    </option>
+                                    <option value="">SWAP</option>
+                                  </select>
                                 </div>
                                 <Transition
                                   as={Fragment}
@@ -443,31 +299,19 @@ const SwapBridges = () => {
                                   leaveFrom="transform opacity-100 scale-100"
                                   leaveTo="transform opacity-0 scale-95"
                                 >
-                                  <Menu.Items className="absolute z-50 left-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                    <div className="px-1 py-1">
+                                  <Menu.Items className="wrapper-menu-contain">
+                                    <div className="wrapper-menu-matic">
                                       <Menu.Item>
                                         {({ active }) => (
-                                          <button
-                                            className={`${
-                                              active
-                                                ? "bg-violet-500 "
-                                                : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                          >
-                                            {active ? "Queue" : "Queue"}
+                                          <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
+                                            {active ? "bridge" : "bridge"}
                                           </button>
                                         )}
                                       </Menu.Item>
                                       <Menu.Item>
                                         {({ active }) => (
-                                          <button
-                                            className={`${
-                                              active
-                                                ? "bg-violet-500"
-                                                : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                          >
-                                            {active ? "History" : "History"}
+                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                            {active ? "swap" : "swap"}
                                           </button>
                                         )}
                                       </Menu.Item>
@@ -476,57 +320,34 @@ const SwapBridges = () => {
                                 </Transition>
                               </Menu>
                             </div>
-                            <div className="flex mt-[6px]">
-                              <p
-                                className="text-sm text-gray900 font-light
-                                "
-                              >
-                                Balance:{" "}
-                              </p>
-                              <span className="ml-1 text-sm text-primaryBlue font-light">
-                                {" "}
-                                30
-                              </span>
+                            <div className="matic-box">
+                              <p>Balance: </p>
+                              <span> 30</span>
                             </div>
                           </div>
-                          <div className="text-right">
-                            <h5 className="md:text-3xl text-xl font-bold text-gray900">
-                              20
-                            </h5>
-                            <span className="text-sm text-gray900 font-light mt-1">
-                              $32,639.40
-                            </span>
+                          <div className="matic-right">
+                            <h5>20</h5>
+                            <span>$32,639.40</span>
                           </div>
                         </div>
                       </div>
-                      <div className="bg-white100 mt-5 py-[17px] px-5 rounded">
-                        <div className="flex items-end justify-between">
-                          <div className="w-[53%]">
-                            <span className="text-[10px] text-gray900">
-                              Receive
-                            </span>
-                            <div className="mr-5 relative">
-                              <span className="absolute top-[4px] left-0">
+
+                      <div className="bridge-recieve-btn">
+                        <div className="bridge-recieve-flex">
+                          <div className="bridge-recieve-width">
+                            <span>Receive</span>
+                            <div className="recieve-position">
+                              <span className="wrapper-recive-absolute">
                                 <Image src={Uniswap} alt="" className="" />
                               </span>
-                              <Menu
-                                as="div"
-                                className="relative inline-block text-left"
-                              >
-                                <div
-                                  className="flex items-center
-                                  "
-                                >
-                                  <Menu.Button className="inline-flex justify-center bg-opacity-20 hover:bg-opacity-30 focus-visible:ring-white focus-visible:ring-opacity-75 ogn-dropdown text-center bg-white100 pl-12 lg:text-[40px] text-3xl font-bold text-primaryDarkBlue py-[8px] pr-4 max-w-[210px] w-full text-[10px] rounded focus:outline-none focus:ring-0 filter-dropdown">
-                                    UNI-V2
-                                  </Menu.Button>
-                                  <span className="flex items-center -ml-1">
-                                    <Image
-                                      src={BlueDropdown}
-                                      alt=""
-                                      className=""
-                                    />
-                                  </span>
+                              <Menu as="div" className="recieve-menu">
+                                <div className="recieve-flex">
+                                  <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
+                                    <option value="" selected>
+                                      UNI-V2
+                                    </option>
+                                    <option value="">SWAP</option>
+                                  </select>
                                 </div>
                                 <Transition
                                   as={Fragment}
@@ -537,31 +358,19 @@ const SwapBridges = () => {
                                   leaveFrom="transform opacity-100 scale-100"
                                   leaveTo="transform opacity-0 scale-95"
                                 >
-                                  <Menu.Items className="absolute z-50 left-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                    <div className="px-1 py-1 ">
+                                  <Menu.Items className="wrapper-menu-contain">
+                                    <div className="wrapper-menu-matic">
                                       <Menu.Item>
                                         {({ active }) => (
-                                          <button
-                                            className={`${
-                                              active
-                                                ? "bg-violet-500 "
-                                                : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                          >
-                                            {active ? "Queue" : "Queue"}
+                                          <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
+                                            {active ? "bridge" : "bridge"}
                                           </button>
                                         )}
                                       </Menu.Item>
                                       <Menu.Item>
                                         {({ active }) => (
-                                          <button
-                                            className={`${
-                                              active
-                                                ? "bg-violet-500"
-                                                : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                          >
-                                            {active ? "History" : "History"}
+                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                            {active ? "swap" : "swap"}
                                           </button>
                                         )}
                                       </Menu.Item>
@@ -570,46 +379,34 @@ const SwapBridges = () => {
                                 </Transition>
                               </Menu>
                             </div>
-                            <div className="flex mt-[6px]">
-                              <p
-                                className="text-sm text-gray900 font-light
-                                "
-                              >
-                                Balance: 500
-                              </p>
+                            <div className="matic-box">
+                              <p>Balance: 500 </p>
                             </div>
                           </div>
-                          <div className="text-right">
-                            <h5 className="md:text-3xl text-xl font-bold text-gray900">
-                              4,205.975
-                            </h5>
-                            <span className="text-sm text-gray900 font-light mt-1">
-                              $32,396.43
-                            </span>
+                          <div className="matic-right">
+                            <h5>4,205.975</h5>
+                            <span>$32,396.43</span>
                           </div>
                         </div>
                       </div>
-                      <div className="py-4">
-                        <div className="flex justify-between items-center text-sm py-1">
-                          <p className="font-light">Rate</p>
-                          <p className="font-light">1 ETH = 210.298 UNI</p>
+                      <div className="bridge-bottom">
+                        <div className="bridge-bottom-main">
+                          <p>Rate</p>
+                          <p>1 ETH = 210.298 UNI</p>
                         </div>
-                        <div className="flex justify-between items-center text-sm py-1">
-                          <p className="font-light">Network fee</p>
-                          <p className="font-light">Fast $4.55</p>
+                        <div className="bridge-bottom-main">
+                          <p>Network fee</p>
+                          <p>Fast $4.55</p>
                         </div>
-                        <div className="flex justify-between items-center text-sm py-1">
-                          <p className="font-light">Ceto Finance fee</p>
-                          <p className="font-light">0.5%</p>
+                        <div className="bridge-bottom-main">
+                          <p>Ceto Finance fee</p>
+                          <p>0.5%</p>
                         </div>
                       </div>
-                      <div className="border-white100 border-t pb-7"></div>
-
-                      <div className="add-btn flex w-full">
-                        <button className="wallet-btn w-full max-w-full justify-center h-10 md:!px-[23px] !px-0 flex items-center ">
-                          <span className="md:ml-3 ml-[7px] md:text-base text-[10px]">
-                            Swap
-                          </span>
+                      <div className="bridge-bottom-border"></div>
+                      <div className="add-btn">
+                        <button className="wallet-btn">
+                          <span>Swap</span>
                         </button>
                       </div>
                     </div>

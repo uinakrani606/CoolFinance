@@ -1,6 +1,5 @@
 $screen-xs: 575px;
 $screen-sm: 767px;
-$screen-md: 991px;
 $screen-lg: 1023px;
 $screen-xl: 1199px;
 $screen-xxl: 1399px;
@@ -35,7 +34,6 @@ $screen-xxl: 1399px;
     display: flex;
     color: var(--gray900);
     gap: 1rem;
-
     .portfolia-left-sec {
       max-width: 281px;
       width: 100%;
@@ -46,7 +44,7 @@ $screen-xxl: 1399px;
         border: 1px solid var(--gray300);
         border-radius: 10px;
         padding: 25px 30px;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         width: 100%;
         &:last-child {
           margin-bottom: 0;
@@ -70,13 +68,13 @@ $screen-xxl: 1399px;
       border-radius: 10px;
       border: 1px solid var(--gray300);
       .portfolia-right-contain {
-        padding: 25px 25px;
+        padding: 25px 25px 0 25px;
         position: relative;
         h3 {
           font-size: 16px;
           font-weight: 500;
           color: var(--gray900);
-          padding-left: 10px
+          padding-left: 10px;
         }
       }
       #tooltip-idAREA div:nth-child(3) {
@@ -228,6 +226,7 @@ $screen-xxl: 1399px;
                 padding: 8px 10px;
                 margin-right: 14px;
                 width: 106px;
+                cursor: pointer;
                 &:hover {
                   border: 1px solid var(--primaryBlue);
                   color: var(--primaryBlue);
@@ -237,6 +236,8 @@ $screen-xxl: 1399px;
             }
             .notional-number {
               width: 15%;
+              font-size: 14px;
+              font-weight: 600;
               p {
                 font-weight: 600;
               }
@@ -252,7 +253,6 @@ $screen-xxl: 1399px;
   }
 }
 // asset sec End
-
 @media screen and (max-width: $screen-xxl) {
   .portfolia-asset-sec {
     .portfolia-asset-flex {
@@ -301,7 +301,7 @@ $screen-xxl: 1399px;
       .portfolia-left-sec {
         .portfolia-left-top {
           h2 {
-            font-size: 24px;
+            font-size: 32px;
             padding-top: 4px;
           }
         }
@@ -330,6 +330,9 @@ $screen-xxl: 1399px;
         .portfolia-left-top {
           padding: 16px;
           margin-bottom: 0;
+          h2{
+            font-size: 22px;
+          }
         }
       }
     }
@@ -344,7 +347,7 @@ $screen-xxl: 1399px;
           .transactions-box {
             .notional-eht {
               padding: 20px 0;
-              &:last-child{
+              &:last-child {
                 padding-bottom: 15px;
               }
             }
@@ -354,7 +357,7 @@ $screen-xxl: 1399px;
     }
   }
 }
-@media screen and (max-width: $screen-xs) {  
+@media screen and (max-width: $screen-xs) {
   .portfolia-asset-sec {
     .portfolia-asset-flex {
       .asset-main-sec {
@@ -391,6 +394,5 @@ $screen-xxl: 1399px;
       }
     }
   }
-} 
-
+}
 // -------======portfolia page Start------=======/

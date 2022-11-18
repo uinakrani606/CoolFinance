@@ -1,9 +1,23 @@
 // siderbar sec Start
 $screen-sm: 767px;
 $screen-md: 991px;
-$screen-lg: 1024px;
 $screen-lg: 1023px;
 
+.downarrow-img {
+  width: 23px;
+  height: 13px;
+  transition: 0.3s;
+  position: absolute;
+  top: 35px;
+  right: 40px;
+}
+.toparrowsidebar.invisible {
+  display: hidden;
+}
+.downarrow-img.invisible {
+  display: visible;
+  transition: 0.3s;
+}
 .siderbar-main-sec {
   width: 300px;
   height: 100vh;
@@ -38,7 +52,7 @@ $screen-lg: 1023px;
       color: var(--white);
       .sidebar-menu {
         position: relative;
-        padding: 36px 0 12px 0;        
+        padding: 36px 0 12px 0;
         li {
           display: block;
           margin: 5px 0;
@@ -65,9 +79,10 @@ $screen-lg: 1023px;
           color: var(--primaryBlue);
         }
       }
-      .sidebar-border{
+      .sidebar-border {
         border-bottom: 1px solid var(--primarylightblue);
-      } &::after {
+      }
+      &::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -83,12 +98,11 @@ $screen-lg: 1023px;
       bottom: 0;
       .sidebar-user-part {
         padding: 0 30px;
-        .sidebar-border-round { 
+        .sidebar-border-round {
           margin-bottom: 30px;
           .user-bottom {
             border-radius: 10px 10px 0 0;
             background-color: var(--gray500);
-            
             color: var(--white);
             .user-flex {
               display: flex;
@@ -110,18 +124,17 @@ $screen-lg: 1023px;
               }
             }
           }
-          .total-wrapper{
+          .total-wrapper {
             border-radius: 0 0 10px 10px;
-            background-color: var(--gray500);  
-            transition: 0.3s; 
+            background-color: var(--gray500);
+            transition: 0.3s;
             border-top: 1px solid var(--primarylightblue);
-          }          
-          .invisible{
-            opacity: 0;
-            transition: 0.3s;            
           }
-          .Total-holding {  
-                     
+          .invisible {
+            opacity: 0;
+            transition: 0.3s;
+          }
+          .Total-holding {
             display: flex;
             padding: 20px;
             color: var(--white);
@@ -182,6 +195,7 @@ $screen-lg: 1023px;
   max-width: calc(100% - 300px);
   width: 100%;
 }
+// meadiaquery start
 @media screen and (min-width: 1024px) {
   .right-tab-main {
     display: flex;
@@ -211,7 +225,7 @@ $screen-lg: 1023px;
       position: fixed;
       z-index: 50;
       width: auto;
-      
+
       .sidebar-toggle {
         display: hidden;
         .sidebar-menu {
@@ -246,6 +260,3 @@ $screen-lg: 1023px;
   }
 }
 // siderbar sec End
-.siderbar-main-sec .sidebar-condition .sidebar-user .sidebar-user-part .sidebar-border-round .Total-holding{
-
-}

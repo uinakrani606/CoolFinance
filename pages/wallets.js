@@ -97,7 +97,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -120,7 +120,7 @@ const Wallets = () => {
                   <span className="btn-view">View</span>
                 </button>
                 <button className="wallet-btn edit-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12.876" height="12.875" viewBox="0 0 12.876 12.875">
                       <g id="Group_1941" data-name="Group 1941" transform="translate(-39.429 -66.581)">
                         <path
@@ -154,7 +154,7 @@ const Wallets = () => {
                           />
                         </g>
                       </g>
-                    </svg>
+                    </svg>                                        
                   </span>
                   <span className="btn-view">Edit</span>
                 </button>
@@ -218,7 +218,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -334,7 +334,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -450,7 +450,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -566,7 +566,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -687,7 +687,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -803,7 +803,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -924,7 +924,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -1040,7 +1040,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path
@@ -1156,7 +1156,7 @@ const Wallets = () => {
             <div>
               <div className="multician-btn-part">
                 <button className="wallet-btn  plus-icon">
-                  <span className="btn-icon-img">
+                  <span className="btn-icon-img view-btn-img">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17.235" height="12.613" viewBox="0 0 17.235 12.613">
                       <g id="Group_1931" data-name="Group 1931" transform="translate(-546 -190.41)">
                         <path

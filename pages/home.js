@@ -482,7 +482,7 @@ const Home = () => {
                       <h3>Protocol</h3>
                       <div className="protocol-img">
                         <Image src={uniswaplogo} alt=" " />
-                        <h4>$4B</h4>
+                        <h4>Uniswap</h4>
                       </div>
                     </div>
                   </div>
@@ -564,5 +564,4 @@ const Home = () => {
     </>
   );
 };
-
 export default Home;

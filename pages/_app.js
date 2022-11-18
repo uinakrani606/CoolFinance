@@ -1,7 +1,7 @@
 import Header from '../components/Sidebar'
 import Head from 'next/head'
 import '../styles/globals.scss'
-import '../styles/Home.scss'
+import '../styles/home.scss'
 import '../styles/sidebar.scss'
 import '../styles/portfolia.scss'
 import'../styles/wallet.scss'
