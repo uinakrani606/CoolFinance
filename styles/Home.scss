@@ -674,4 +674,10 @@ $screen-xxl: 1399px;
     }
   }
 }
+@media (min-width:576px) and (max-width: 1024px) {
+  .tv-lightweight-charts{
+    margin-top: 51px;
+  }
+}
 /* Explore all protocols sec End */
+
