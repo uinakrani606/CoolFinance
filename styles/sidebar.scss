@@ -14,9 +14,11 @@ $screen-lg: 1023px;
 .toparrowsidebar.invisible {
   display: hidden;
 }
-.downarrow-img.invisible {
-  display: visible;
-  transition: 0.3s;
+.toparrowsidebarinvisible{
+  display: none;
+}
+.downarrow-imginvisible{
+  display: none;
 }
 .siderbar-main-sec {
   width: 300px;
@@ -130,9 +132,12 @@ $screen-lg: 1023px;
             transition: 0.3s;
             border-top: 1px solid var(--primarylightblue);
           }
-          .invisible {
+          .total-wrapper.invisible {
             opacity: 0;
             transition: 0.3s;
+          }
+          .visible{
+            opacity: 1;
           }
           .Total-holding {
             display: flex;

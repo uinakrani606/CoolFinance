@@ -17,7 +17,7 @@ function Sidebar() {
   const [menutoggle, setMenutoggle] = useState(false);
   const menutoggleHendler = () => {
     setMenutoggle(!menutoggle);
-  };
+  };  
   return (
     <div className="siderbar-main-sec">
       <div className="siderbar-logo-part">
@@ -74,12 +74,12 @@ function Sidebar() {
                   </div>
                   <div onClick={menutoggleHendler}>
                     <Link href={"#"}>
-                      <a className={`toparrowsidebar ${menutoggle ? "invisible" : "visible"}`}>
+                      <a className={`toparrowsidebar${menutoggle ? "visible" : "invisible"}`}>
                         <Image src={arrowsidebar} alt="" />
                       </a>
                     </Link>
                     <Link href={"#"} onClick={menutoggleHendler}>
-                      <a className={`downarrow-img ${menutoggle ? "visible" : "invisible"}`}>
+                      <a className={`downarrow-img${menutoggle ? "invisible" : "visible"}`}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="13.451"
@@ -104,7 +104,7 @@ function Sidebar() {
                   </div>
                 </div>
               </div>
-              <div className={`total-wrapper ${menutoggle ? "invisible" : ""}`}>
+              <div className={`total-wrapper ${menutoggle ? "visible" : "invisible"}`}>
                 <div className="Total-holding">
                   <div className="Total-holding-width">
                     <h4>$7,822</h4>
