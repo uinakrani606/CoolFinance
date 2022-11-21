@@ -11,9 +11,6 @@ $screen-lg: 1023px;
   top: 35px;
   right: 40px;
 }
-.toparrowsidebar.invisible {
-  display: hidden;
-}
 .toparrowsidebarinvisible{
   display: none;
 }
@@ -113,6 +110,7 @@ $screen-lg: 1023px;
               padding: 20px;
               .user-img {
                 display: flex;
+                align-items: center;
                 .name-user {
                   padding-left: 12px;
                   h4 {
@@ -226,8 +224,7 @@ $screen-lg: 1023px;
     }
     .sidebar-condition {
       position: fixed;
-      left: 100%;
-      position: fixed;
+      left: 100%;     
       z-index: 50;
       width: auto;
 

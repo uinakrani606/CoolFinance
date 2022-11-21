@@ -16,10 +16,10 @@ const SwapBridges = () => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className="swap-head">
-        <h2>Swap & Bridges</h2>
-      </div>
-      <div className="total-value-main swapbridge-main-sec">
+      <div className="total-value-main">
+        <div className="swap-head">
+          <h2>Swap & Bridges</h2>
+        </div>
         <div className="swap-bridge-heading">
           <div className="bridge-swap-sec">
             <div className="">

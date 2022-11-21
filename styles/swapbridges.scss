@@ -19,11 +19,7 @@ $screen-xxl: 1399px;
   --gray500: #00000030;
   --gray900: #333333;
 }
-.swap-head {
-  max-width: 1423px;
-  padding: 0 20px;
-  width: 100%;
-  margin: 0 auto;
+.swap-head { 
   h2 {
     font-size: 40px;
     font-weight: bold;
@@ -31,328 +27,324 @@ $screen-xxl: 1399px;
     margin: 44px 0 20px 0;
   }
 }
-.swapbridge-main-sec {
+.swap-bridge-heading {
   display: flex;
-  justify-content: center;
-  .swap-bridge-heading {
-    .bridge-swap-sec {
-      border: 1px solid var(--gray300);
-      border-radius: 10px;
-      margin: 0 auto;
-      margin-top: 30px;
-      .bridge-part {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: relative;
-        border-bottom: 1px solid var(--gray300);
-        a {
-          font-size: 18px;
-          font-weight: 600;
-          display: block;
-          width: 50%;
-          padding: 20px;
-          text-align: center;
-          line-height: 1.5rem;
-          border-top-left-radius: 10px;
-        }
-        .bridge-border {
-          color: var(--primaryBlue);
-          border-bottom: 4px solid var(--primaryBlue);
-        }
+  .bridge-swap-sec {
+    border: 1px solid var(--gray300);
+    border-radius: 10px;    
+    margin: 30px 0 0 ;    
+    .bridge-part {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      border-bottom: 1px solid var(--gray300);
+      a {
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        width: 50%;
+        padding: 20px;
+        text-align: center;
+        line-height: 1.5rem;
+        border-top-left-radius: 10px;
       }
-      .bridge-condition-sec {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        min-width: 0;
-        overflow-wrap: break-word;
-        background-color: var(--white);
-        width: 576px;
-        border-radius: 10px;
-        .bridge-sec {
-          padding: 30px;
-          flex: 1 1 auto;
-          flex-wrap: wrap;
-          .tab-content {
-            .bridge-relative {
-              position: relative;
-              span {
-                position: absolute;
-                top: 8px;
-                left: 8px;
-              }
-              select.dropdown-wallet {
-                font-size: 14px;
-                font-weight: 600;
-                color: var(--gray900);
-                height: 40px;
-                padding: 8px 22px 8px 16px;
-                width: 100%;
-                border: 1px solid var(--white100);
-                border-radius: 4px;
-                width: 100%;
-                cursor: pointer;
-                &:focus {
-                  outline: 2px solid transparent;
-                  outline-offset: 2px;
-                }
-              }
+      .bridge-border {
+        color: var(--primaryBlue);
+        border-bottom: 4px solid var(--primaryBlue);
+      }
+    }
+    .bridge-condition-sec {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-width: 0;
+      overflow-wrap: break-word;
+      background-color: var(--white);
+      width: 576px;
+      border-radius: 10px;
+      .bridge-sec {
+        padding: 30px;
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+        .tab-content {
+          .bridge-relative {
+            position: relative;
+            span {
+              position: absolute;
+              top: 8px;
+              left: 8px;
             }
-            .wrapper-bridge {
-              border-bottom: 1px solid var(--white100);
-              padding-top: 28px;
-            }
-            .bridge-ehterium {
-              padding-top: 28px;
-              display: flex;
-              justify-content: space-between;
-              .bridge-ehterium-width {
-                width: 44%;
-                h3 {
-                  color: var(--gray900);
-                  font-size: 12px;
-                  font-weight: 500;
-                  opacity: 0.4;
-                  padding-bottom: 6px;
-                }
-                .bridge-queue-etherium {
-                  position: relative;
-                  .etherium-img {
-                    position: absolute;
-                    top: 12px;
-                    left: 12px;
-                  }
-                  .filter-dropdown {
-                    background-color: var(--gray100);
-                    font-size: 14px;
-                    font-weight: 400;
-                    border: none;
-                    color: var(--gray900);
-                    height: 40px;
-                    width: 224px;
-                    padding-left: 30px !important;
-                    padding: 8px 22px;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    &:focus {
-                      outline: 2px solid transparent;
-                      outline-offset: 2px;
-                    }
-                  }
-                  .polygon-dropdown {
-                    padding-left: 38px !important;
-                  }
-                }
-              }
-              .select-reverse {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding-top: 12px;
-                margin: 16px 0;
-                .top-bottom-arrow {
-                  width: 30px;
-                  height: 30px;
-                  border-radius: 50%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  border: 1px solid var(--white100);
-                }
-              }
-            }
-            .bridge-recieve-btn {
-              background-color: var(--gray100);
-              margin-top: 20px;
-              padding: 17px 20px;
+            select.dropdown-wallet {
+              font-size: 14px;
+              font-weight: 600;
+              color: var(--gray900);
+              height: 40px;
+              padding: 8px 22px 8px 16px;
+              width: 100%;
+              border: 1px solid var(--white100);
               border-radius: 4px;
-              .bridge-recieve-flex {
-                display: flex;
-                align-items: flex-end;
-                justify-content: space-between;
-                .bridge-recieve-width {
-                  width: 57%;
-                  span {
-                    font-size: 10px;
-                    color: var(--gray900);
+              width: 100%;
+              cursor: pointer;
+              &:focus {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+              }
+            }
+          }
+          .wrapper-bridge {
+            border-bottom: 1px solid var(--white100);
+            padding-top: 28px;
+          }
+          .bridge-ehterium {
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            .bridge-ehterium-width {
+              width: 44%;
+              h3 {
+                color: var(--gray900);
+                font-size: 12px;
+                font-weight: 500;
+                opacity: 0.4;
+                padding-bottom: 6px;
+              }
+              .bridge-queue-etherium {
+                position: relative;
+                .etherium-img {
+                  position: absolute;
+                  top: 12px;
+                  left: 12px;
+                }
+                .filter-dropdown {
+                  background-color: var(--gray100);
+                  font-size: 14px;
+                  font-weight: 400;
+                  border: none;
+                  color: var(--gray900);
+                  height: 40px;
+                  width: 224px;
+                  padding-left: 30px !important;
+                  padding: 8px 22px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  &:focus {
+                    outline: 2px solid transparent;
+                    outline-offset: 2px;
                   }
-                  .recieve-position {
+                }
+                .polygon-dropdown {
+                  padding-left: 38px !important;
+                }
+              }
+            }
+            .select-reverse {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding-top: 12px;
+              margin: 16px 0;
+              .top-bottom-arrow {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid var(--white100);
+              }
+            }
+          }
+          .bridge-recieve-btn {
+            background-color: var(--gray100);
+            margin-top: 20px;
+            padding: 17px 20px;
+            border-radius: 4px;
+            .bridge-recieve-flex {
+              display: flex;
+              align-items: flex-end;
+              justify-content: space-between;
+              .bridge-recieve-width {
+                width: 57%;
+                span {
+                  font-size: 10px;
+                  color: var(--gray900);
+                }
+                .recieve-position {
+                  position: relative;
+                  margin-right: 20px;
+                  .wrapper-recive-absolute {
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                  }
+                  .recieve-menu {
                     position: relative;
-                    margin-right: 20px;
-                    .wrapper-recive-absolute {
-                      position: absolute;
-                      top: 4px;
-                      left: 0;
-                    }
-                    .recieve-menu {
-                      position: relative;
-                      display: inline-block;
-                      text-align: left;
-                      cursor: pointer;
-                      .recieve-flex {
-                        display: flex;
+                    display: inline-block;
+                    text-align: left;
+                    cursor: pointer;
+                    .recieve-flex {
+                      display: flex;
+                      align-items: center;
+                      .ogn-dropdown {
+                        display: inline-flex;
                         align-items: center;
-                        .ogn-dropdown {
-                          display: inline-flex;
-                          align-items: center;
-                          justify-content: center;
-                          text-align: center;
-                          font-size: 40px;
-                          font-weight: bold;
-                          line-height: 2rem;
-                          color: var(--primaryDarkBlue);
-                          padding: 8px 16px 8px 56px;
-                          max-width: 190px;
-                          width: 100%;
-                          border: none;
-                          border-radius: 4px;
-                          background-color: transparent;
-                          cursor: pointer;
-                          &:focus {
-                            outline: 2px solid transparent;
-                            outline-offset: 2px;
-                            option {
-                              font-size: 20px;
-                            }
-                          }
-                        }
-                        .eth-dropdown {
-                          padding-right: 48px;
-                          max-width: 346px;
-                          text-align: left;
-                        }
-                        .uni-dropdown {
-                          max-width: 218px;
-                        }
-                        .wrapper-recieve-item {
-                          display: flex;
-                          align-items: center;
-                          cursor: pointer;
-                        }
-                      }
-                      .wrapper-menu-contain {
-                        position: absolute;
-                        left: 0;
-                        z-index: 50;
-                        margin-top: 8px;
-                        width: 224px;
-                        transform-origin: top right;
-                        border-radius: 6px;
-                        box-shadow: 2px 1px 6px 0px #e0e0e0;
-                        background-color: var(--white);
+                        justify-content: center;
+                        text-align: center;
+                        font-size: 40px;
+                        font-weight: bold;
+                        line-height: 2rem;
+                        color: var(--primaryDarkBlue);
+                        padding: 8px 16px 8px 56px;
+                        max-width: 190px;
+                        width: 100%;
+                        border: none;
+                        border-radius: 4px;
+                        background-color: transparent;
+                        cursor: pointer;
                         &:focus {
                           outline: 2px solid transparent;
                           outline-offset: 2px;
-                        }
-                        &:focus-visible {
-                          visibility: hidden;
-                        }
-                        .wrapper-menu-matic {
-                          padding: 4px;
-                          .group {
-                            display: flex;
-                            width: 100%;
-                            align-items: center;
-                            font-size: 14px;
-                            border-radius: 6px;
-                            padding: 8px;
-                            border: none;
-                            background-color: #fff;
+                          option {
+                            font-size: 20px;
                           }
+                        }
+                      }
+                      .eth-dropdown {
+                        padding-right: 48px;
+                        max-width: 346px;
+                        text-align: left;
+                      }
+                      .uni-dropdown {
+                        max-width: 218px;
+                      }
+                      .wrapper-recieve-item {
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                      }
+                    }
+                    .wrapper-menu-contain {
+                      position: absolute;
+                      left: 0;
+                      z-index: 50;
+                      margin-top: 8px;
+                      width: 224px;
+                      transform-origin: top right;
+                      border-radius: 6px;
+                      box-shadow: 2px 1px 6px 0px #e0e0e0;
+                      background-color: var(--white);
+                      &:focus {
+                        outline: 2px solid transparent;
+                        outline-offset: 2px;
+                      }
+                      &:focus-visible {
+                        visibility: hidden;
+                      }
+                      .wrapper-menu-matic {
+                        padding: 4px;
+                        .group {
+                          display: flex;
+                          width: 100%;
+                          align-items: center;
+                          font-size: 14px;
+                          border-radius: 6px;
+                          padding: 8px;
+                          border: none;
+                          background-color: #fff;
                         }
                       }
                     }
                   }
-                  .matic-box {
-                    display: flex;
-                    margin-top: 6px;
-                    p {
-                      font-size: 14px;
-                      font-weight: 300;
-                      color: var(--gray900);
-                    }
-                    span {
-                      color: var(--primaryBlue);
-                      font-size: 14px;
-                    }
-                  }
                 }
-                .matic-right {
-                  text-align: right;
-                  h5 {
-                    font-size: 30px;
-                    font-weight: bold;
+                .matic-box {
+                  display: flex;
+                  margin-top: 6px;
+                  p {
+                    font-size: 14px;
+                    font-weight: 300;
                     color: var(--gray900);
                   }
                   span {
+                    color: var(--primaryBlue);
                     font-size: 14px;
-                    color: var(--gray900);
-                    margin-top: 4px;
-                    font-weight: 300;
-                    padding: 10px 0;
                   }
                 }
-                select.filter-dropdown {
-                  background-image: url(../assets/img/blue-down-arrow.svg);
-                }
               }
-            }
-            .bridge-bottom {
-              padding: 16px 0;
-              .bridge-bottom-main {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 14px;
-                padding: 5px 0;
-                p {
-                  font-weight: 300;
+              .matic-right {
+                text-align: right;
+                h5 {
+                  font-size: 30px;
+                  font-weight: bold;
+                  color: var(--gray900);
                 }
-              }
-            }
-            .bridge-bottom-border {
-              border-top: 1px solid var(--white100);
-              padding-bottom: 28px;
-            }
-            .add-btn {
-              display: flex;
-              width: 100%;
-              .wallet-btn {
-                max-width: 100%;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 11px 23px;
-                border-radius: 4px;
-                border: none;
-                color: var(--white);
-                transition: 0.3s;
-                cursor: pointer;
-                border: 1px solid var(--primaryBlue);
                 span {
-                  font-size: 16px;
-                }
-                &:hover {
-                  background-color: var(--white);
-                  color: var(--primaryBlue);
-                  transition: 0.3s;
+                  font-size: 14px;
+                  color: var(--gray900);
+                  margin-top: 4px;
+                  font-weight: 300;
+                  padding: 10px 0;
                 }
               }
+              select.filter-dropdown {
+                background-image: url(../assets/img/blue-down-arrow.svg);
+              }
             }
-            .bridge-block {
-              display: block;
+          }
+          .bridge-bottom {
+            padding: 16px;
+            .bridge-bottom-main {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 14px;
+              padding: 5px 0;
+              p {
+                font-weight: 300;
+              }
             }
-            .bridge-hidden {
-              display: none;
+          }
+          .bridge-bottom-border {
+            border-top: 1px solid var(--white100);
+            padding-bottom: 28px;
+          }
+          .add-btn {
+            display: flex;
+            width: 100%;
+            .wallet-btn {
+              max-width: 100%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 11px 23px;
+              border-radius: 4px;
+              border: none;
+              color: var(--white);
+              transition: 0.3s;
+              cursor: pointer;
+              border: 1px solid var(--primaryBlue);
+              span {
+                font-size: 16px;
+              }
+              &:hover {
+                background-color: var(--white);
+                color: var(--primaryBlue);
+                transition: 0.3s;
+              }
             }
-            .swap-block {
-              display: block;
-            }
-            .swap-hidden {
-              display: none;
-            }
+          }
+          .bridge-block {
+            display: block;
+          }
+          .bridge-hidden {
+            display: none;
+          }
+          .swap-block {
+            display: block;
+          }
+          .swap-hidden {
+            display: none;
           }
         }
       }
@@ -368,31 +360,32 @@ $screen-xxl: 1399px;
       margin-bottom: 10px;
     }
   }
-  .swapbridge-main-sec {
-    .swap-bridge-heading {
-      h2 {
-        font-size: 32px;
-      }
-      .bridge-swap-sec {
-        .bridge-condition-sec {
-          .bridge-sec {
-            .tab-content {
-              .bridge-ehterium {
-                .bridge-ehterium-width {
-                  .bridge-queue-etherium {
-                    .filter-dropdown {
-                      width: 100%;
-                    }
+  .swap-bridge-heading {
+    justify-content: center;
+    h2 {
+      font-size: 32px;
+    }
+    .bridge-swap-sec {
+      width: 100%;
+      .bridge-condition-sec {
+        width: 100%;
+        .bridge-sec {
+          .tab-content {
+            .bridge-ehterium {
+              .bridge-ehterium-width {
+                .bridge-queue-etherium {
+                  .filter-dropdown {
+                    width: 100%;
                   }
                 }
               }
-              .bridge-recieve-btn {
-                .bridge-recieve-flex .bridge-recieve-width {
-                  .recieve-position .recieve-menu {
-                    .recieve-flex {
-                      .ogn-dropdown {
-                        font-size: 32px;
-                      }
+            }
+            .bridge-recieve-btn {
+              .bridge-recieve-flex .bridge-recieve-width {
+                .recieve-position .recieve-menu {
+                  .recieve-flex {
+                    .ogn-dropdown {
+                      font-size: 32px;
                     }
                   }
                 }
@@ -405,54 +398,50 @@ $screen-xxl: 1399px;
   }
 }
 @media screen and (max-width: $screen-sm) {
-  .swap-head {
-    padding: 0 15px;
+  .swap-head {   
     h2 {
       margin: 20px 0 15px 0;
     }
   }
-  .swapbridge-main-sec {
-    .swap-bridge-heading {
-      width: 100%;
-      .bridge-swap-sec {
-        margin-top: 0;
-        .bridge-condition-sec {
+  .swap-bridge-heading {
+    .bridge-swap-sec {
+      margin-top: 0;
+      .bridge-condition-sec {        
+        .bridge-sec {
           width: 100%;
-          .bridge-sec {
-            .tab-content {
-              .bridge-relative {
-                select {
-                  width: 277px;
+          .tab-content {
+            .bridge-relative {
+              select {
+                width: 277px;
+              }
+            }
+            .bridge-recieve-btn {
+              .bridge-recieve-flex {
+                .matic-right h5 {
+                  font-size: 16px;
                 }
               }
-              .bridge-recieve-btn {
-                .bridge-recieve-flex {
-                  .matic-right h5 {
-                    font-size: 16px;
-                  }
-                }
-              }
-              .bridge-recieve-btn {
-                .bridge-recieve-flex .bridge-recieve-width {
-                  .recieve-position .recieve-menu {
-                    .recieve-flex {
-                      .ogn-dropdown {
-                        font-size: 32px;
-                        padding: 8px 32px 8px 56px;
-                        &:focus {
-                          option {
-                            font-size: 16px;
-                          }
+            }
+            .bridge-recieve-btn {
+              .bridge-recieve-flex .bridge-recieve-width {
+                .recieve-position .recieve-menu {
+                  .recieve-flex {
+                    .ogn-dropdown {
+                      font-size: 32px;
+                      padding: 8px 32px 8px 56px;
+                      &:focus {
+                        option {
+                          font-size: 16px;
                         }
                       }
                     }
                   }
                 }
               }
-              .add-btn {
-                .wallet-btn span {
-                  font-size: 12px;
-                }
+            }
+            .add-btn {
+              .wallet-btn span {
+                font-size: 12px;
               }
             }
           }
@@ -462,38 +451,34 @@ $screen-xxl: 1399px;
   }
 }
 @media screen and (max-width: $screen-xs) {
-  .swapbridge-main-sec {
-    justify-content: center;
-    .swap-bridge-heading {
-      width: 100%;
-      .bridge-swap-sec {
-        .bridge-condition-sec {
-          width: auto;
-          .bridge-sec {
-            padding: 15px;
-            .tab-content {
-              .bridge-ehterium {
-                flex-direction: column;
-                .bridge-ehterium-width {
-                  width: 100%;
-                }
-                .select-reverse {
-                  padding-top: 0;
-                }
+  .swap-bridge-heading {    
+    .bridge-swap-sec {
+      .bridge-condition-sec {
+        width: auto;
+        .bridge-sec {
+          padding: 15px;
+          .tab-content {
+            .bridge-ehterium {
+              flex-direction: column;
+              .bridge-ehterium-width {
+                width: 100%;
               }
-              .bridge-recieve-btn {
-                padding: 17px 15px;
-                .bridge-recieve-flex {
-                  .bridge-recieve-width {
-                    width: 70%;
-                    .recieve-position {
-                      margin-right: 10px;
-                      .recieve-menu {
-                        .recieve-flex {
-                          .ogn-dropdown {
-                            font-size: 16px;
-                            padding: 8px 33px 8px 46px;
-                          }
+              .select-reverse {
+                padding-top: 0;
+              }
+            }
+            .bridge-recieve-btn {
+              padding: 17px 15px;
+              .bridge-recieve-flex {
+                .bridge-recieve-width {
+                  width: 70%;
+                  .recieve-position {
+                    margin-right: 10px;
+                    .recieve-menu {
+                      .recieve-flex {
+                        .ogn-dropdown {
+                          font-size: 16px;
+                          padding: 8px 33px 8px 46px;
                         }
                       }
                     }

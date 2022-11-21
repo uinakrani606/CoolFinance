@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Lock from "../assets/img/lock.svg";
+import { Link } from "react-feather";
 
 const Wallets = () => {
   return (

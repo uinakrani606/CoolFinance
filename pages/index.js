@@ -455,7 +455,7 @@ const Explore = () => {
                 </div>
               </div>
             </div>
-            <div className="explore-protocol-left uniswap-sec-main">
+            <div className="explore-protocol-left uniswap-sec-main ">
               <div className="protocol-box">
                 <div className="notional-part">
                   <Image src={uniswap} alt=" " />

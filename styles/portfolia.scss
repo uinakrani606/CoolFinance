@@ -222,13 +222,12 @@ $screen-xxl: 1399px;
                 color: white;
                 font-size: 10px;
                 transition: 0.3s all;
-                border: 1px var(--primaryBlue);
+                border: 1px solid var(--primaryBlue);
                 padding: 8px 10px;
                 margin-right: 14px;
                 width: 106px;
                 cursor: pointer;
-                &:hover {
-                  border: 1px solid var(--primaryBlue);
+                &:hover {                  
                   color: var(--primaryBlue);
                   background-color: var(--white);
                 }

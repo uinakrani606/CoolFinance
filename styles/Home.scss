@@ -176,13 +176,12 @@ $screen-xxl: 1399px;
       color: #fff;
       align-items: center;
       gap: 12px;
-      border: 1px solid transparent;
+      border: 1px solid var(--primaryBlue);
       border-radius: 4px;
       transition: 0.3s ease;
 
       &:hover {
         background-color: var(--white);
-        border: 1px solid var(--primaryBlue);
         color: var(--primaryBlue);
       }
     }
@@ -250,12 +249,15 @@ $screen-xxl: 1399px;
           font-weight: 500;
           background-color: var(--gray100);
           margin-top: 20px;
-          justify-content: space-evenly;
+          justify-content: space-between;
           border-radius: 4px;
           .notional-risk {
-            padding: 12px 11px 12px;
+            padding: 12px;
             border-radius: 4px;
             background-color: var(--gray400);
+            h3 {
+              font-size: 14px;
+            }
             h4 {
               font-size: 10px;
               font-weight: bold;
@@ -271,10 +273,11 @@ $screen-xxl: 1399px;
             }
           }
           .notional-protocol {
-            padding: 12px 11px 12px;
+            padding:12px;
 
             .notional-protocol-inner {
               h3 {
+                font-size: 14px;
                 color: var(--gray900);
                 opacity: 0.5;
                 text-align: center;
@@ -303,8 +306,9 @@ $screen-xxl: 1399px;
             margin-top: 12px;
           }
           .notional-chain {
-            padding: 12px 11px 12px;
+            padding: 12px;
             h3 {
+              font-size: 14px;
               text-align: center;
               color: var(--gray900);
               opacity: 0.5;
@@ -330,7 +334,7 @@ $screen-xxl: 1399px;
       .notional-insert-sec {
         border: 1px solid var(--gray300);
         border-radius: 10px;
-        padding: 14px 16px;
+        padding: 14px 14px 14px 20px;
         margin: 18px 0;
         .insert-sec {
           display: flex;
@@ -377,19 +381,22 @@ $screen-xxl: 1399px;
             font-weight: bold;
             background-color: var(--primaryDarkBlue);
             margin-top: 4px;
-            padding: 4px 8px;
             border-radius: 4px;
             color: #fff;
             display: flex;
+            align-items: center;
             justify-content: center;
+            width: 20px;
+            height: 20px;
           }
           .insert-logo-part {
             display: flex;
             justify-content: center;
             background-color: var(--gray200);
             border-radius: 4px;
-            padding: 8px;
             margin-top: 2px;
+            width: 20px;
+            height: 20px;
           }
         }
       }
@@ -431,8 +438,9 @@ $screen-xxl: 1399px;
         width: 32%;
         .protocol-box {
           .notional-bottompart {
+            justify-content: space-evenly;
             .notional-risk {
-              width: 29%;
+              width: 32%;
               text-align: center;
               padding: 12px 6px;
             }
@@ -447,8 +455,15 @@ $screen-xxl: 1399px;
           }
         }
       }
+      .uniswap-sec-main {
+        width: 65%;
+        .protocol-box {
+          width: 100%;
+        }
+      }
     }
   }
+
   .uniswap-sec-main {
     display: flex;
     gap: 16px;
@@ -674,10 +689,4 @@ $screen-xxl: 1399px;
     }
   }
 }
-@media (min-width:576px) and (max-width: 1024px) {
-  .tv-lightweight-charts{
-    margin-top: 51px;
-  }
-}
 /* Explore all protocols sec End */
-
