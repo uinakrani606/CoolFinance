@@ -131,8 +131,19 @@ $screen-lg: 1023px;
             border-top: 1px solid var(--primarylightblue);
           }
           .total-wrapper.invisible {
-            opacity: 0;
+            margin-top: -76px;
             transition: 0.3s;
+            background-color: transparent;
+            border-top: 1px solid transparent;
+            .Total-holding-width{
+              z-index: -1;
+            } 
+            .Total-holding-border{
+              z-index: -1;
+            }            
+          }          
+          .total-wrapper .invisible .Total-holding-width{
+            z-index: -5;
           }
           .visible{
             opacity: 1;
