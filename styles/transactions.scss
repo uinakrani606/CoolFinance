@@ -214,8 +214,7 @@ $screen-xxl: 1399px;
                   transition: 0.3s all;
                   cursor: pointer;
                   &:hover {
-                    background-color: var(--white);
-                    border: 1px solid var(--primaryBlue);
+                    background-color: var(--white);                   
                     color: var(--primaryBlue);
                   }
                   &:nth-child(2) {
@@ -224,8 +223,7 @@ $screen-xxl: 1399px;
                     color: var(--black);
                     margin-right: 0;
                     &:hover {
-                      background-color: var(--black);
-                      border: 1px solid var(--black);
+                      background-color: var(--black);                     
                       color: var(--white);
                     }
                   }

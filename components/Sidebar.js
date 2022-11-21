@@ -10,18 +10,17 @@ import Discord from "../assets/img/Discord-icon.svg";
 import Twitter from "../assets/img/Twitter-icon.svg";
 import close from "../assets/img/close-icon.svg";
 import arrowsidebar from "../assets/img/arrowsidebar.svg";
-// import downarrow from "../assets/img/downarrow-.png";
 
 function Sidebar() {
   const router = useRouter();
   const [menutoggle, setMenutoggle] = useState(false);
   const menutoggleHendler = () => {
     setMenutoggle(!menutoggle);
-  };  
+  };   
   return (
     <div className="siderbar-main-sec">
       <div className="siderbar-logo-part">
-        <Image src={Logo} alt="" />
+        <Image src={Logo} alt=""/>
         <span onClick={menutoggleHendler}>
           <Image src={menubtn} alt="" />
         </span>
@@ -92,8 +91,7 @@ function Sidebar() {
                             d="M-1926.941,601.848l5.311,5.311-5.311,5.311"
                             transform="translate(613.884 1928.355) rotate(90)"
                             fill="none"
-                            stroke="
-                      #ffffff"
+                            stroke="#ffffff"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth="2"

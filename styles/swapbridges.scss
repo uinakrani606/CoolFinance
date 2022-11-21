@@ -19,20 +19,21 @@ $screen-xxl: 1399px;
   --gray500: #00000030;
   --gray900: #333333;
 }
-.swap-head { 
+.swap-head {
   h2 {
     font-size: 40px;
     font-weight: bold;
     color: var(--primaryDarkBlue);
-    margin: 44px 0 20px 0;
+    margin: 44px 0 0 0;
   }
 }
 .swap-bridge-heading {
   display: flex;
+  justify-content: center;
   .bridge-swap-sec {
     border: 1px solid var(--gray300);
-    border-radius: 10px;    
-    margin: 30px 0 0 ;    
+    border-radius: 10px;
+    margin: 30px 0 0;
     .bridge-part {
       display: flex;
       justify-content: space-around;
@@ -357,18 +358,16 @@ $screen-xxl: 1399px;
   .swap-head {
     h2 {
       font-size: 32px;
-      margin-bottom: 10px;
     }
   }
   .swap-bridge-heading {
-    justify-content: center;
     h2 {
       font-size: 32px;
     }
     .bridge-swap-sec {
-      width: 100%;
+      // width: 100%;
       .bridge-condition-sec {
-        width: 100%;
+        // width: 100%;
         .bridge-sec {
           .tab-content {
             .bridge-ehterium {
@@ -398,15 +397,17 @@ $screen-xxl: 1399px;
   }
 }
 @media screen and (max-width: $screen-sm) {
-  .swap-head {   
+  .swap-head {
     h2 {
-      margin: 20px 0 15px 0;
+      margin: 20px 0 20px 0;
     }
   }
   .swap-bridge-heading {
     .bridge-swap-sec {
+      width: 100%;
       margin-top: 0;
-      .bridge-condition-sec {        
+      .bridge-condition-sec {
+        width: 100%;
         .bridge-sec {
           width: 100%;
           .tab-content {
@@ -451,10 +452,9 @@ $screen-xxl: 1399px;
   }
 }
 @media screen and (max-width: $screen-xs) {
-  .swap-bridge-heading {    
+  .swap-bridge-heading {
     .bridge-swap-sec {
       .bridge-condition-sec {
-        width: auto;
         .bridge-sec {
           padding: 15px;
           .tab-content {

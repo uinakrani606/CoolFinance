@@ -15,7 +15,6 @@ const Portfolio = () => {
     BAR: "BAR",
     AREA: "AREA",
   };
-
   const dailyData = [
     { date: 1603756800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },
     { date: 1599436800, dailyVolumeUSD: 0, totalLiquidityUSD: 0 },

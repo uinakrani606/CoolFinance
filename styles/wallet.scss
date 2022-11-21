@@ -84,7 +84,7 @@ $screen-xxl: 1399px;
   overflow-x: auto;
   margin: 30px 0 16px 0;
   .wallet-data-table {
-    padding: 12px 16px 22px 16px;
+    padding: 16px 20px 22px 20px;
     text-align: left;
     .wallet-data-list {
       display: inline-flex;
@@ -116,7 +116,7 @@ $screen-xxl: 1399px;
       align-items: center;
       border-bottom: 1px solid var(--white100);
       width: 100%;
-      padding: 25px 0;
+      padding: 30px 0;
       .multician-para {
         width: 370px;
         &:nth-child(2) {
@@ -320,7 +320,7 @@ $screen-xxl: 1399px;
           width: 30px;
           height: 30px;
           padding: 8px 7px 8px 6px !important;
-          &:hover .view-btn-img svg path{
+          &:hover .view-btn-img svg path {
             fill: var(--primaryBlue);
           }
           .btn-icon-img {
