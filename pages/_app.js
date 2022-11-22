@@ -7,6 +7,7 @@ import '../styles/portfolia.scss'
 import'../styles/wallet.scss'
 import'../styles/transactions.scss'
 import'../styles/swapbridges.scss'
+import'../styles/Variable.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -28,5 +29,4 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
-
 export default MyApp

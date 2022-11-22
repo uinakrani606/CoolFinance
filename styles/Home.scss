@@ -1,41 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
-}
-a {
-  color: inherit;
-  display: inline-block;
-  text-decoration: none;
-}
-$screen-xs: 575px;
-$screen-sm: 767px;
-$screen-md: 991px;
-$screen-lg: 1023px;
-$screen-xl: 1199px;
-$screen-xxl: 1399px;
-:root {
-  --primaryBlue: #0770e5;
-  --primarylightblue: #0770e530;
-  --primaryDarkBlue: #00215f;
-  --black: #000;
-  --white: #fff;
-  --white100: #e0e0e0;
-  --gray100: #e0e0e066;
-  --gray200: #e0e0e080;
-  --gray300: #e0e0e0;
-  --gray400: #e8e8e8;
-  --gray500: #00000030;
-  --gray900: #333333;
-}
+@import'./Variable.scss';
+
 //=========---------- home page strat--------=======\
 .right-tab-main {
   width: 100%;

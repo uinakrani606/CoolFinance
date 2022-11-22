@@ -16,11 +16,11 @@ function Sidebar() {
   const [menutoggle, setMenutoggle] = useState(false);
   const menutoggleHendler = () => {
     setMenutoggle(!menutoggle);
-  };   
+  };
   return (
     <div className="siderbar-main-sec">
       <div className="siderbar-logo-part">
-        <Image src={Logo} alt=""/>
+        <Image src={Logo} alt="" />
         <span onClick={menutoggleHendler}>
           <Image src={menubtn} alt="" />
         </span>
@@ -62,7 +62,7 @@ function Sidebar() {
         <div className="sidebar-user">
           <div className="sidebar-user-part">
             <div className="sidebar-border-round">
-              <div className="user-bottom">
+              <div className={`user-bottom ${menutoggle ? " " : "visible-border"}`}>
                 <div className="user-flex">
                   <div className="user-img">
                     <Image src={Avatar} alt="" />

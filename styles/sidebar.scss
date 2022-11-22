@@ -1,8 +1,4 @@
-// siderbar sec Start
-$screen-sm: 767px;
-$screen-md: 991px;
-$screen-lg: 1023px;
-
+@import'./Variable.scss';
 .downarrow-img {
   width: 23px;
   height: 13px;
@@ -124,27 +120,28 @@ $screen-lg: 1023px;
               }
             }
           }
+          .user-bottom.visible-border{
+            border-radius: 10px;  
+          } 
           .total-wrapper {
             border-radius: 0 0 10px 10px;
             background-color: var(--gray500);
-            transition: 0.3s;
+            transition: 0.5s;
             border-top: 1px solid var(--primarylightblue);
           }
           .total-wrapper.invisible {
             margin-top: -76px;
-            transition: 0.3s;
+            transition: 0.5s;
             background-color: transparent;
             border-top: 1px solid transparent;
             .Total-holding-width{
-              z-index: -1;
+              z-index: -1;   
+
             } 
             .Total-holding-border{
-              z-index: -1;
+              z-index: -1;             
             }            
-          }          
-          .total-wrapper .invisible .Total-holding-width{
-            z-index: -5;
-          }
+          } 
           .visible{
             opacity: 1;
           }
@@ -153,7 +150,7 @@ $screen-lg: 1023px;
             padding: 20px;
             color: var(--white);
             .Total-holding-width {
-              width: 50%;
+              width: 50%;              
               h4 {
                 font-size: 16px;
               }
