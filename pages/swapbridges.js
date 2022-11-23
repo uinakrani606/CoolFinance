@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState, Component } from "react";
 import Image from "next/image";
 import Ethreum from "../assets/img/ethereum.svg";
 import Polygon from "../assets/img/Polygon.svg";
@@ -14,6 +14,55 @@ import OriginProtocol from "../assets/img/origin-protocol.svg";
 
 const SwapBridges = () => {
   const [openTab, setOpenTab] = React.useState(1);
+  const sendInput = useRef(0);
+  const receiveInput = useRef(0);
+  const swapReceiveInput = useRef(0);
+  const swapSendInput = useRef(0);
+  const [count, setCount] = useState(100);
+  const [balanceCount , setbalanceCount] = useState(500);
+
+  // const handleclick = event => {
+  //   setCount(event.target.value);
+  //   console.log(event)
+  //   console.log(setCount)
+  // };
+  const [balance] = useState(0.1);
+
+  const [countnumber, setCountnumber] = useState(20);
+  const [balanceeth] = useState(30);
+
+  const [countitem, setCountitem] = useState(4205.975);
+  const [balanceuni] = useState(500);
+
+  const [sendInputValue, setSendInputValue] = useState(100);
+  const [receiveInputValue, setReceiveInputValue] = useState(13.453);
+  const [swapSendInputValue, setSwapSendInputValue] = useState(13.453);
+  const [swapReceiveInputValue, setSwapReceiveInputValue] = useState(13.453);
+
+  const setSendValueToField = () => {
+    sendInput.current.value = balanceCount;
+  }
+
+  const onChangeSendInputValue = (e) => {
+    setSendInputValue(e.target.value);
+  }
+
+  const setReceiveValueToField = () => {
+    receiveInput.current.value = balance;
+  }
+
+  const onChangeReceiveInputValue = (e) => {
+    setReceiveInputValue(e.target.value);
+  }
+
+  const setSwapSendValueToField = (value) => {
+    swapSendInput.current.value = value;
+  }
+
+  const setSwapReceiveValueToField = (value) => {
+    swapReceiveInput.current.value = value;
+  }
+
   return (
     <>
       <div className="total-value-main">
@@ -112,57 +161,61 @@ const SwapBridges = () => {
                         <div className="bridge-recieve-flex">
                           <div className="bridge-recieve-width">
                             <span>Send</span>
-                            <div className="recieve-position">
+                            <div className="icon-flex">
                               <span className="wrapper-recive-absolute">
                                 <Image src={OriginProtocol} alt="" className="" />
                               </span>
-                              <Menu as="div" className="recieve-menu">
-                                <div className="recieve-flex">
-                                  <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
-                                    <option value="" selected>
-                                      OGN
-                                    </option>
-                                    <option value="">SWAP</option>
-                                  </select>
-                                </div>
-                                <Transition
-                                  as={Fragment}
-                                  enter="transition ease-out duration-100"
-                                  enterFrom="transform opacity-0 scale-95"
-                                  enterTo="transform opacity-100 scale-100"
-                                  leave="transition ease-in duration-75"
-                                  leaveFrom="transform opacity-100 scale-100"
-                                  leaveTo="transform opacity-0 scale-95"
-                                >
-                                  <Menu.Items className="wrapper-menu-contain">
-                                    <div className="wrapper-menu-matic">
-                                      <Menu.Item>
-                                        {({ active }) => (
-                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
-                                            {active ? "bridge" : "bridge"}
-                                          </button>
-                                        )}
-                                      </Menu.Item>
-                                      <Menu.Item>
-                                        {({ active }) => (
-                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
-                                            {active ? "swap" : "swap"}
-                                          </button>
-                                        )}
-                                      </Menu.Item>
-                                    </div>
-                                  </Menu.Items>
-                                </Transition>
-                              </Menu>
+                              <div className="recieve-position">
+                                <Menu as="div" className="recieve-menu">
+                                  <div className="recieve-flex">
+                                    <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
+                                      <option value="" selected>
+                                        OGN
+                                      </option>
+                                      <option value="">SWAP</option>
+                                    </select>
+                                  </div>
+                                  <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                  >
+                                    <Menu.Items className="wrapper-menu-contain">
+                                      <div className="wrapper-menu-matic">
+                                        <Menu.Item>
+                                          {({ active }) => (
+                                            <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                              {active ? "bridge" : "bridge"}
+                                            </button>
+                                          )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                          {({ active }) => (
+                                            <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                              {active ? "swap" : "swap"}
+                                            </button>
+                                          )}
+                                        </Menu.Item>
+                                      </div>
+                                    </Menu.Items>
+                                  </Transition>
+                                </Menu>
+                              </div>
                             </div>
+
                             <div className="matic-box">
-                              <p>Balance: </p>
-                              <span> 500</span>
+                              <p>Balance:</p>
+                              <p onClick={setSendValueToField}>{balanceCount}</p>
+                              {/* <p onClick={handleclick} value={count}>{balanceCount}</p> */}
                             </div>
                           </div>
                           <div className="matic-right">
-                            <h5>100</h5>
-                            <span>$16.03</span>
+                            <input ref={sendInput} value={sendInputValue} onChange={onChangeSendInputValue} />
+                            <span>$16.03 </span>
                           </div>
                         </div>
                       </div>
@@ -170,55 +223,61 @@ const SwapBridges = () => {
                         <div className="bridge-recieve-flex">
                           <div className="bridge-recieve-width">
                             <span>Receive</span>
-                            <div className="recieve-position">
+                            <div className="icon-flex">
                               <span className="wrapper-recive-absolute">
                                 <Image src={MaticIcon} alt="" className="" />
                               </span>
-                              <Menu as="div" className="recieve-menu">
-                                <div className="recieve-flex">
-                                  <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
-                                    <option value="" selected>
-                                      MATIC
-                                    </option>
-                                    <option value="">SWAP</option>
-                                  </select>
-                                </div>
-                                <Transition
-                                  as={Fragment}
-                                  enter="transition ease-out duration-100"
-                                  enterFrom="transform opacity-0 scale-95"
-                                  enterTo="transform opacity-100 scale-100"
-                                  leave="transition ease-in duration-75"
-                                  leaveFrom="transform opacity-100 scale-100"
-                                  leaveTo="transform opacity-0 scale-95"
-                                >
-                                  <Menu.Items className="wrapper-menu-contain">
-                                    <div className="wrapper-menu-matic">
-                                      <Menu.Item>
-                                        {({ active }) => (
-                                          <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
-                                            {active ? "bridge" : "bridge"}
-                                          </button>
-                                        )}
-                                      </Menu.Item>
-                                      <Menu.Item>
-                                        {({ active }) => (
-                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
-                                            {active ? "swap" : "swap"}
-                                          </button>
-                                        )}
-                                      </Menu.Item>
-                                    </div>
-                                  </Menu.Items>
-                                </Transition>
-                              </Menu>
+                              <div className="recieve-position">
+                                <Menu as="div" className="recieve-menu">
+                                  <div className="recieve-flex">
+                                    <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
+                                      <option value="" selected>
+                                        MATIC
+                                      </option>
+                                      <option value="">SWAP</option>
+                                    </select>
+                                  </div>
+                                  <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                  >
+                                    <Menu.Items className="wrapper-menu-contain">
+                                      <div className="wrapper-menu-matic">
+                                        <Menu.Item>
+                                          {({ active }) => (
+                                            <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
+                                              {active ? "bridge" : "bridge"}
+                                            </button>
+                                          )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                          {({ active }) => (
+                                            <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                              {active ? "swap" : "swap"}
+                                            </button>
+                                          )}
+                                        </Menu.Item>
+                                      </div>
+                                    </Menu.Items>
+                                  </Transition>
+                                </Menu>
+                              </div>
                             </div>
+
                             <div className="matic-box">
-                              <p>Balance: 0.1 </p>
+                              <p>Balance:</p>
+                              <span onClick={setReceiveValueToField}>{balance}</span>
                             </div>
                           </div>
                           <div className="matic-right">
-                            <h5>13.453</h5>
+                            {/* <input placeholder={countvalue} /> */}
+                            <input ref={receiveInput} value={receiveInputValue} onChange={onChangeReceiveInputValue} />
+
                             <span>$16.15</span>
                           </div>
                         </div>
@@ -277,114 +336,120 @@ const SwapBridges = () => {
                         <div className="bridge-recieve-flex">
                           <div className="bridge-recieve-width">
                             <span>Send</span>
-                            <div className="recieve-position">
+                            <div className="icon-flex">
                               <span className="wrapper-recive-absolute">
                                 <Image src={EthIcon} alt="" className="" />
                               </span>
-                              <Menu as="div" className="recieve-menu">
-                                <div className="recieve-flex">
-                                  <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
-                                    <option value="" selected>
-                                      ETH
-                                    </option>
-                                    <option value="">SWAP</option>
-                                  </select>
-                                </div>
-                                <Transition
-                                  as={Fragment}
-                                  enter="transition ease-out duration-100"
-                                  enterFrom="transform opacity-0 scale-95"
-                                  enterTo="transform opacity-100 scale-100"
-                                  leave="transition ease-in duration-75"
-                                  leaveFrom="transform opacity-100 scale-100"
-                                  leaveTo="transform opacity-0 scale-95"
-                                >
-                                  <Menu.Items className="wrapper-menu-contain">
-                                    <div className="wrapper-menu-matic">
-                                      <Menu.Item>
-                                        {({ active }) => (
-                                          <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
-                                            {active ? "bridge" : "bridge"}
-                                          </button>
-                                        )}
-                                      </Menu.Item>
-                                      <Menu.Item>
-                                        {({ active }) => (
-                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
-                                            {active ? "swap" : "swap"}
-                                          </button>
-                                        )}
-                                      </Menu.Item>
-                                    </div>
-                                  </Menu.Items>
-                                </Transition>
-                              </Menu>
+                              <div className="recieve-position">
+                                <Menu as="div" className="recieve-menu">
+                                  <div className="recieve-flex">
+                                    <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
+                                      <option value="" selected>
+                                        ETH
+                                      </option>
+                                      <option value="">SWAP</option>
+                                    </select>
+                                  </div>
+                                  <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                  >
+                                    <Menu.Items className="wrapper-menu-contain">
+                                      <div className="wrapper-menu-matic">
+                                        <Menu.Item>
+                                          {({ active }) => (
+                                            <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
+                                              {active ? "bridge" : "bridge"}
+                                            </button>
+                                          )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                          {({ active }) => (
+                                            <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                              {active ? "swap" : "swap"}
+                                            </button>
+                                          )}
+                                        </Menu.Item>
+                                      </div>
+                                    </Menu.Items>
+                                  </Transition>
+                                </Menu>
+                              </div>
                             </div>
-                            <div className="matic-box">
-                              <p>Balance: </p>
-                              <span> 30</span>
+
+                            <div className="matic-box">   
+                                <p>Balance: </p>
+                                <p onClick={() => setSwapSendValueToField(balanceeth)}> {balanceeth}</p>
                             </div>
                           </div>
                           <div className="matic-right">
-                            <h5>20</h5>
+                            <input type="number" ref={swapSendInput} value={swapSendInputValue} onChange={(e) => setSwapSendInputValue(e.target.value)} />
                             <span>$32,639.40</span>
                           </div>
                         </div>
                       </div>
-
                       <div className="bridge-recieve-btn">
                         <div className="bridge-recieve-flex">
                           <div className="bridge-recieve-width">
                             <span>Receive</span>
-                            <div className="recieve-position">
+                            <div className="icon-flex">
                               <span className="wrapper-recive-absolute">
                                 <Image src={Uniswap} alt="" className="" />
                               </span>
-                              <Menu as="div" className="recieve-menu">
-                                <div className="recieve-flex">
-                                  <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
-                                    <option value="" selected>
-                                      UNI-V2
-                                    </option>
-                                    <option value="">SWAP</option>
-                                  </select>
-                                </div>
-                                <Transition
-                                  as={Fragment}
-                                  enter="transition ease-out duration-100"
-                                  enterFrom="transform opacity-0 scale-95"
-                                  enterTo="transform opacity-100 scale-100"
-                                  leave="transition ease-in duration-75"
-                                  leaveFrom="transform opacity-100 scale-100"
-                                  leaveTo="transform opacity-0 scale-95"
-                                >
-                                  <Menu.Items className="wrapper-menu-contain">
-                                    <div className="wrapper-menu-matic">
-                                      <Menu.Item>
-                                        {({ active }) => (
-                                          <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
-                                            {active ? "bridge" : "bridge"}
-                                          </button>
-                                        )}
-                                      </Menu.Item>
-                                      <Menu.Item>
-                                        {({ active }) => (
-                                          <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
-                                            {active ? "swap" : "swap"}
-                                          </button>
-                                        )}
-                                      </Menu.Item>
-                                    </div>
-                                  </Menu.Items>
-                                </Transition>
-                              </Menu>
+                              <div className="recieve-position">
+                                <Menu as="div" className="recieve-menu">
+                                  <div className="recieve-flex">
+                                    <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
+                                      <option value="" selected>
+                                        UNI-V2
+                                      </option>
+                                      <option value="">SWAP</option>
+                                    </select>
+                                  </div>
+                                  <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                  >
+                                    <Menu.Items className="wrapper-menu-contain">
+                                      <div className="wrapper-menu-matic">
+                                        <Menu.Item>
+                                          {({ active }) => (
+                                            <button className={`${active ? "bg-violet-500 " : "text-gray-900"} group `}>
+                                              {active ? "bridge" : "bridge"}
+                                            </button>
+                                          )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                          {({ active }) => (
+                                            <button className={`${active ? "bg-violet-500" : "text-gray-900"} group`}>
+                                              {active ? "swap" : "swap"}
+                                            </button>
+                                          )}
+                                        </Menu.Item>
+                                      </div>
+                                    </Menu.Items>
+                                  </Transition>
+                                </Menu>
+                              </div>
                             </div>
+
                             <div className="matic-box">
-                              <p>Balance: 500 </p>
+                                <p>Balance:</p>
+                              <span onClick={() => setSwapReceiveValueToField(balanceuni)}  >{balanceuni}</span>
                             </div>
                           </div>
                           <div className="matic-right">
-                            <h5>4,205.975</h5>
+                            <input type="number" ref={swapReceiveInput} value={swapReceiveInputValue} onChange={((e) => setSwapReceiveInputValue(e.target.value))} />
                             <span>$32,396.43</span>
                           </div>
                         </div>

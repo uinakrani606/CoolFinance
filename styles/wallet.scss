@@ -65,7 +65,7 @@
   overflow-x: auto;
   margin: 30px 0 16px 0;
   .wallet-data-table {
-    padding: 16px 20px 22px 20px;
+    padding: 16px 20px 20px 20px;
     text-align: left;
     .wallet-data-list {
       display: inline-flex;
@@ -97,7 +97,7 @@
       align-items: center;
       border-bottom: 1px solid var(--white100);
       width: 100%;
-      padding: 30px 0;
+      padding: 25px 0;
       .multician-para {
         width: 370px;
         &:nth-child(2) {
@@ -185,8 +185,7 @@
         }
       }
       &:last-child {
-        border-bottom: none;
-        padding-bottom: 10px;
+        border-bottom: none;        
       }
     }
   }

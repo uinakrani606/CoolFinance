@@ -1,4 +1,4 @@
-@import'./Variable.scss';
+@import "./Variable.scss";
 
 .swap-head {
   h2 {
@@ -151,6 +151,7 @@
                 span {
                   font-size: 10px;
                   color: var(--gray900);
+                  padding-right: 15px;
                 }
                 .recieve-position {
                   position: relative;
@@ -193,9 +194,10 @@
                         }
                       }
                       .eth-dropdown {
-                        padding-right: 48px;
+                        padding-right: 40px;
                         max-width: 346px;
                         text-align: left;
+                        padding-left: 0;
                       }
                       .uni-dropdown {
                         max-width: 218px;
@@ -242,30 +244,56 @@
                 .matic-box {
                   display: flex;
                   margin-top: 6px;
-                  p {
+                  align-items: center;
+                  a {
                     font-size: 14px;
+
                     font-weight: 300;
                     color: var(--gray900);
                   }
                   span {
-                    color: var(--primaryBlue);
+                    font-size: 14px;
+                    font-weight: 300;
+                  }
+                  p {
+                    color: var(--gray900);
                     font-size: 14px;
                   }
+                  p:nth-child(2){
+                    color: var(--primaryBlue);
+                    cursor: pointer;
+                  }
+                }
+                .icon-flex {
+                  display: flex;
+                  align-items: center;
                 }
               }
               .matic-right {
                 text-align: right;
-                h5 {
+                display: flex;
+                flex-direction: column;
+                input {
                   font-size: 30px;
                   font-weight: bold;
-                  color: var(--gray900);
+                  background-color: transparent;
+                  max-width: 150px;
+                  text-align: end;
+                  border: none;
+                  &::placeholder {
+                    color: var(--gray900);
+                  }
+                  &:focus {
+                    border: 0;
+                    outline: 2px solid transparent;
+                    outline-offset: 2px;
+                  }
                 }
                 span {
                   font-size: 14px;
                   color: var(--gray900);
-                  margin-top: 4px;
                   font-weight: 300;
-                  padding: 10px 0;
+                  padding: 5px 0;
                 }
               }
               select.filter-dropdown {
@@ -345,8 +373,8 @@
     h2 {
       font-size: 32px;
     }
-    .bridge-swap-sec {      
-      .bridge-condition-sec {       
+    .bridge-swap-sec {
+      .bridge-condition-sec {
         .bridge-sec {
           .tab-content {
             .bridge-ehterium {
@@ -396,19 +424,12 @@
               }
             }
             .bridge-recieve-btn {
-              .bridge-recieve-flex {
-                .matic-right h5 {
-                  font-size: 16px;
-                }
-              }
-            }
-            .bridge-recieve-btn {
               .bridge-recieve-flex .bridge-recieve-width {
                 .recieve-position .recieve-menu {
                   .recieve-flex {
                     .ogn-dropdown {
                       font-size: 32px;
-                      padding: 8px 32px 8px 56px;
+                      padding: 8px 32px 8px 8px;
                       &:focus {
                         option {
                           font-size: 16px;
@@ -449,19 +470,31 @@
             .bridge-recieve-btn {
               padding: 17px 15px;
               .bridge-recieve-flex {
+                .matic-right input {
+                  font-size: 16px;
+                  &::placeholder {
+                    font-size: 16px;
+                  }
+                }
                 .bridge-recieve-width {
-                  width: 70%;
+                  width: 64%;
+                  span {
+                    padding-right: 10px;
+                  }
                   .recieve-position {
-                    margin-right: 10px;
+                    margin-right: 2px;
                     .recieve-menu {
                       .recieve-flex {
                         .ogn-dropdown {
                           font-size: 16px;
-                          padding: 8px 33px 8px 46px;
+                          padding: 8px 33px 8px 5px;
                         }
                       }
                     }
                   }
+                }
+                .matic-right {
+                  width: 31%;
                 }
               }
             }

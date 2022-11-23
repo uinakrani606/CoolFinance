@@ -136,9 +136,9 @@ const Portfolio = () => {
                   <div className="tab-content tab-space">
                     <div>
                       <div className="assets-box notional-eht">
-                        <div className="portfolia-market">
+                        <div className="portfolia-market">                         
                           <h3>Asset</h3>
-                        </div>
+                        </div>                                            
                         <div className="notional-width">
                           <h3>Protocol/Token</h3>
                         </div>
@@ -162,10 +162,12 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="notional-eht">
-                        <div className="portfolia-market">
+                        <Link href={"#"} >
+                          <a className="portfolia-market">
                           <Image src={notional} alt=" " />
                           <p className="data-table-transition">Notional Eth Market</p>
-                        </div>
+                          </a>
+                        </Link>
                         <div className="notional-width">
                           <p>Notional</p>
                         </div>
@@ -191,10 +193,12 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="notional-eht">
-                        <div className="portfolia-market">
+                        <Link href={"#"}>
+                          <a className="portfolia-market">
                           <Image src={curvesvg} alt=" " />
                           <p className="data-table-transition">Curve Finance</p>
-                        </div>
+                          </a>                        
+                        </Link>
                         <div className="notional-width">
                           <p>Curve</p>
                         </div>
@@ -220,10 +224,12 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="notional-eht">
-                        <div className="portfolia-market">
+                        <Link href={"#"}>
+                          <a className="portfolia-market">
                           <Image src={aavev2} alt=" " />
                           <p className="data-table-transition">AAVE V2 (AAVE)</p>
-                        </div>
+                          </a>                        
+                        </Link>
                         <div className="notional-width">
                           <p>Aave</p>
                         </div>
@@ -249,10 +255,12 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="notional-eht">
-                        <div className="portfolia-market">
+                        <Link href={"#"}>
+                          <a className="portfolia-market">
                           <Image src={uniswap} alt=" " />
                           <p className="data-table-transition">Uniswap</p>
-                        </div>
+                          </a>                        
+                        </Link>
                         <div className="notional-width">
                           <p>Uniswap</p>
                         </div>
@@ -278,10 +286,12 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="notional-eht">
-                        <div className="portfolia-market">
+                        <Link href={"#"}>
+                          <a className="portfolia-market">
                           <div className="portfolia-insert"></div>
                           <p className="data-table-transition">Insert Name Here</p>
-                        </div>
+                          </a>                        
+                        </Link>
                         <div className="notional-width">
                           <p className="text-gray900 text-sm font-light">Protocol Name</p>
                         </div>
@@ -307,10 +317,12 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="notional-eht">
-                        <div className="portfolia-market">
+                        <Link href={"#"}>
+                          <a className="portfolia-market">
                           <div className="portfolia-insert"></div>
                           <p className="data-table-transition">Insert Name Here</p>
-                        </div>
+                          </a>                        
+                        </Link>
                         <div className="notional-width">
                           <p className="text-gray900 text-sm font-light">Protocol Name</p>
                         </div>
@@ -336,10 +348,12 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="notional-eht">
-                        <div className="portfolia-market">
+                        <Link href={"#"}>
+                          <a className="portfolia-market">
                           <div className="portfolia-insert"></div>
                           <p className="data-table-transition">Insert Name Here</p>
-                        </div>
+                          </a>                        
+                        </Link>
                         <div className="notional-width">
                           <p className="text-gray900 text-sm font-light">Protocol Name</p>
                         </div>
@@ -365,10 +379,12 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="notional-eht">
-                        <div className="portfolia-market">
+                        <Link href={"#"}>
+                          <a className="portfolia-market">
                           <div className="portfolia-insert"></div>
                           <p className="data-table-transition">Insert Name Here</p>
-                        </div>
+                          </a>                        
+                        </Link>
                         <div className="notional-width">
                           <p className="text-gray900 text-sm font-light">Protocol Name</p>
                         </div>

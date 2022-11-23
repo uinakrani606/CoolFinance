@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import arrow from "../assets/img/viewmoreicon.svg";
+// import arrow from "../assets/img/viewmoreicon.svg";
 import notional from "../assets/img/notionalogo.svg";
 import protocol from "../assets/img/notional.svg";
 import etherium from "../assets/img/ethereum.svg";

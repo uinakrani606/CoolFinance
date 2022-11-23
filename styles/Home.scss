@@ -48,6 +48,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  margin-bottom: 80px;
   .total-value-head {
     margin-top: 44px;
     h2 {
@@ -176,6 +177,11 @@
         border: 1px solid var(--gray300);
         border-radius: 10px;
         padding: 20px;
+        transition: 0.5s all;
+        &:hover{
+          border: 1px solid var(--primaryBlue);
+          transition: 0.5s all;
+        }
 
         .notional-part {
           display: flex;
@@ -298,6 +304,11 @@
         border-radius: 10px;
         padding: 14px 14px 14px 20px;
         margin: 18px 0;
+        transition: 0.5s all;
+        &:hover{
+          border: 1px solid var(--primaryBlue);
+          transition: 0.5s all;
+        }
         .insert-sec {
           display: flex;
           justify-content: space-between;

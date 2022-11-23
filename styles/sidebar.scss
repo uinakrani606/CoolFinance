@@ -58,8 +58,12 @@
             padding: 5px 14px;
             width: 100%;
             border-radius: 4px;
+            transition: 0.3s all;
             &:hover {
               padding: 5px 14px;
+              background-color: #0770e5;
+              transition: 0.3s all;
+              color: var(--white);
             }
           }
         }
@@ -184,6 +188,13 @@
           justify-content: space-between;
           align-items: center;
           margin-bottom: 14px;
+          a{
+            transition: 0.3s all;
+            &:hover{
+              opacity: 0.8;
+              transition: 0.3s all;
+            }
+          }
         }
         .footer-copyright {
           font-size: 10px;

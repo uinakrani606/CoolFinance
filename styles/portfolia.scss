@@ -113,7 +113,7 @@
   border: 1px solid var(--gray300);
   border-radius: 10px;
   overflow: hidden;
-  margin: 24px 0 16px 0;
+  margin: 24px 0 50px 0;
   .portfolia-asset-flex {
     display: flex;
     flex-wrap: wrap;
@@ -160,11 +160,16 @@
               align-items: center;
               gap: 10px;
               width: 21%;
+              &:hover p{
+                color: var(--primaryBlue);
+              }    
               p {
                 font-size: 14px;
                 font-weight: 600;
                 color: var(--gray900);
                 margin-right: 32px;
+                
+                
               }
               .data-table-transition {
                 white-space: nowrap;
@@ -173,7 +178,7 @@
                 width: 67%;
               }
               .portfolia-insert {
-                width: 40px;
+                width: 42.5px;
                 height: 40px;
                 border-radius: 50%;
                 background-color: var(--white100);
@@ -224,8 +229,7 @@
               }
             }
             &:last-child {
-              border-bottom: none;
-              padding-bottom: 10px;
+              border-bottom: none;              
             }
           }
         }
