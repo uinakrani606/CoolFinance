@@ -81,7 +81,6 @@ const TradingViewChart = ({
   field,
   title,
   width,
-  radioChangeHandler,
   defaultSelectedRange,
   updateDefaultSelectedRange,
   useWeekly = false,
