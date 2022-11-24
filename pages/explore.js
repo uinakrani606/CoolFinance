@@ -126,7 +126,8 @@ const Explore = () => {
                   title="Liquidityy"
                   field="totalLiquidityUSD"
                   width={width}
-                  type={CHART_TYPES.AREA}
+                  type={CHART_TYPES.AREA}                  
+                  defaultSelectedRange={999999}
                 />
               </div>
             </div>

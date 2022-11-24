@@ -81,6 +81,9 @@ const TradingViewChart = ({
   field,
   title,
   width,
+  radioChangeHandler,
+  defaultSelectedRange,
+  updateDefaultSelectedRange,
   useWeekly = false,
 }) => {
   // reference for DOM element to create with chart
@@ -89,7 +92,9 @@ const TradingViewChart = ({
   // pointer to the chart object
   const [chartCreated, setChartCreated] = useState(false);
   const dataPrev = usePrevious(data);
-
+  let chart;
+  console.log('jskdlfjsdfdsf', defaultSelectedRange)
+  
   useEffect(() => {
     if (data !== dataPrev && chartCreated && type === CHART_TYPES.BAR) {
       // remove the tooltip element
@@ -116,6 +121,67 @@ const TradingViewChart = ({
   const textColor = darkMode ? "white" : "black";
   const previousTheme = usePrevious(darkMode);
 
+  const [portfolio, setPortfolio] = useState('ALL');
+  const organicvalue = 1
+  const [selectedRange, setSelectedRange]  = useState(1);
+  const radioChangeHandler = (e) => {
+    setPortfolio(e.target.value);
+    dateLoop(e.target.value); 
+  };
+
+  useEffect(() => {    
+    if (chartCreated && formattedData) {
+      var d = new Date()
+      d.setDate(d.getDate() - 0)
+
+      var t = new Date()
+      t.setDate(t.getDate() - defaultSelectedRange);
+
+      chartCreated.timeScale().setVisibleRange({ from: t / 1000, to: d / 1000});
+      chartCreated.timeScale().scrollPosition(0, true); 
+    }
+  })
+
+  const dateLoop = (selectedRange) => {
+
+    if (selectedRange === "1D")
+    { 
+      organicvalue = 1;
+    }
+    else if (selectedRange === "1W")
+    {
+      organicvalue = 7;
+    }
+    else if (selectedRange === "1M")
+    {
+      organicvalue = 30;
+    }
+    else if (selectedRange === "3M")
+    {
+      organicvalue = 91;
+    }
+    else if (selectedRange === "6M")
+    {
+      organicvalue = 182;
+    }
+    else if (selectedRange === "1Y")
+    {
+      organicvalue = 365; 
+    } 
+    else if (selectedRange === "YTD")
+    {
+      organicvalue = 187; 
+    } 
+    else if (selectedRange === "ALL")
+    {
+      organicvalue = 999999; 
+    } 
+    else {
+      
+    } 
+    updateDefaultSelectedRange(organicvalue);
+  };
+
   // reset the chart if them switches
   useEffect(() => {
     if (chartCreated && previousTheme !== darkMode) {
@@ -131,7 +197,7 @@ const TradingViewChart = ({
   // if no chart created yet, create one with options and add to DOM manually
   useEffect(() => {
     if (!chartCreated && formattedData) {
-      var chart = createChart(ref.current, {
+      chart = createChart(ref.current, {
         rightPriceScale: {
           scaleMargins: {
             top: 0.2,
@@ -1369,6 +1435,1259 @@ const TradingViewChart = ({
           time: "2019-06-05",
           value: 95.94,
         },
+        {
+          time: "2020-03-01",
+          value: 96.760002,
+        },
+        {
+          time: "2020-03-04",
+          value: 98.360001,
+        },
+        {
+          time: "2020-03-05",
+          value: 96.260002,
+        },
+        {
+          time: "2020-03-06",
+          value: 98.120003,
+        },
+        {
+          time: "2020-03-07",
+          value: 99.68,
+        },
+        {
+          time: "2020-03-11",
+          value: 102.1,
+        },
+        {
+          time: "2020-03-12",
+          value: 100.22,
+        },
+        {
+          time: "2020-03-13",
+          value: 100.5,
+        },
+        {
+          time: "2020-03-14",
+          value: 99.660004,
+        },
+        {
+          time: "2020-03-15",
+          value: 100.08,
+        },
+        {
+          time: "2020-03-18",
+          value: 99.919998,
+        },
+        {
+          time: "2020-03-19",
+          value: 99.459999,
+        },
+        {
+          time: "2020-03-20",
+          value: 98.220001,
+        },
+        {
+          time: "2020-03-21",
+          value: 97.300003,
+        },
+        {
+          time: "2020-03-22",
+          value: 97.660004,
+        },
+        {
+          time: "2020-03-25",
+          value: 97,
+        },
+        {
+          time: "2020-03-26",
+          value: 97.019997,
+        },
+        {
+          time: "2020-03-27",
+          value: 96.099998,
+        },
+        {
+          time: "2020-03-28",
+          value: 96.699997,
+        },
+        {
+          time: "2020-03-29",
+          value: 96.300003,
+        },
+        {
+          time: "2020-04-01",
+          value: 97.779999,
+        },
+        {
+          time: "2020-04-02",
+          value: 98.360001,
+        },
+        {
+          time: "2020-04-03",
+          value: 98.5,
+        },
+        {
+          time: "2020-04-04",
+          value: 98.360001,
+        },
+        {
+          time: "2020-04-05",
+          value: 99.540001,
+        },
+        {
+          time: "2020-04-08",
+          value: 98.580002,
+        },
+        {
+          time: "2020-04-09",
+          value: 97.239998,
+        },
+        {
+          time: "2020-04-10",
+          value: 97.32,
+        },
+        {
+          time: "2020-04-11",
+          value: 98.400002,
+        },
+        {
+          time: "2020-04-12",
+          value: 98.220001,
+        },
+        {
+          time: "2020-04-15",
+          value: 98.720001,
+        },
+        {
+          time: "2020-04-16",
+          value: 99.120003,
+        },
+        {
+          time: "2020-04-17",
+          value: 98.620003,
+        },
+        {
+          time: "2020-04-18",
+          value: 98,
+        },
+        {
+          time: "2020-04-19",
+          value: 97.599998,
+        },
+        {
+          time: "2020-04-22",
+          value: 97.599998,
+        },
+        {
+          time: "2020-04-23",
+          value: 96.800003,
+        },
+        {
+          time: "2020-04-24",
+          value: 96.32,
+        },
+        {
+          time: "2020-04-25",
+          value: 96.339996,
+        },
+        {
+          time: "2020-04-26",
+          value: 97.120003,
+        },
+        {
+          time: "2020-04-29",
+          value: 96.980003,
+        },
+        {
+          time: "2020-04-30",
+          value: 96.32,
+        },
+        {
+          time: "2020-05-02",
+          value: 96.860001,
+        },
+        {
+          time: "2020-05-03",
+          value: 96.699997,
+        },
+        {
+          time: "2020-05-06",
+          value: 94.940002,
+        },
+        {
+          time: "2020-05-07",
+          value: 94.5,
+        },
+        {
+          time: "2020-05-08",
+          value: 94.239998,
+        },
+        {
+          time: "2020-05-10",
+          value: 92.900002,
+        },
+        {
+          time: "2020-05-13",
+          value: 91.279999,
+        },
+        {
+          time: "2020-05-14",
+          value: 91.599998,
+        },
+        {
+          time: "2020-05-15",
+          value: 90.080002,
+        },
+        {
+          time: "2020-05-16",
+          value: 91.68,
+        },
+        {
+          time: "2020-05-17",
+          value: 91.959999,
+        },
+        {
+          time: "2020-05-20",
+          value: 91.080002,
+        },
+        {
+          time: "2020-05-21",
+          value: 90.760002,
+        },
+        {
+          time: "2020-05-22",
+          value: 91,
+        },
+        {
+          time: "2020-05-23",
+          value: 90.739998,
+        },
+        {
+          time: "2020-05-24",
+          value: 91,
+        },
+        {
+          time: "2020-05-27",
+          value: 91.199997,
+        },
+        {
+          time: "2020-05-28",
+          value: 90.68,
+        },
+        {
+          time: "2020-05-29",
+          value: 91.120003,
+        },
+        {
+          time: "2020-05-30",
+          value: 90.419998,
+        },
+        {
+          time: "2020-05-31",
+          value: 93.800003,
+        },
+        {
+          time: "2021-03-01",
+          value: 96.760002,
+        },
+        {
+          time: "2021-03-04",
+          value: 98.360001,
+        },
+        {
+          time: "2021-03-05",
+          value: 96.260002,
+        },
+        {
+          time: "2021-03-06",
+          value: 98.120003,
+        },
+        {
+          time: "2021-03-07",
+          value: 99.68,
+        },
+        {
+          time: "2021-03-11",
+          value: 102.1,
+        },
+        {
+          time: "2021-03-12",
+          value: 100.22,
+        },
+        {
+          time: "2021-03-13",
+          value: 100.5,
+        },
+        {
+          time: "2021-03-14",
+          value: 99.660004,
+        },
+        {
+          time: "2021-03-15",
+          value: 100.08,
+        },
+        {
+          time: "2021-03-18",
+          value: 99.919998,
+        },
+        {
+          time: "2021-03-19",
+          value: 99.459999,
+        },
+        {
+          time: "2021-03-20",
+          value: 98.220001,
+        },
+        {
+          time: "2021-03-21",
+          value: 97.300003,
+        },
+        {
+          time: "2021-03-22",
+          value: 97.660004,
+        },
+        {
+          time: "2021-03-25",
+          value: 97,
+        },
+        {
+          time: "2021-03-26",
+          value: 97.019997,
+        },
+        {
+          time: "2021-03-27",
+          value: 96.099998,
+        },
+        {
+          time: "2021-03-28",
+          value: 96.699997,
+        },
+        {
+          time: "2021-03-29",
+          value: 96.300003,
+        },
+        {
+          time: "2021-04-01",
+          value: 97.779999,
+        },
+        {
+          time: "2021-04-02",
+          value: 98.360001,
+        },
+        {
+          time: "2021-04-03",
+          value: 98.5,
+        },
+        {
+          time: "2021-04-04",
+          value: 98.360001,
+        },
+        {
+          time: "2021-04-05",
+          value: 99.540001,
+        },
+        {
+          time: "2021-04-08",
+          value: 98.580002,
+        },
+        {
+          time: "2021-04-09",
+          value: 97.239998,
+        },
+        {
+          time: "2021-04-10",
+          value: 97.32,
+        },
+        {
+          time: "2021-04-11",
+          value: 98.400002,
+        },
+        {
+          time: "2021-04-12",
+          value: 98.220001,
+        },
+        {
+          time: "2021-04-15",
+          value: 98.720001,
+        },
+        {
+          time: "2021-04-16",
+          value: 99.120003,
+        },
+        {
+          time: "2021-04-17",
+          value: 98.620003,
+        },
+        {
+          time: "2021-04-18",
+          value: 98,
+        },
+        {
+          time: "2021-04-19",
+          value: 97.599998,
+        },
+        {
+          time: "2021-04-22",
+          value: 97.599998,
+        },
+        {
+          time: "2021-04-23",
+          value: 96.800003,
+        },
+        {
+          time: "2021-04-24",
+          value: 96.32,
+        },
+        {
+          time: "2021-04-25",
+          value: 96.339996,
+        },
+        {
+          time: "2021-04-26",
+          value: 97.120003,
+        },
+        {
+          time: "2021-04-29",
+          value: 96.980003,
+        },
+        {
+          time: "2021-04-30",
+          value: 96.32,
+        },
+        {
+          time: "2021-05-02",
+          value: 96.860001,
+        },
+        {
+          time: "2021-05-03",
+          value: 96.699997,
+        },
+        {
+          time: "2021-05-06",
+          value: 94.940002,
+        },
+        {
+          time: "2021-05-07",
+          value: 94.5,
+        },
+        {
+          time: "2021-05-08",
+          value: 94.239998,
+        },
+        {
+          time: "2021-05-10",
+          value: 92.900002,
+        },
+        {
+          time: "2021-05-13",
+          value: 91.279999,
+        },
+        {
+          time: "2021-05-14",
+          value: 91.599998,
+        },
+        {
+          time: "2021-05-15",
+          value: 90.080002,
+        },
+        {
+          time: "2021-05-16",
+          value: 91.68,
+        },
+        {
+          time: "2021-05-17",
+          value: 91.959999,
+        },
+        {
+          time: "2021-05-20",
+          value: 91.080002,
+        },
+        {
+          time: "2021-05-21",
+          value: 90.760002,
+        },
+        {
+          time: "2021-05-22",
+          value: 91,
+        },
+        {
+          time: "2021-05-23",
+          value: 90.739998,
+        },
+        {
+          time: "2021-05-24",
+          value: 91,
+        },
+        {
+          time: "2021-05-27",
+          value: 91.199997,
+        },
+        {
+          time: "2021-05-28",
+          value: 90.68,
+        },
+        {
+          time: "2021-05-29",
+          value: 91.120003,
+        },
+        {
+          time: "2021-05-30",
+          value: 90.419998,
+        },
+        {
+          time: "2021-05-31",
+          value: 93.800003,
+        },
+
+        {
+          time: "2022-03-01",
+          value: 96.760002,
+        },
+        {
+          time: "2022-03-04",
+          value: 98.360001,
+        },
+        {
+          time: "2022-03-05",
+          value: 96.260002,
+        },
+        {
+          time: "2022-03-06",
+          value: 98.120003,
+        },
+        {
+          time: "2022-03-07",
+          value: 99.68,
+        },
+        {
+          time: "2022-03-11",
+          value: 102.1,
+        },
+        {
+          time: "2022-03-12",
+          value: 100.22,
+        },
+        {
+          time: "2022-03-13",
+          value: 100.5,
+        },
+        {
+          time: "2022-03-14",
+          value: 99.660004,
+        },
+        {
+          time: "2022-03-15",
+          value: 100.08,
+        },
+        {
+          time: "2022-03-18",
+          value: 99.919998,
+        },
+        {
+          time: "2022-03-19",
+          value: 99.459999,
+        },
+        {
+          time: "2022-03-20",
+          value: 98.220001,
+        },
+        {
+          time: "2022-03-21",
+          value: 97.300003,
+        },
+        {
+          time: "2022-03-22",
+          value: 97.660004,
+        },
+        {
+          time: "2022-03-25",
+          value: 97,
+        },
+        {
+          time: "2022-03-26",
+          value: 97.019997,
+        },
+        {
+          time: "2022-03-27",
+          value: 96.099998,
+        },
+        {
+          time: "2022-03-28",
+          value: 96.699997,
+        },
+        {
+          time: "2022-03-29",
+          value: 96.300003,
+        },
+        {
+          time: "2022-04-01",
+          value: 97.779999,
+        },
+        {
+          time: "2022-04-02",
+          value: 98.360001,
+        },
+        {
+          time: "2022-04-03",
+          value: 98.5,
+        },
+        {
+          time: "2022-04-04",
+          value: 98.360001,
+        },
+        {
+          time: "2022-04-05",
+          value: 99.540001,
+        },
+        {
+          time: "2022-04-08",
+          value: 98.580002,
+        },
+        {
+          time: "2022-04-09",
+          value: 97.239998,
+        },
+        {
+          time: "2022-04-10",
+          value: 97.32,
+        },
+        {
+          time: "2022-04-11",
+          value: 98.400002,
+        },
+        {
+          time: "2022-04-12",
+          value: 98.220001,
+        },
+        {
+          time: "2022-04-15",
+          value: 98.720001,
+        },
+        {
+          time: "2022-04-16",
+          value: 99.120003,
+        },
+        {
+          time: "2022-04-17",
+          value: 98.620003,
+        },
+        {
+          time: "2022-04-18",
+          value: 98,
+        },
+        {
+          time: "2022-04-19",
+          value: 97.599998,
+        },
+        {
+          time: "2022-04-22",
+          value: 97.599998,
+        },
+        {
+          time: "2022-04-23",
+          value: 96.800003,
+        },
+        {
+          time: "2022-04-24",
+          value: 96.32,
+        },
+        {
+          time: "2022-04-25",
+          value: 96.339996,
+        },
+        {
+          time: "2022-04-26",
+          value: 97.120003,
+        },
+        {
+          time: "2022-04-29",
+          value: 96.980003,
+        },
+        {
+          time: "2022-04-30",
+          value: 96.32,
+        },
+        {
+          time: "2022-05-02",
+          value: 96.860001,
+        },
+        {
+          time: "2022-05-03",
+          value: 96.699997,
+        },
+        {
+          time: "2022-05-06",
+          value: 94.940002,
+        },
+        {
+          time: "2022-05-07",
+          value: 94.5,
+        },
+        {
+          time: "2022-05-08",
+          value: 94.239998,
+        },
+        {
+          time: "2022-05-10",
+          value: 92.900002,
+        },
+        {
+          time: "2022-05-13",
+          value: 91.279999,
+        },
+        {
+          time: "2022-05-14",
+          value: 91.599998,
+        },
+        {
+          time: "2022-05-15",
+          value: 90.080002,
+        },
+        {
+          time: "2022-05-16",
+          value: 91.68,
+        },
+        {
+          time: "2022-05-17",
+          value: 91.959999,
+        },
+        {
+          time: "2022-05-20",
+          value: 91.080002,
+        },
+        {
+          time: "2022-05-21",
+          value: 90.760002,
+        },
+        {
+          time: "2022-05-22",
+          value: 91,
+        },
+        {
+          time: "2022-05-23",
+          value: 90.739998,
+        },
+        {
+          time: "2022-05-24",
+          value: 91,
+        },
+        {
+          time: "2022-05-27",
+          value: 91.199997,
+        },
+        {
+          time: "2022-05-28",
+          value: 90.68,
+        },
+        {
+          time: "2022-05-29",
+          value: 91.120003,
+        },
+        {
+          time: "2022-05-30",
+          value: 90.419998,
+        },
+        {
+          time: "2022-05-31",
+          value: 93.800003,
+        },
+        {
+          time: "2022-06-01",
+          value: 139.64999,
+        },
+        {
+          time: "2022-06-04",
+          value: 137.10001,
+        },
+        {
+          time: "2022-06-05",
+          value: 139.25,
+        },
+        {
+          time: "2022-06-06",
+          value: 141.3,
+        },
+        {
+          time: "2022-06-07",
+          value: 145,
+        },
+        {
+          time: "2022-06-08",
+          value: 143.89999,
+        },
+        {
+          time: "2022-06-11",
+          value: 142.7,
+        },
+        {
+          time: "2022-06-13",
+          value: 144.05,
+        },
+        {
+          time: "2022-06-14",
+          value: 143.55,
+        },
+        {
+          time: "2022-06-15",
+          value: 140.5,
+        },
+        {
+          time: "2022-06-18",
+          value: 139.64999,
+        },
+        {
+          time: "2022-06-19",
+          value: 138,
+        },
+        {
+          time: "2022-06-20",
+          value: 141,
+        },
+        {
+          time: "2022-06-21",
+          value: 140.55,
+        },
+        {
+          time: "2022-06-22",
+          value: 140.55,
+        },
+        {
+          time: "2022-06-25",
+          value: 140.75,
+        },
+        {
+          time: "2022-06-26",
+          value: 140.64999,
+        },
+        {
+          time: "2022-06-27",
+          value: 141.14999,
+        },
+        {
+          time: "2022-06-28",
+          value: 139.8,
+        },
+        {
+          time: "2022-06-29",
+          value: 139.8,
+        },
+        {
+          time: "2022-07-02",
+          value: 140.14999,
+        },
+        {
+          time: "2022-07-03",
+          value: 143.05,
+        },
+        {
+          time: "2022-07-04",
+          value: 140,
+        },
+        {
+          time: "2022-07-05",
+          value: 129.2,
+        },
+        {
+          time: "2022-07-06",
+          value: 129.55,
+        },
+        {
+          time: "2022-07-09",
+          value: 128.3,
+        },
+        {
+          time: "2022-07-10",
+          value: 126.55,
+        },
+        {
+          time: "2022-07-11",
+          value: 124.3,
+        },
+        {
+          time: "2022-07-12",
+          value: 124.8,
+        },
+        {
+          time: "2022-07-13",
+          value: 123.25,
+        },
+        {
+          time: "2022-07-16",
+          value: 123,
+        },
+        {
+          time: "2022-07-17",
+          value: 124.25,
+        },
+        {
+          time: "2022-07-18",
+          value: 123,
+        },
+        {
+          time: "2022-07-19",
+          value: 121,
+        },
+        {
+          time: "2022-07-20",
+          value: 121.45,
+        },
+        {
+          time: "2022-07-23",
+          value: 123.8,
+        },
+        {
+          time: "2022-07-24",
+          value: 122.15,
+        },
+        {
+          time: "2022-07-25",
+          value: 121.3,
+        },
+        {
+          time: "2022-07-26",
+          value: 122.7,
+        },
+        {
+          time: "2022-07-27",
+          value: 122.2,
+        },
+        {
+          time: "2022-07-30",
+          value: 121.7,
+        },
+        {
+          time: "2022-07-31",
+          value: 122.95,
+        },
+        {
+          time: "2022-08-01",
+          value: 121,
+        },
+        {
+          time: "2022-08-02",
+          value: 116,
+        },
+        {
+          time: "2022-08-03",
+          value: 118.1,
+        },
+        {
+          time: "2022-08-06",
+          value: 114.3,
+        },
+        {
+          time: "2022-08-07",
+          value: 114.25,
+        },
+        {
+          time: "2022-08-08",
+          value: 111.85,
+        },
+        {
+          time: "2022-08-09",
+          value: 109.7,
+        },
+        {
+          time: "2022-08-10",
+          value: 105,
+        },
+        {
+          time: "2022-08-13",
+          value: 105.75,
+        },
+        {
+          time: "2022-08-14",
+          value: 107.25,
+        },
+        {
+          time: "2022-08-15",
+          value: 107.4,
+        },
+        {
+          time: "2022-08-16",
+          value: 110.5,
+        },
+        {
+          time: "2022-08-17",
+          value: 109,
+        },
+        {
+          time: "2022-08-20",
+          value: 108.95,
+        },
+        {
+          time: "2022-08-21",
+          value: 108.35,
+        },
+        {
+          time: "2022-08-22",
+          value: 108.6,
+        },
+        {
+          time: "2022-08-23",
+          value: 105.65,
+        },
+        {
+          time: "2022-08-24",
+          value: 104.45,
+        },
+        {
+          time: "2022-08-27",
+          value: 106.2,
+        },
+        {
+          time: "2022-08-28",
+          value: 106.55,
+        },
+        {
+          time: "2022-08-29",
+          value: 111.8,
+        },
+        {
+          time: "2022-08-30",
+          value: 115.5,
+        },
+        {
+          time: "2022-08-31",
+          value: 115.5,
+        },
+        {
+          time: "2022-09-03",
+          value: 114.55,
+        },
+        {
+          time: "2022-09-04",
+          value: 112.75,
+        },
+        {
+          time: "2022-09-05",
+          value: 111.5,
+        },
+        {
+          time: "2022-09-06",
+          value: 108.1,
+        },
+        {
+          time: "2022-09-07",
+          value: 108.55,
+        },
+        {
+          time: "2022-09-10",
+          value: 106.5,
+        },
+        {
+          time: "2022-09-11",
+          value: 105.1,
+        },
+        {
+          time: "2022-09-12",
+          value: 107.2,
+        },
+        {
+          time: "2022-09-13",
+          value: 107.1,
+        },
+        {
+          time: "2022-09-14",
+          value: 105.75,
+        },
+        {
+          time: "2022-09-17",
+          value: 106.05,
+        },
+        {
+          time: "2022-09-18",
+          value: 109.15,
+        },
+        {
+          time: "2022-09-19",
+          value: 111.4,
+        },
+        {
+          time: "2022-09-20",
+          value: 111,
+        },
+        {
+          time: "2022-09-21",
+          value: 111,
+        },
+        {
+          time: "2022-09-24",
+          value: 108.95,
+        },
+        {
+          time: "2022-09-25",
+          value: 106.65,
+        },
+        {
+          time: "2022-09-26",
+          value: 106.7,
+        },
+        {
+          time: "2022-09-27",
+          value: 107.05,
+        },
+        {
+          time: "2022-09-28",
+          value: 106.55,
+        },
+        {
+          time: "2022-10-01",
+          value: 106.2,
+        },
+        {
+          time: "2022-10-02",
+          value: 106.4,
+        },
+        {
+          time: "2022-10-03",
+          value: 107.1,
+        },
+        {
+          time: "2022-10-04",
+          value: 106.4,
+        },
+        {
+          time: "2022-10-05",
+          value: 104.65,
+        },
+        {
+          time: "2022-10-08",
+          value: 102.65,
+        },
+        {
+          time: "2022-10-09",
+          value: 102.1,
+        },
+        {
+          time: "2022-10-10",
+          value: 102.15,
+        },
+        {
+          time: "2022-10-11",
+          value: 100.9,
+        },
+        {
+          time: "2022-10-12",
+          value: 102,
+        },
+        {
+          time: "2022-10-15",
+          value: 100.15,
+        },
+        {
+          time: "2022-10-16",
+          value: 99,
+        },
+        {
+          time: "2022-10-17",
+          value: 98,
+        },
+        {
+          time: "2022-10-18",
+          value: 96,
+        },
+        {
+          time: "2022-10-19",
+          value: 95.5,
+        },
+        {
+          time: "2022-10-22",
+          value: 92.400002,
+        },
+        {
+          time: "2022-10-23",
+          value: 92.300003,
+        },
+        {
+          time: "2022-10-24",
+          value: 92.900002,
+        },
+        {
+          time: "2022-10-25",
+          value: 91.849998,
+        },
+        {
+          time: "2022-10-26",
+          value: 91.599998,
+        },
+        {
+          time: "2022-10-29",
+          value: 94.050003,
+        },
+        {
+          time: "2022-10-30",
+          value: 98.25,
+        },
+        {
+          time: "2022-10-31",
+          value: 97.25,
+        },
+        {
+          time: "2022-11-01",
+          value: 96.879997,
+        },
+        {
+          time: "2022-11-02",
+          value: 101.78,
+        },
+        {
+          time: "2022-11-06",
+          value: 102.4,
+        },
+        {
+          time: "2022-11-07",
+          value: 100.6,
+        },
+        {
+          time: "2022-11-08",
+          value: 98.5,
+        },
+        {
+          time: "2022-11-09",
+          value: 95.139999,
+        },
+        {
+          time: "2022-11-12",
+          value: 96.900002,
+        },
+        {
+          time: "2022-11-13",
+          value: 97.400002,
+        },
+        {
+          time: "2022-11-14",
+          value: 103.3,
+        },
+        {
+          time: "2022-11-15",
+          value: 102.74,
+        },
+        {
+          time: "2022-11-16",
+          value: 101.2,
+        },
+        {
+          time: "2022-11-19",
+          value: 98.720001,
+        },
+        {
+          time: "2022-11-20",
+          value: 102.2,
+        },
+        {
+          time: "2022-11-21",
+          value: 108.8,
+        },
+        {
+          time: "2022-11-22",
+          value: 109.9,
+        },
+        {
+          time: "2022-11-23",
+          value: 113.74,
+        },
       ]);
       var toolTip = document.createElement("div");
       toolTip.setAttribute("id", "tooltip-id" + type);
@@ -1427,7 +2746,6 @@ const TradingViewChart = ({
                 param.time.year + "-" + param.time.month + "-" + param.time.day
               ).format("MMMM D, YYYY");
           var price = param.seriesPrices.get(series);
-          console.log(toolTip);
           toolTip.innerHTML =
           `<div style="font-size: 16px; margin: 4px 0px; color: ${textColor};">${title}</div>` +
           `<div style="font-size: 22px; margin: 4px 0px; color: ${textColor}">` +
@@ -1439,7 +2757,15 @@ const TradingViewChart = ({
         }
       });
 
-      chart.timeScale().fitContent();
+      var d = new Date()
+      d.setDate(d.getDate() - 0)
+  
+      var t = new Date()
+      console.log('updatedselected', defaultSelectedRange);
+      t.setDate(t.getDate() - defaultSelectedRange);
+  
+      chart.timeScale().setVisibleRange({ from: t / 1000, to: d / 1000});
+      chart.timeScale().scrollPosition(0, true);
 
       setChartCreated(chart);
     }
@@ -1455,7 +2781,9 @@ const TradingViewChart = ({
     topScale,
     type,
     useWeekly,
+    radioChangeHandler,
     width,
+    defaultSelectedRange
   ]);
 
   // responsiveness
@@ -1465,10 +2793,46 @@ const TradingViewChart = ({
       chartCreated && chartCreated.timeScale().scrollToPosition(0);
     }
   }, [chartCreated, width]);
-
-  return (
+ 
+    return (
     <div>
       <div ref={ref} id={"test-id" + type} />
+        <div className="portfolio-right-contain-top">
+          <ul>
+            <li>
+              <input type="radio" id="1D" name="portfolio" value="1D" onChange={radioChangeHandler} checked={portfolio === "1D"} />
+              <label for="1D">1D</label>
+            </li>
+            <li>
+              <input type="radio" id="1W" name="portfolio" value="1W" onChange={radioChangeHandler} checked={portfolio === "1W"} />
+              <label for="1W">1W</label>
+            </li>
+            <li>
+              <input type="radio" id="1M" name="portfolio" value="1M" onChange={radioChangeHandler} checked={portfolio === "1M"} />
+              <label for="1M">1M</label>
+            </li>
+            <li>
+              <input type="radio" id="3M" name="portfolio" value="3M" onChange={radioChangeHandler} checked={portfolio === "3M"} />
+              <label for="3M">3M</label>
+            </li>
+            <li>
+              <input type="radio" id="6M" name="portfolio" value="6M" onChange={radioChangeHandler} checked={portfolio === "6M"} />
+              <label for="6M">6M</label>
+            </li>
+            <li>
+              <input type="radio" id="1Y" name="portfolio" value="1Y" onChange={radioChangeHandler} checked={portfolio === "1Y"} />
+              <label for="1Y">1Y</label>
+            </li>
+            <li>
+              <input type="radio" id="YTD" name="portfolio" value="YTD" onChange={radioChangeHandler} checked={portfolio === "YTD"} />
+              <label for="YTD">YTD</label>
+            </li>
+            <li>
+              <input type="radio" id="ALL" name="portfolio" value="ALL" onChange={radioChangeHandler} checked={portfolio === "ALL"} />
+              <label for="ALL">ALL</label>
+            </li>
+          </ul>
+        </div>
     </div>
   );
 };

@@ -1,5 +1,3 @@
-@import'./Variable.scss';
-
 // -------======portfolia page Start------=======/
 .portfolia-sec-main {
   margin-top: 44px;
@@ -52,6 +50,9 @@
       .portfolia-right-contain {
         padding: 25px 25px 0 25px;
         position: relative;
+        .portfolio-right-contain-top {
+          display: block;
+        }
         h3 {
           font-size: 16px;
           font-weight: 500;
@@ -237,7 +238,46 @@
     }
   }
 }
+.portfolio-right-contain-top {
+  position: absolute;
+  right: 20%;
+  top: 55px;
+  display: none;
+  ul {
+    display: flex;
+    li {
+      list-style: none;
+      margin-right: 4px; 
+    }
+  } 
+  input[type="radio"] {
+    display:none;
+  }
+  label {
+    background-color: #F3F3F3;
+    padding: 3px 6px;
+    border: 0;
+    border-radius: 2px;
+    color: #33333380;
+    font-size: 10px;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+  .blank-label {
+    display: none;
+  } 
+  input[type="radio"]:checked + label {
+    background: #00215F;
+    color: #fff;
+  }
+}
 // asset sec End
+@media screen and (max-width: $screen-xl){
+  .portfolio-right-contain-top{
+    top: 11px;
+    right: 25px;
+  }
+}
 @media screen and (max-width: $screen-xxl) {
   .portfolia-asset-sec {
     .portfolia-asset-flex {
@@ -359,6 +399,10 @@
         }
       }
     }
+  }
+  .portfolio-right-contain-top{
+    right: 15px;
+    top: 81px;
   }
 }
 @media screen and (max-width: 425px) {

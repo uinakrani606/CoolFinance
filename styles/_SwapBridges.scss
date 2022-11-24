@@ -1,5 +1,3 @@
-@import "./Variable.scss";
-
 .swap-head {
   h2 {
     font-size: 40px;
@@ -259,7 +257,7 @@
                     color: var(--gray900);
                     font-size: 14px;
                   }
-                  p:nth-child(2){
+                  p:nth-child(2) {
                     color: var(--primaryBlue);
                     cursor: pointer;
                   }
@@ -279,12 +277,16 @@
                   background-color: transparent;
                   max-width: 158px;
                   text-align: end;
-                  border: none; 
+                  border: none;
                   &:focus {
                     border: 0;
                     outline: 2px solid transparent;
                     outline-offset: 2px;
                   }
+                }
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
                 }
                 span {
                   font-size: 14px;
@@ -427,6 +429,11 @@
                     .ogn-dropdown {
                       font-size: 32px;
                       padding: 8px 32px 8px 8px;
+                      optgroup{-webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        font-size: 12px;
+                      }
                       &:focus {
                         option {
                           font-size: 16px;
@@ -469,9 +476,6 @@
               .bridge-recieve-flex {
                 .matic-right input {
                   font-size: 16px;
-                  &::placeholder {
-                    font-size: 16px;
-                  }
                 }
                 .bridge-recieve-width {
                   width: 64%;

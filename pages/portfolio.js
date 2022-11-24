@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -11,6 +11,12 @@ const TradingViewChart = dynamic(() => import("../components/TradingviewChart"),
   ssr: false,
 });
 const Portfolio = () => {
+  const [defaultSelectedRange, setDefaultSelectedRange] = useState(999999);
+
+  const updateDefaultSelectedRange = (value) => {
+    setDefaultSelectedRange(value);
+  }
+
   const CHART_TYPES = {
     BAR: "BAR",
     AREA: "AREA",
@@ -119,6 +125,8 @@ const Portfolio = () => {
                   field="totalLiquidityUSD"
                   width={width}
                   type={CHART_TYPES.AREA}
+                  defaultSelectedRange={defaultSelectedRange}
+                  updateDefaultSelectedRange={updateDefaultSelectedRange}
                 />
               </div>
             </div>
