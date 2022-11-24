@@ -91,8 +91,6 @@ const TradingViewChart = ({
   // pointer to the chart object
   const [chartCreated, setChartCreated] = useState(false);
   const dataPrev = usePrevious(data);
-  let chart;
-  console.log('jskdlfjsdfdsf', defaultSelectedRange)
   
   useEffect(() => {
     if (data !== dataPrev && chartCreated && type === CHART_TYPES.BAR) {
@@ -196,7 +194,7 @@ const TradingViewChart = ({
   // if no chart created yet, create one with options and add to DOM manually
   useEffect(() => {
     if (!chartCreated && formattedData) {
-      chart = createChart(ref.current, {
+      let chart = createChart(ref.current, {
         rightPriceScale: {
           scaleMargins: {
             top: 0.2,

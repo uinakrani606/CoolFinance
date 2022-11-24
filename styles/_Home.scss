@@ -607,6 +607,16 @@
   }
 }
 @media screen and (max-width: $screen-xs) {
+  .total-value-main {
+    .total-value-head {
+      .total-value-right {
+        .total-right-conatin{
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+    }
+  }
   .tv-lightweight-charts {
     margin-top: 40px;
   }
