@@ -2800,35 +2800,35 @@ const TradingViewChart = ({
           <ul>
             <li>
               <input type="radio" id="1D" name="portfolio" value="1D" onChange={radioChangeHandler} checked={portfolio === "1D"} />
-              <label for="1D">1D</label>
+              <label htmlFor="1D">1D</label>
             </li>
             <li>
               <input type="radio" id="1W" name="portfolio" value="1W" onChange={radioChangeHandler} checked={portfolio === "1W"} />
-              <label for="1W">1W</label>
+              <label htmlFor="1W">1W</label>
             </li>
             <li>
               <input type="radio" id="1M" name="portfolio" value="1M" onChange={radioChangeHandler} checked={portfolio === "1M"} />
-              <label for="1M">1M</label>
+              <label htmlFor="1M">1M</label>
             </li>
             <li>
               <input type="radio" id="3M" name="portfolio" value="3M" onChange={radioChangeHandler} checked={portfolio === "3M"} />
-              <label for="3M">3M</label>
+              <label htmlFor="3M">3M</label>
             </li>
             <li>
               <input type="radio" id="6M" name="portfolio" value="6M" onChange={radioChangeHandler} checked={portfolio === "6M"} />
-              <label for="6M">6M</label>
+              <label htmlFor="6M">6M</label>
             </li>
             <li>
               <input type="radio" id="1Y" name="portfolio" value="1Y" onChange={radioChangeHandler} checked={portfolio === "1Y"} />
-              <label for="1Y">1Y</label>
+              <label htmlFor="1Y">1Y</label>
             </li>
             <li>
               <input type="radio" id="YTD" name="portfolio" value="YTD" onChange={radioChangeHandler} checked={portfolio === "YTD"} />
-              <label for="YTD">YTD</label>
+              <label htmlFor="YTD">YTD</label>
             </li>
             <li>
               <input type="radio" id="ALL" name="portfolio" value="ALL" onChange={radioChangeHandler} checked={portfolio === "ALL"} />
-              <label for="ALL">ALL</label>
+              <label htmlFor="ALL">ALL</label>
             </li>
           </ul>
         </div>
