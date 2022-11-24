@@ -20,12 +20,7 @@ const SwapBridges = () => {
   const swapSendInput = useRef(0);
   const [count, setCount] = useState(100);
   const [balanceCount , setbalanceCount] = useState(500);
-
-  // const handleclick = event => {
-  //   setCount(event.target.value);
-  //   console.log(event)
-  //   console.log(setCount)
-  // };
+  
   const [balance] = useState(0.1);
 
   const [countnumber, setCountnumber] = useState(20);
@@ -36,8 +31,8 @@ const SwapBridges = () => {
 
   const [sendInputValue, setSendInputValue] = useState(100);
   const [receiveInputValue, setReceiveInputValue] = useState(13.453);
-  const [swapSendInputValue, setSwapSendInputValue] = useState(13.453);
-  const [swapReceiveInputValue, setSwapReceiveInputValue] = useState(13.453);
+  const [swapSendInputValue, setSwapSendInputValue] = useState(20);
+  const [swapReceiveInputValue, setSwapReceiveInputValue] = useState(4205.975);
 
   const setSendValueToField = () => {
     sendInput.current.value = balanceCount;
@@ -206,15 +201,13 @@ const SwapBridges = () => {
                                 </Menu>
                               </div>
                             </div>
-
                             <div className="matic-box">
                               <p>Balance:</p>
-                              <p onClick={setSendValueToField}>{balanceCount}</p>
-                              {/* <p onClick={handleclick} value={count}>{balanceCount}</p> */}
+                              <p onClick={setSendValueToField}>{balanceCount}</p>                              
                             </div>
                           </div>
                           <div className="matic-right">
-                            <input ref={sendInput} value={sendInputValue} onChange={onChangeSendInputValue} />
+                            <input type="number" ref={sendInput} value={sendInputValue} onChange={onChangeSendInputValue} />
                             <span>$16.03 </span>
                           </div>
                         </div>
@@ -271,13 +264,11 @@ const SwapBridges = () => {
 
                             <div className="matic-box">
                               <p>Balance:</p>
-                              <span onClick={setReceiveValueToField}>{balance}</span>
+                              <span>{balance}</span>
                             </div>
                           </div>
-                          <div className="matic-right">
-                            {/* <input placeholder={countvalue} /> */}
-                            <input ref={receiveInput} value={receiveInputValue} onChange={onChangeReceiveInputValue} />
-
+                          <div className="matic-right">                           
+                            <input type="number" ref={receiveInput} value={receiveInputValue} onChange={onChangeReceiveInputValue} />
                             <span>$16.15</span>
                           </div>
                         </div>
@@ -445,7 +436,7 @@ const SwapBridges = () => {
 
                             <div className="matic-box">
                                 <p>Balance:</p>
-                              <span onClick={() => setSwapReceiveValueToField(balanceuni)}  >{balanceuni}</span>
+                              <span>{balanceuni}</span>
                             </div>
                           </div>
                           <div className="matic-right">

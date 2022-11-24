@@ -277,12 +277,9 @@
                   font-size: 30px;
                   font-weight: bold;
                   background-color: transparent;
-                  max-width: 150px;
+                  max-width: 158px;
                   text-align: end;
-                  border: none;
-                  &::placeholder {
-                    color: var(--gray900);
-                  }
+                  border: none; 
                   &:focus {
                     border: 0;
                     outline: 2px solid transparent;
