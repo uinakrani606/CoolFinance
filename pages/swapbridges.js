@@ -164,12 +164,10 @@ const SwapBridges = () => {
                                 <Menu as="div" className="recieve-menu">
                                   <div className="recieve-flex">
                                     <select className="eth-dropdown ogn-dropdown filter-dropdown" name="" id="">
-                                      <optgroup>
-                                        <option value="" selected>
-                                          OGN
-                                        </option>
-                                        <option value="">SWAP</option>
-                                      </optgroup>
+                                      <option value="" selected>
+                                        OGN
+                                      </option>
+                                      <option value="">SWAP</option>
                                     </select>
                                   </div>
                                   <Transition
