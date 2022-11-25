@@ -224,7 +224,7 @@ const Explore = () => {
                       <Image src={protocol} alt=" " />
                     </div>
                     <div className="insert-logo-part">
-                      <Image src={etherium} alt=" " />
+                      <Image src={etherium} alt=" " className="insert-img"/>
                     </div>
                   </div>
                 </div>
@@ -253,7 +253,7 @@ const Explore = () => {
                       <Image src={protocol} alt=" " />
                     </div>
                     <div className="insert-logo-part">
-                      <Image src={etherium} alt=" " />
+                      <Image src={etherium} alt=" " className="insert-img"/>
                     </div>
                   </div>
                 </div>
@@ -323,7 +323,7 @@ const Explore = () => {
                       <Image src={protocol} alt=" " />
                     </div>
                     <div className="insert-logo-part">
-                      <Image src={etherium} alt=" " />
+                      <Image src={etherium} alt=" " className="insert-img" />
                     </div>
                   </div>
                 </div>
@@ -352,7 +352,7 @@ const Explore = () => {
                       <Image src={protocol} alt=" " />
                     </div>
                     <div className="insert-logo-part">
-                      <Image src={etherium} alt=" " />
+                      <Image src={etherium} alt=" " className="insert-img"/>
                     </div>
                   </div>
                 </div>
@@ -422,7 +422,7 @@ const Explore = () => {
                       <Image src={protocol} alt=" " />
                     </div>
                     <div className="insert-logo-part">
-                      <Image src={etherium} alt=" " />
+                      <Image src={etherium} alt=" " className="insert-img"/>
                     </div>
                   </div>
                 </div>
@@ -451,7 +451,7 @@ const Explore = () => {
                       <Image src={protocol} alt=" " />
                     </div>
                     <div className="insert-logo-part">
-                      <Image src={etherium} alt=" " />
+                      <Image src={etherium} alt=" " className="insert-img"/>
                     </div>
                   </div>
                 </div>
@@ -522,7 +522,7 @@ const Explore = () => {
                         <Image src={protocol} alt=" " />
                       </div>
                       <div className="insert-logo-part">
-                        <Image src={etherium} alt=" " />
+                        <Image src={etherium} alt=" " className="insert-img"/>
                       </div>
                     </div>
                   </div>
@@ -551,7 +551,7 @@ const Explore = () => {
                         <Image src={protocol} alt=" " />
                       </div>
                       <div className="insert-logo-part">
-                        <Image src={etherium} alt=" " />
+                        <Image src={etherium} alt=" " className="insert-img"/>
                       </div>
                     </div>
                   </div>
